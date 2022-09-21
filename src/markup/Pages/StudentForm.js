@@ -109,7 +109,7 @@ function StudentForm() {
                 <form className="inquiry-form dzForm" onSubmit={handleSubmit}>
                   <div className="dzFormMsg"></div>
                   <h3 className="box-title m-t0 m-b10">
-                    Teacher's Registration form {' '}
+                    Student's Registration form {' '}
                     <span className="bg-primary"></span>
                   </h3>
                   <p>
@@ -150,7 +150,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="phone"
-                            placeholder="ID Number: e.g. PIC/2022/S/00001"
+                            placeholder="ID Number: e.g. PIC/2022/S00001"
                             value={contact.phone}
                             onChange={(e) =>
                               setContact({
@@ -220,7 +220,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="phone"
-                            placeholder="D.B.O"
+                            placeholder="D.O.B"
                             value={contact.phone}
                             onChange={(e) =>
                               setContact({
