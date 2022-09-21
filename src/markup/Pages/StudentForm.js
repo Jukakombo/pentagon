@@ -109,11 +109,11 @@ function StudentForm() {
                 <form className="inquiry-form dzForm" onSubmit={handleSubmit}>
                   <div className="dzFormMsg"></div>
                   <h3 className="box-title m-t0 m-b10">
-                    Student's Registration form {' '}
+                    Student's Registration Form {' '}
                     <span className="bg-primary"></span>
                   </h3>
                   <p>
-                  Please give us accurate information and keep in mind that giving false information is a crime in violation of our school's policy.
+                  Please give us accurate information and keep in mind that giving false information is a crime and violation of our school's policy.
                   </p>
                   <div className="row">
                     <div className="col-lg-6">
@@ -287,7 +287,7 @@ function StudentForm() {
                           </span>
                           <input
                             className="form-control"
-                            type="text"
+                            type="file"
                             name="phone"
                             placeholder="Profile Picture"
                             value={contact.phone}
