@@ -71,7 +71,7 @@ class Register extends Component {
                             name="dzName"
                             required=""
                             className="form-control"
-                            placeholder="Your Email Id"
+                            placeholder="e.g joseph@pic.edu"
                             type="email"
                           />
                         </div>
@@ -81,7 +81,7 @@ class Register extends Component {
                             name="dzName"
                             required=""
                             className="form-control "
-                            placeholder="Type Password"
+                            placeholder="Type at least 8 characters"
                             type="password"
                           />
                         </div>

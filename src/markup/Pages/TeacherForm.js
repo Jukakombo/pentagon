@@ -62,8 +62,7 @@ function TeacherForm() {
                           Our Address
                         </h5>
                         <p>
-                        Gudele Bloc 7, Juba - South
-                          Sudan
+                        Gudele Block 9, Opp. Pity Oil Filling Station
                         </p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
@@ -113,7 +112,7 @@ function TeacherForm() {
                     <span className="bg-primary"></span>
                   </h3>
                   <p>
-                  Please give us accurate information and keep in mind that giving false information is a crime in violation of our school's policy.
+                  Please give us accurate information and keep in mind that giving false information is a crime and violation of our school's policy.
                   </p>
                   <div className="row">
                     <div className="col-lg-6">
@@ -287,7 +286,7 @@ function TeacherForm() {
                           </span>
                           <input
                             className="form-control"
-                            type="text"
+                            type="file"
                             name="phone"
                             placeholder="Profile Picture"
                             value={contact.phone}
