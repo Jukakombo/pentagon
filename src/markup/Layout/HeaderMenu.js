@@ -95,6 +95,16 @@ class HeaderMenu extends Component {
                   Create an Account{" "}
                 </Link>
               </li>
+              <li>
+                <Link to={"./student-registration-form"} className="dez-page">
+                 Student Registration form{" "}
+                </Link>
+              </li>
+              <li>
+                <Link to={"./teacher-registration-form"} className="dez-page">
+                Teacher Registration Form{" "}
+                </Link>
+              </li>
 
               <li>
                 <Link to={"./portfolio-grid-4"} className="dez-page">
