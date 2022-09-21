@@ -150,7 +150,7 @@ function TeacherForm() {
                             className="form-control"
                             type="text"
                             name="phone"
-                            placeholder="ID Number: e.g. PIC/2022/S00001"
+                            placeholder="ID Number: e.g. PIC/2022/T/01"
                             value={contact.phone}
                             onChange={(e) =>
                               setContact({
@@ -316,7 +316,7 @@ function TeacherForm() {
                             name="message"
                             rows="4"
                             className="form-control"
-                            placeholder="H.M comment"
+                            placeholder="Subjects taking"
                             value={contact.message}
                             onChange={(e) =>
                               setContact({

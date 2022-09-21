@@ -150,7 +150,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="phone"
-                            placeholder="ID Number: e.g. PIC/2022/S00001"
+                            placeholder="ID Number: e.g. PIC/2022/S/00001"
                             value={contact.phone}
                             onChange={(e) =>
                               setContact({
