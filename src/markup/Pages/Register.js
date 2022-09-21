@@ -30,8 +30,8 @@ function Register() {
     setTimeout(() => {
       setShowProgress(false);
     }, 8000);
-  };
-
+  }; 
+  
   const success = (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
