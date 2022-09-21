@@ -36,7 +36,7 @@ function Copyright(props) {
     >
       {'Copyright © '}
       <Link color="inherit" href="https://jubaproper.com">
-        Juba Proper International College
+        Pentagon International College (PIC)
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

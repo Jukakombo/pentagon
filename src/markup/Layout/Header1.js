@@ -56,17 +56,17 @@ class Header1 extends Component {
                       <i className="flaticon-phone-call m-r5"></i> +212698487054
                     </li>
                     <li>
-                      <i className="ti-location-pin m-r5"></i> Rock City Near  Bus Station
+                      <i className="ti-location-pin m-r5"></i> Gudele Bloc 7, Juba South Sudan
                     </li>
                   </ul>
                 </div>
                 <div className="dlab-topbar-right">
                   <ul>
                     <li>
-                      <i className="ti-skype m-r5"></i> Light House Primary & Secondary School
+                      <i className="ti-skype m-r5"></i> Pentagon International College
                     </li>
                     <li>
-                      <i className="ti-email m-r5"></i> LightHpri@gmail.com
+                      <i className="ti-email m-r5"></i> pentagonsch@gmail.com
                     </li>
                   </ul>
                 </div>

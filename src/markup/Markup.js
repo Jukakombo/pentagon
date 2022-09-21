@@ -68,6 +68,8 @@ import SignInSide from "./Pages/dashboar-student/SignInSide";
 import ScienceAndTechnology from "./Pages/school-news/ScienceAndTechnology";
 import StudentArticles from "./Pages/school-news/StudentArticles";
 import LibraryBooks from "./Pages/library/LibraryBooks";
+import TeacherForm from "./Pages/TeacherForm";
+import StudentForm from "./Pages/StudentForm";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -258,6 +260,8 @@ function Markup() {
           >
             <LibraryBooks />
           </Route>
+          <Route  path="/teacher-registration-form"component={TeacherForm }/>
+          <Route  path="/student-registration-form"component={StudentForm }/>
 
           <Route
             exact
