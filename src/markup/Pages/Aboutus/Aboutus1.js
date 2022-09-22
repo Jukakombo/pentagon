@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
-import Header from './../../Layout/Header1';
-import Footer5 from './../../Layout/footer5';
-import PageTitle from './../../Layout/PageTitle';
-import SectionCounter from './../../Element/SectionCounter';
+import Header from "./../../Layout/Header1";
+import Footer5 from "./../../Layout/footer5";
+import PageTitle from "./../../Layout/PageTitle";
+import SectionCounter from "./../../Element/SectionCounter";
 
 //Images
-import about9 from './../../../images/about/pic9.jpg';
-import bg2 from './../../../images/background/bg-map.jpg';
-import services1 from './../../../images/our-services/pic1.jpg';
-import services2 from './../../../images/our-services/pic2.jpg';
+import about9 from "./../../../images/about/pic9.jpg";
+import bg2 from "./../../../images/background/bg-map.jpg";
+import services1 from "./../../../images/our-services/pic1.jpg";
+import services2 from "./../../../images/our-services/pic2.jpg";
 
-import bnr from './../../../images/banner/bnr2.jpg';
+import bnr from "./../../../images/banner/bnr2.jpg";
 
 class Aboutus1 extends Component {
   render() {
@@ -21,7 +21,7 @@ class Aboutus1 extends Component {
         <div className="page-content bg-white">
           <div
             className="dlab-bnr-inr overlay-primary"
-            style={{ backgroundImage: 'url(' + bnr + ')' }}
+            style={{ backgroundImage: "url(" + bnr + ")" }}
           >
             <PageTitle motherMenu="About Us 1" activeMenu="About Us 1" />
           </div>
@@ -35,11 +35,23 @@ class Aboutus1 extends Component {
                     <span className="bg-primary"></span>
                   </h2>
                   <p>
-                  Pentagon International College (PIC) we provide a
-                    happy, caring and safe environment for our children. We work
-                    very hard to ensure that your child's experience of school
-                    is a positive one, which encourages a love of learning and
-                    self-discipline from the very start.
+                    Pentagon international Modern Mixed Secondary School is
+                    newly registered with the state Ministry of Education,
+                    Central Equatoria State under Registration Ref. No.
+                    SOME/JS/17-A-1 and it was established as institution in 19th
+                    April 2021
+                  </p>
+                  <p>
+                    Pentagon international Modern Mixed Secondary School is
+                    owned by South Sudanese. The Chief Executive Officer is
+                    called Mere Luke.
+                  </p>
+                  <p>
+                    The main goal for establishing Pentagon International Modern
+                    Mixed Secondary School is to provide Sophisticated
+                    high-quality class of education to the coming generations
+                    that will contribute. Towards growth, mental and physical
+                    development of the learners.
                   </p>
                 </div>
               </div>
@@ -75,7 +87,7 @@ class Aboutus1 extends Component {
                         </p>
                         <p>
                           Provide strong, effective staff, management, and
-                          leadership through continuous development programmes{' '}
+                          leadership through continuous development programmes{" "}
                         </p>
                         <p>
                           We are committed to offer first class standards in
@@ -105,9 +117,9 @@ function VisionBlog() {
       <div
         className="section-ful our-about-info content-inner-1 "
         style={{
-          backgroundImage: 'url(' + bg2 + ')',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: "url(" + bg2 + ")",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="container">
@@ -116,7 +128,7 @@ function VisionBlog() {
               Mission And Vision<span className="bg-primary"></span>
             </h2>
             <p>
-              {' '}
+              {" "}
               Learning hand in hand – partners in education. Our aim is to set
               high standards and expectations to help all members of the school
               community to achieve the best in everything they do and to work

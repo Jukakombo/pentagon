@@ -167,7 +167,7 @@ class Footer5 extends Component {
                 <div className="col-lg-6 col-md-6 col-sm-6 text-left ">
                   {" "}
                   <span>
-                    Copyright © {new Date().getFullYear()} Pentagon
+                    Copyright ©2021- {new Date().getFullYear()} Pentagon
                     International College (PIC)
                   </span>{" "}
                 </div>
