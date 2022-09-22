@@ -194,7 +194,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="idNumber"
-                            placeholder="ID Number: e.g. PIC/2022/T01"
+                            placeholder="ID Number: e.g. PIC/2022/S00001"
                             value={idNumber}
                             onChange={handleChangeInput}
                             required

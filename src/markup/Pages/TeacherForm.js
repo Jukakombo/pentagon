@@ -4,7 +4,7 @@ import Header from "./../Layout/Header1";
 import Footer5 from "./../Layout/footer5";
  
 import bgimg from "./../../images/background/bg2.jpg";
-import FileBase from 'react-file-base64';
+
  
 import { client } from "../../sanityClient";
 
