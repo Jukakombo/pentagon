@@ -56,7 +56,7 @@ class Header4 extends Component {
                       <i className="flaticon-phone-call m-r5"></i> +212698487054
                     </li>
                     <li>
-                      <i className="ti-location-pin m-r5"></i> Gudele Bloc 7
+                      <i className="ti-location-pin m-r5"></i> Gudele Block 9, Opp. Pity Oil Filling Station
                     </li>
                   </ul>
                 </div>
