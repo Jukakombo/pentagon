@@ -2,9 +2,10 @@ import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
 import Header from "./../Layout/Header1";
 import Footer5 from "./../Layout/footer5";
-import { useDispatch } from "react-redux";
+ 
 import bgimg from "./../../images/background/bg2.jpg";
-import { createContact } from "../../actions/contacts";
+import FileBase from 'react-file-base64';
+ 
 import { client } from "../../sanityClient";
 
 // const initialState = {};
@@ -18,7 +19,7 @@ function TeacherForm() {
     dateOfBirth: "",
     address: "",
     contact: "",
-    profilePicture: "",
+    profilePicture:"",
     subjects: "",
     headmasterComment: "",
   });
@@ -56,6 +57,7 @@ function TeacherForm() {
       profilePicture: formData.profilePicture,
       subjects: formData.subjects,
       headmasterComment: formData.headmasterComment,
+      
     };
 
     client
@@ -278,12 +280,19 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="file"
-                            name="phone"
+                            name="profilePicture"
                             placeholder="Profile Picture"
                             value={profilePicture}
                             onChange={handleChangeInput}
                             required
                           />
+                           {/* <FileBase component="input"
+                        type="file"
+                        multiple={false}
+                        onDone={({ base64 }) =>
+                        setFormData({ ...formData, profilePicture: base64 })
+                        } /> */}
+
                         </div>
                       </div>
                     </div>
