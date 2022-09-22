@@ -29,6 +29,9 @@ import S3Form from "../studentsForms/S3-Form";
 import S4Form from "../studentsForms/S4-Form";
 import TrainingForm from "../studentsForms/TrainingForm";
 import Workshop from "../studentsForms/Workshop";
+import SeniorTwo from "../Senior-2";
+import SeniorThree from "../SeniorThree";
+import SeniorFour from "../SeniorFour";
 
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
@@ -195,13 +198,13 @@ export default function Orders({ setContactId }) {
       return <SeniorOne />;
     // senior-2
     case "/senior-2":
-      return <SeniorOne />;
+      return <SeniorTwo />;
     // senior-3
     case "/senior-3":
-      return <SeniorOne />;
+      return <SeniorThree />;
     // senior-4
     case "/senior-4":
-      return <SeniorOne />;
+      return <SeniorFour />;
     // Libbrary
     case "/library":
       return <Library />;

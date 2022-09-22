@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Footer5 extends Component {
   render() {
@@ -11,22 +11,24 @@ class Footer5 extends Component {
               <div className="row">
                 <div className="col-5 col-lg-2 col-md-6 col-sm-6 footer-col-4">
                   <div className="widget widget_services border-0">
-                    <h5 className="m-b30 text-white">Pentagon International College (PIC) </h5>
+                    <h5 className="m-b30 text-white">
+                      Pentagon International College (P.I.C){" "}
+                    </h5>
                     <ul>
                       <li>
-                        <Link to={'/about-1'}>About Us </Link>
+                        <Link to={"/about-1"}>About Us </Link>
                       </li>
                       <li>
-                        <Link to={'/'}>Home </Link>
+                        <Link to={"/"}>Home </Link>
                       </li>
                       <li>
-                        <Link to={'/contact'}>Contact Us</Link>
+                        <Link to={"/contact"}>Contact Us</Link>
                       </li>
                       <li>
-                        <Link to={'/#'}>Terms & Conditions</Link>
+                        <Link to={"/#"}>Terms & Conditions</Link>
                       </li>
                       <li>
-                        <Link to={'/service'}>Our Services</Link>
+                        <Link to={"/service"}>Our Services</Link>
                       </li>
                     </ul>
                   </div>
@@ -36,19 +38,19 @@ class Footer5 extends Component {
                     <h5 className="m-b30 text-white">Useful Link</h5>
                     <ul>
                       <li>
-                        <Link to={'#'}>Create Account</Link>
+                        <Link to={"#"}>Create Account</Link>
                       </li>
                       <li>
-                        <Link to={'#'}>School Philosophy </Link>
+                        <Link to={"#"}>School Philosophy </Link>
                       </li>
                       <li>
-                        <Link to={'#'}>Corporate Culture</Link>
+                        <Link to={"#"}>Corporate Culture</Link>
                       </li>
                       <li>
-                        <Link to={'#'}>Portfolio</Link>
+                        <Link to={"#"}>Portfolio</Link>
                       </li>
                       <li>
-                        <Link to={'#'}>Project Details</Link>
+                        <Link to={"#"}>Project Details</Link>
                       </li>
                     </ul>
                   </div>
@@ -59,11 +61,12 @@ class Footer5 extends Component {
                     <ul>
                       <li>
                         <i className="ti-location-pin"></i>
-                        <strong>address</strong> Gudele Block 7  
+                        <strong>address</strong> Gudele Block 9, Opp. Pity Oil Filling Station
                       </li>
                       <li>
                         <i className="ti-mobile"></i>
-                        <strong>phone</strong>+212698487054 (24/7 Support Line)
+                        <strong>phone</strong>+211(0)920032333 |
+                        +211(0)928104000 +211(0)928617175 (24/7 Support Line)
                       </li>
                       <li>
                         <i className="ti-email"></i>
@@ -78,8 +81,8 @@ class Footer5 extends Component {
                       Subscribe To Our Newsletter
                     </h5>
                     <p className="text-capitalize m-b20">
-                      If you have any questions, you can contact us so that
-                      we can give you a satisfying answer. Subscribe to our
+                      If you have any questions, you can contact us so that we
+                      can give you a satisfying answer. Subscribe to our
                       newsletter to get our latest news.
                     </p>
                     <div className="subscribe-form m-b20">
@@ -113,7 +116,7 @@ class Footer5 extends Component {
                     <ul className="list-inline m-a0">
                       <li>
                         <Link
-                          to={'#'}
+                          to={"#"}
                           className="site-button facebook circle mr-1"
                         >
                           <i className="fa fa-facebook"></i>
@@ -121,7 +124,7 @@ class Footer5 extends Component {
                       </li>
                       <li>
                         <Link
-                          to={'#'}
+                          to={"#"}
                           className="site-button google-plus circle mr-1"
                         >
                           <i className="fa fa-google-plus"></i>
@@ -129,7 +132,7 @@ class Footer5 extends Component {
                       </li>
                       <li>
                         <Link
-                          to={'#'}
+                          to={"#"}
                           className="site-button linkedin circle mr-1"
                         >
                           <i className="fa fa-linkedin"></i>
@@ -137,7 +140,7 @@ class Footer5 extends Component {
                       </li>
                       <li>
                         <Link
-                          to={'#'}
+                          to={"#"}
                           className="site-button instagram circle mr-1"
                         >
                           <i className="fa fa-instagram"></i>
@@ -145,7 +148,7 @@ class Footer5 extends Component {
                       </li>
                       <li>
                         <Link
-                          to={'#'}
+                          to={"#"}
                           className="site-button twitter circle mr-1"
                         >
                           <i className="fa fa-twitter"></i>
@@ -162,19 +165,29 @@ class Footer5 extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-6 text-left ">
-                  {' '}
+                  {" "}
                   <span>
-                    Copyright © {new Date().getFullYear()} Pentagon International College (PIC)
-                  </span>{' '}
+                    Copyright © {new Date().getFullYear()} Pentagon
+                    International College (PIC)
+                  </span>{" "}
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 text-right ">
                   <div className="widget-link ">
                     <ul>
                       <li>
-                        <Link to={'#'}> Developed by</Link>
+                        <Link to={"#"}> Developed by</Link>
                       </li>
                       <li>
-                        <Link to={{pathname:'https://alison-profesional-portfolio.netlify.app/'}} target="_blank"> Alison Juka</Link>
+                        <Link
+                          to={{
+                            pathname:
+                              "https://alison-profesional-portfolio.netlify.app/",
+                          }}
+                          target="_blank"
+                        >
+                          {" "}
+                          Alison Juka | Remit Capital Limited
+                        </Link>
                       </li>
                     </ul>
                   </div>

@@ -36,13 +36,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
  
 
-export default function SeniorOne() {
+export default function SeniorFour() {
   const [seniorOneData, setSeniorOneData]=useState([])
   // console.log(seniorOneData)
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="senior1Form" ]{
+        `*[_type=="senior4Form" ]{
           profilePicture{
           asset->{
           url
