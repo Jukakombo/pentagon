@@ -85,7 +85,7 @@ function Contact() {
                         <p className="m-b0">info@example.com</p>
                         <p className="m-b0">sales@example.com</p>
                         <p className="m-b0">hr@example.com</p>
-                        <p>jubaProper@gmail.com</p>
+                        <p>pentagon@gmail.com</p>
                       </div>
                     </div>
                   </div>
@@ -98,8 +98,9 @@ function Contact() {
                           </span>
                           Phone Numbers
                         </h5>
-                        <p>+212698487054</p>
-                        <p>+212698487054</p>
+                        <p>+211(0)920032333 </p>
+                        <p>+211(0)928617175</p>
+                        <p>+211(0)928104000</p>
                       </div>
                     </div>
                   </div>
