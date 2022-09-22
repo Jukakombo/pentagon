@@ -1,43 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
-import Header from './../Layout/Header1';
-import Footer5 from './../Layout/footer5';
-import { useDispatch } from 'react-redux';
-import bgimg from './../../images/background/bg2.jpg';
-import { createContact } from '../../actions/contacts';
+import Header from "./../Layout/Header1";
+import Footer5 from "./../Layout/footer5";
+import { useDispatch } from "react-redux";
+import bgimg from "./../../images/background/bg2.jpg";
+import { createContact } from "../../actions/contacts";
+import { client } from "../../sanityClient";
 
 // const initialState = {};
 
 function TeacherForm() {
-  const [contact, setContact] = useState({
-    givenName: '',
-    email: '',
-    phone: '',
-    message: '',
-    subject: '',
+  const [formData, setFormData] = useState({
+    fullName: "",
+    idNumber: "",
+    gender: "",
+    email: "",
+    dateOfBirth: "",
+    address: "",
+    contact: "",
+    profilePicture: "",
+    subjects: "",
+    headmasterComment: "",
   });
-  const [success, setSuccess] = useState(false);
-  const dispatch = useDispatch();
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(createContact(contact));
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 5000);
-    clear();
+  const {
+    fullName,
+    idNumber,
+    gender,
+    dateOfBirth,
+    address,
+    contact,
+    profilePicture,
+    headmasterComment,
+    subjects,
+  } = formData;
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
-  console.log(handleSubmit);
 
-  const clear = () => {
-    setContact({
-      givenName: '',
-      email: '',
-      phone: '',
-      message: '',
-      subject: '',
+  const handleSubmit = () => {
+    setLoading(true);
+
+    const contact = {
+      _type: "teacherForm",
+      fullName: formData.fullName,
+      idNumber: formData.idNumber,
+      gender: formData.gender,
+      dateOfBirth: formData.dateOfBirth,
+      address: formData.address,
+      contact: formData.contact,
+      profilePicture: formData.profilePicture,
+      subjects: formData.subjects,
+      headmasterComment: formData.headmasterComment,
+    };
+
+    client
+      .create(contact)
+      .then(() => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+        
+      })
+      .catch((err) => console.log(err));
+    setFormData({
+      fullName: "",
+      idNumber: "",
+      gender: "",
+      email: "",
+      dateOfBirth: "",
+      address: "",
+      contact: "",
+      profilePicture: "",
+      subjects: "",
+      headmasterComment: "",
     });
+    setTimeout(() => {
+      setIsFormSubmitted(false);
+    }, 5000);
   };
   return (
     <>
@@ -46,7 +89,7 @@ function TeacherForm() {
         {/* <!-- inner page banner --> */}
         <div
           className="dlab-bnr-inr overlay-primary-dark contact-page"
-          style={{ backgroundImage: 'url(' + bgimg + ')' }}
+          style={{ backgroundImage: "url(" + bgimg + ")" }}
         >
           <div className="container">
             <div className="row">
@@ -61,9 +104,7 @@ function TeacherForm() {
                           </span>
                           Our Address
                         </h5>
-                        <p>
-                        Gudele Block 9, Opp. Pity Oil Filling Station
-                        </p>
+                        <p>Gudele Block 9, Opp. Pity Oil Filling Station</p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
                         </h6>
@@ -105,14 +146,16 @@ function TeacherForm() {
                 </div>
               </div>
               <div className="col-lg-8 col-xs-8">
-                <form className="inquiry-form dzForm" onSubmit={handleSubmit}>
+                <form className="inquiry-form dzForm">
                   <div className="dzFormMsg"></div>
                   <h3 className="box-title m-t0 m-b10">
-                    Teacher's Registration form {' '}
+                    Teacher's Registration Form{" "}
                     <span className="bg-primary"></span>
                   </h3>
                   <p>
-                  Please give us accurate information and keep in mind that giving false information is a crime and violation of our school's policy.
+                    Please give us accurate information and keep in mind that
+                    giving false information is a crime and violation of our
+                    school's policy.
                   </p>
                   <div className="row">
                     <div className="col-lg-6">
@@ -125,15 +168,10 @@ function TeacherForm() {
                             autoFocus
                             className="form-control"
                             type="text"
-                            name="givenName"
-                            placeholder="Enter your Name here......"
-                            value={contact.givenName}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                givenName: e.target.value,
-                              })
-                            }
+                            name="fullName"
+                            placeholder="Enter your Names here......"
+                            value={fullName}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
@@ -148,15 +186,10 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="text"
-                            name="phone"
+                            name="idNumber"
                             placeholder="ID Number: e.g. PIC/2022/T01"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={idNumber}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
@@ -172,43 +205,16 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="text"
-                            name="phone"
+                            name="gender"
                             placeholder="Gender"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={gender}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-6">
-                      <div className="form-group">
-                        <div className="input-group">
-                          <span className="input-group-addon">
-                            <i className="ti-id-badge text-primary"></i>
-                          </span>
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="phone"
-                            placeholder="Class"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
+
                     <div className="col-lg-6">
                       <div className="form-group">
                         <div className="input-group">
@@ -218,15 +224,10 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="text"
-                            name="phone"
+                            name="dateOfBirth"
                             placeholder="D.O.B"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={dateOfBirth}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
@@ -241,15 +242,10 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="text"
-                            name="phone"
+                            name="address"
                             placeholder="Address"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={address}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
@@ -264,15 +260,10 @@ function TeacherForm() {
                           <input
                             className="form-control"
                             type="text"
-                            name="phone"
+                            name="contact"
                             placeholder="Contact/E-mail"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={contact}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
@@ -282,28 +273,22 @@ function TeacherForm() {
                       <div className="form-group">
                         <div className="input-group">
                           <span className="input-group-addon">
-                            <i className="ti-export text-primary"></i>
+                            <i className="ti-gallery text-primary"></i>
                           </span>
                           <input
                             className="form-control"
                             type="file"
                             name="phone"
                             placeholder="Profile Picture"
-                            value={contact.phone}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                phone: e.target.value,
-                              })
-                            }
+                            value={profilePicture}
+                            onChange={handleChangeInput}
                             required
                           />
                         </div>
                       </div>
                     </div>
-                     
 
-                    <div className="col-lg-12">
+                    <div className="col-lg-6">
                       <div className="form-group">
                         <div className="input-group">
                           <span className="input-group-addon">
@@ -312,18 +297,31 @@ function TeacherForm() {
                           <textarea
                             required
                             type="text"
-                            name="message"
+                            name="subjects"
                             rows="4"
                             className="form-control"
                             placeholder="Subject(s)"
-                            value={contact.message}
-                            onChange={(e) =>
-                              setContact({
-                                ...contact,
-                                message: e.target.value,
-                              })
-                            }
+                            value={subjects}
+                            onChange={handleChangeInput}
                           ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <div className="input-group">
+                          <span className="input-group-addon">
+                            <i className="ti-write text-primary"></i>
+                          </span>
+                          <input
+                            className="form-control"
+                            type="text"
+                            name="headmasterComment"
+                            placeholder="Headmaster Comment"
+                            value={headmasterComment}
+                            onChange={handleChangeInput}
+                            required
+                          />
                         </div>
                       </div>
                     </div>
@@ -343,9 +341,11 @@ function TeacherForm() {
                             data-error="Please complete the Captcha"
                           />
 
-                          {success && (
+                          {isFormSubmitted && (
                             <div className="col-lg-12 site-button">
-                            Congratulations on successfully enrolling in Pentagon International College. Please be patient as we will respond in a timely manner.{' '}
+                              Congratulations on successfully enrolling in
+                              Pentagon International College. Please be patient
+                              as we will respond in a timely manner.{" "}
                             </div>
                           )}
                         </div>
@@ -353,12 +353,11 @@ function TeacherForm() {
                     </div>
                     <div className="col-lg-12">
                       <button
-                        type="submit"
+                        type="button"
                         className="site-button button-lg"
                         onClick={handleSubmit}
                       >
-                        {' '}
-                        <span>Submit</span>
+                        <span>{!loading ? "Submit" : "Saving..."}</span>
                       </button>
                     </div>
                   </div>

@@ -283,7 +283,7 @@ function StudentForm() {
                       <div className="form-group">
                         <div className="input-group">
                           <span className="input-group-addon">
-                            <i className="ti-export text-primary"></i>
+                            <i className="ti-gallery text-primary"></i>
                           </span>
                           <input
                             className="form-control"
