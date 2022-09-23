@@ -41,13 +41,13 @@ class Footer5 extends Component {
                         <Link to={"#"}>Create Account</Link>
                       </li>
                       <li>
-                        <Link to={"#"}>School Philosophy </Link>
+                        <Link to={"/code-of-conduct"}>Code of Conduct </Link>
                       </li>
                       <li>
-                        <Link to={"#"}>Corporate Culture</Link>
+                        <Link to={"/about-1"}>About Us</Link>
                       </li>
                       <li>
-                        <Link to={"#"}>Portfolio</Link>
+                        <Link to={"/portfolio-grid-4"}>Gallery</Link>
                       </li>
                       <li>
                         <Link to={"#"}>Project Details</Link>

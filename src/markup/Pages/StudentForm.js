@@ -125,10 +125,8 @@ function StudentForm() {
                           </span>
                           E-mail
                         </h5>
-                        <p className="m-b0">info@example.com</p>
-                        <p className="m-b0">sales@example.com</p>
-                        <p className="m-b0">hr@example.com</p>
-                        <p>Pentagon@gmail.com</p>
+                        <p className="m-b0">pentagoncollege2021@gmail.com</p>
+                         
                       </div>
                     </div>
                   </div>
