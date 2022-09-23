@@ -62,8 +62,7 @@ function Contact() {
                           Our Address
                         </h5>
                         <p>
-                          Gudele Bloc 7 near Zain Network, Juba South
-                          Sudan
+                        Gudele Block 9, Opp. Pity Oil Filling Station
                         </p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
