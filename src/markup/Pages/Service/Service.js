@@ -34,7 +34,7 @@ const iconBox = [
   {
     icon: <i className="flaticon-devices" />,
     title: 'E-Library',
-    text: 'We build a fun, cost-free online library for all of our students. ',
+    text: 'We create a fun, free online library for all of our students with all of the school books and exercices South Sudan syllabus that can only be accessed by our students using their school e-mail and password, which we provide to all of our students.. ',
   },
   
 ];
