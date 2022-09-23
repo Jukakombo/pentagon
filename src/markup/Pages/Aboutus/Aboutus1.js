@@ -125,14 +125,14 @@ function VisionBlog() {
         <div className="container">
           <div className="section-head text-center">
             <h2 className="box-title m-tb0">
-              Mission And Vision<span className="bg-primary"></span>
+              VISION AND MISSION<span className="bg-primary"></span>
             </h2>
             <p>
               {" "}
               Learning hand in hand – partners in education. Our aim is to set
               high standards and expectations to help all members of the school
-              community to achieve the best in everything they do and to work
-              towards reaching their full potential. To fulfil this we will:
+              community to achieve the best among all in everything they do and to work
+              towards reaching their full potential.  
             </p>
           </div>
           <div className=" row dzseth  m-b30">
@@ -142,19 +142,19 @@ function VisionBlog() {
             <div className="col-lg-6 col-md-12 m-b30 dis-tbl text-justify">
               <div className="dis-tbl-cell">
                 <h3 className="box-title">
-                  Mision<span className="bg-primary"></span>
+                  VISION<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                  Maintain a safe, open and friendly environment within which
-                  pupils are encouraged to develop a love of learning and to
-                  become confident, independent and lifelong learners
+                UNTIL You Light the Candle, Darkness Rules!
+                </p>
+                <h3 className="box-title">
+                VISION STATEMENT<span className="bg-primary"></span>
+                </h3>
+                <p className="font-16">
+                Stop wondering on what to do, take that match box near you and light the candle. You will find the “Seeds” on the tables. They were hidden by Darkness.
                 </p>
                 <p className="font-16">
-                  Provide a broad, balanced and challenging curriculum to enable
-                  all pupils to work to the best of their ability
-                </p>
-                <p className="font-16">
-                  Children in our school come from different cultural
+                  Students in our school come from different cultural
                   backgrounds; they have different religions and speak different
                   languages. We celebrate and value this diversity. We encourage
                   the children to be proud of their own culture, religion and
@@ -167,25 +167,21 @@ function VisionBlog() {
             <div className="col-lg-6 col-md-12 dis-tbl text-justify">
               <div className="dis-tbl-cell">
                 <h3 className="box-title">
-                  Vision<span className="bg-primary"></span>
+                MISSION<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                  Our school aims to be the centre for a meaningful child
-                  centred, fun-based curriculum that builds like skills,
-                  innovation, independence, collaboration, confidence, and
-                  resilience to support each child in achieving their full
-                  potential and to make a smooth transition to school and
-                  society.
+                Declare war on illiteracy in our beloved Country, The Republic of South Sudan and beyond.
                 </p>
+                <h3 className="box-title">
+                MISSION STATEMENT<span className="bg-primary"></span>
+                </h3>
                 <p className="font-16">
-                  Provide equal opportunities for all our children and encourage
-                  them to be proud of their own culture, religion and language
-                  and to show respect for those of others.
+                To provide a sophisticated high quality class of education to the coming generations in order to embrace humanity around the world and build our Nation’s shining future to last.
                 </p>
                 <p className="font-16">
                   Work together in a positive partnership with parents and
-                  governors and to contribute to the quality and development of
-                  our local community.
+                  government and to contribute to the quality and development of
+                  our country.
                 </p>
               </div>
             </div>
