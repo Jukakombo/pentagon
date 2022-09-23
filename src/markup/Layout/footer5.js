@@ -15,9 +15,7 @@ class Footer5 extends Component {
                       Pentagon International College (P.I.C){" "}
                     </h5>
                     <ul>
-                      <li>
-                        <Link to={"/about-1"}>About Us </Link>
-                      </li>
+                      
                       <li>
                         <Link to={"/"}>Home </Link>
                       </li>

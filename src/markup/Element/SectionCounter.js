@@ -17,8 +17,8 @@ class SectionCounter extends Component{
 				<div className="section-full content-inner-1 overlay-primary about-service bg-img-fix" style={{ backgroundImage: "url(" + bg1 + ")" }}>
 					<div className="container">
 						<div className="section-head text-white text-center">
-							<h2 className="box-title m-tb0 max-w800 m-auto">Amazing things happen to your business when we connect those dots of utility and value<span className="bg-primary"></span></h2>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over</p>
+							<h2 className="box-title m-tb0 max-w800 m-auto">Amazing things happen to your child when we connect those dots of utility and value<span className="bg-primary"></span></h2>
+							<p>We are concentrating on ensuring that your child is well-taught and strives to outperform everyone else.</p>
 						</div>
 					</div>
 					<div className="container">

@@ -14,33 +14,29 @@ const iconBox = [
   {
     icon: <i className="flaticon-notebook" />,
     title: 'Curriculum',
-    text: 'The curriculum is dynamic, modern and designed to challenge and inspire learners to be adaptable and flexible. The Curriculum is coherent with the needs of learners, South Sudan and the broader international society. It prepares learners for the opportunities and experiences of a highly competitive environment and society.',
+    text: 'The curriculum is dynamic and modern, with the goal of challenging and inspiring students to be adaptable and flexible. The Curriculum is in line with the needs of students, South Sudan, and the larger international community. It prepares students for the opportunities and experiences that come with living in a highly competitive environment and society.',
   },
   {
     icon: <i className="flaticon-pen" />,
     title: 'Co-curricular Activities ',
-    text: 'We place great emphasis on co-curricular activities. All pupils are encouraged to participate in any one of the school clubs such as music, scrabble, swimming, and other safe outdoor and indoor games. ',
+    text: 'Extracurricular activities are extremely important to us. All students are encouraged to participate in school clubs such as music, debate, football, and other safe outdoor and indoor games.',
   },
   {
     icon: <i className="flaticon-bar-chart" />,
     title: 'Responsibility',
-    text: 'With the understanding that children are the most valuable assets, we employ different proven strategies to make our students responsible society members',
+    text: 'Knowing that students are our most valuable assets, we use a variety of tested techniques to develop responsible citizens in our students.',
   },
   {
     icon: <i className="flaticon-file" />,
     title: 'High Morals',
-    text: 'We teach them moral values like honesty, loyalty, respect, self-reliance, self-discipline, patience, kindness, gratitude, forgiveness, personal responsibility and courtesy.',
+    text: 'We instill in them moral principles like integrity, fidelity, respect, patience, kindness, gratitude, forgiving, personal accountability, and courtesy.',
   },
   {
     icon: <i className="flaticon-devices" />,
-    title: 'E-learning',
-    text: 'Free and fun digital education for all our children special the nursery classes.',
+    title: 'E-Library',
+    text: 'We build a fun, cost-free online library for all of our students. ',
   },
-  {
-    icon: <i className="flaticon-transport" />,
-    title: 'transportation',
-    text: 'Transportaon to and from school for our pupils',
-  },
+  
 ];
 
 class Service extends Component {
