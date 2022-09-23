@@ -9,6 +9,7 @@ import SectionCounter from "./../../Element/SectionCounter";
 import about9 from "./../../../images/about/pic9.jpg";
 import bg2 from "./../../../images/background/bg-map.jpg";
 import services1 from "./../../../images/our-services/pic1.jpg";
+import organizationalDigram from "./../../../images/our-services/organizational.png";
 import services2 from "./../../../images/our-services/pic2.jpg";
 
 import bnr from "./../../../images/banner/bnr2.jpg";
@@ -101,9 +102,23 @@ class Aboutus1 extends Component {
               </div>
             </div>
             {/* Counetr section */}
-
+            {/* <SectionCounter /> */}
             {/* Counetr section End*/}
             <VisionBlog />
+            <div className="container">
+              <div className="section-head text-center">
+                <h2 className="box-title m-tb0">
+                  Organizational Structure for Effective School Management
+                  <span className="bg-primary"></span>
+                </h2>
+                {/* <div className=" row dzseth  m-b30"> */}
+                <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
+                  <img src={organizationalDigram} data-tilt alt="organigram" />
+                  {/* </div> */}
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
         <Footer5 />
@@ -131,8 +146,8 @@ function VisionBlog() {
               {" "}
               Learning hand in hand – partners in education. Our aim is to set
               high standards and expectations to help all members of the school
-              community to achieve the best among all in everything they do and to work
-              towards reaching their full potential.  
+              community to achieve the best among all in everything they do and
+              to work towards reaching their full potential.
             </p>
           </div>
           <div className=" row dzseth  m-b30">
@@ -145,13 +160,15 @@ function VisionBlog() {
                   VISION<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                UNTIL You Light the Candle, Darkness Rules!
+                  UNTIL You Light the Candle, Darkness Rules!
                 </p>
                 <h3 className="box-title">
-                VISION STATEMENT<span className="bg-primary"></span>
+                  VISION STATEMENT<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                Stop wondering on what to do, take that match box near you and light the candle. You will find the “Seeds” on the tables. They were hidden by Darkness.
+                  Stop wondering on what to do, take that match box near you and
+                  light the candle. You will find the “Seeds” on the tables.
+                  They were hidden by Darkness.
                 </p>
                 <p className="font-16">
                   Students in our school come from different cultural
@@ -167,16 +184,19 @@ function VisionBlog() {
             <div className="col-lg-6 col-md-12 dis-tbl text-justify">
               <div className="dis-tbl-cell">
                 <h3 className="box-title">
-                MISSION<span className="bg-primary"></span>
+                  MISSION<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                Declare war on illiteracy in our beloved Country, The Republic of South Sudan and beyond.
+                  Declare war on illiteracy in our beloved Country, The Republic
+                  of South Sudan and beyond.
                 </p>
                 <h3 className="box-title">
-                MISSION STATEMENT<span className="bg-primary"></span>
+                  MISSION STATEMENT<span className="bg-primary"></span>
                 </h3>
                 <p className="font-16">
-                To provide a sophisticated high quality class of education to the coming generations in order to embrace humanity around the world and build our Nation’s shining future to last.
+                  To provide a sophisticated high quality class of education to
+                  the coming generations in order to embrace humanity around the
+                  world and build our Nation’s shining future to last.
                 </p>
                 <p className="font-16">
                   Work together in a positive partnership with parents and
