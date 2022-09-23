@@ -2,10 +2,10 @@ import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
 import Header from "./../Layout/Header1";
 import Footer5 from "./../Layout/footer5";
- 
+
 import bgimg from "./../../images/background/bg2.jpg";
 // import FileBase from 'react-file-base64';
- 
+
 import { client } from "../../sanityClient";
 
 // const initialState = {};
@@ -20,8 +20,8 @@ function StudentForm() {
     dateOfBirth: "",
     address: "",
     contact: "",
-    profilePicture:"",
-   
+    profilePicture: "",
+
     headmasterComment: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -37,7 +37,6 @@ function StudentForm() {
     classYear,
     profilePicture,
     headmasterComment,
- 
   } = formData;
 
   const handleChangeInput = (e) => {
@@ -57,11 +56,9 @@ function StudentForm() {
       address: formData.address,
       contact: formData.contact,
       profilePicture: formData.profilePicture,
-   
+
       headmasterComment: formData.headmasterComment,
       classYear: formData.classYear,
-      
-      
     };
 
     client
@@ -69,7 +66,6 @@ function StudentForm() {
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
-        
       })
       .catch((err) => console.log(err));
     setFormData({
@@ -81,9 +77,9 @@ function StudentForm() {
       address: "",
       contact: "",
       profilePicture: "",
-    
+
       headmasterComment: "",
-      classYear:""
+      classYear: "",
     });
     setTimeout(() => {
       setIsFormSubmitted(false);
@@ -210,7 +206,8 @@ function StudentForm() {
                           <span className="input-group-addon">
                             <i className="ti-user text-primary"></i>
                           </span>
-                          <input
+                           
+                          <select
                             className="form-control"
                             type="text"
                             name="gender"
@@ -218,7 +215,10 @@ function StudentForm() {
                             value={gender}
                             onChange={handleChangeInput}
                             required
-                          />
+                          >
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -228,15 +228,21 @@ function StudentForm() {
                           <span className="input-group-addon">
                             <i className="ti-user text-primary"></i>
                           </span>
-                          <input
+
+                          <select
                             className="form-control"
                             type="text"
-                            name="class"
-                            placeholder="Class"
-                            value={classYear}
+                            name="classYear"
                             onChange={handleChangeInput}
                             required
-                          />
+                          >
+                            <option>Senior-One</option>
+                            <option>Senior-Two</option>
+                            <option>Senior-Three-Art Section</option>
+                            <option>Senior-Three-Science Section</option>
+                            <option>Senior-Four-Art-Section</option>
+                            <option>Senior-Four-Science-Section</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -310,19 +316,16 @@ function StudentForm() {
                             onChange={handleChangeInput}
                             required
                           />
-                           {/* <FileBase component="input"
+                          {/* <FileBase component="input"
                         type="file"
                         multiple={false}
                         onDone={({ base64 }) =>
                         setFormData({ ...formData, profilePicture: base64 })
                         } /> */}
-
                         </div>
                       </div>
                     </div>
 
-                     
-                  
                     <div className="col-lg-12">
                       <div className="form-group">
                         <div className="input-group">
