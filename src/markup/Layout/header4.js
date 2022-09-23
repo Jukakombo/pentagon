@@ -63,9 +63,9 @@ class Header4 extends Component {
                 </div>
                 <div className="dlab-topbar-right">
                   <ul>
-                    <li>
+                    {/* <li>
                       <i className="ti-skype m-r5"></i> pentagon.sch
-                    </li>
+                    </li> */}
                     <li>
                       <i className="ti-email m-r5"></i>pentagoncollege2021@gmail.com
                     </li>
