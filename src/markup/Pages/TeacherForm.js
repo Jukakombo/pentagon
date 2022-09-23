@@ -2,10 +2,9 @@ import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
 import Header from "./../Layout/Header1";
 import Footer5 from "./../Layout/footer5";
- 
+
 import bgimg from "./../../images/background/bg2.jpg";
 
- 
 import { client } from "../../sanityClient";
 
 // const initialState = {};
@@ -19,7 +18,7 @@ function TeacherForm() {
     dateOfBirth: "",
     address: "",
     contact: "",
-    profilePicture:"",
+    profilePicture: "",
     subjects: "",
     headmasterComment: "",
   });
@@ -57,7 +56,6 @@ function TeacherForm() {
       profilePicture: formData.profilePicture,
       subjects: formData.subjects,
       headmasterComment: formData.headmasterComment,
-      
     };
 
     client
@@ -65,7 +63,6 @@ function TeacherForm() {
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
-        
       })
       .catch((err) => console.log(err));
     setFormData({
@@ -205,7 +202,7 @@ function TeacherForm() {
                           <span className="input-group-addon">
                             <i className="ti-user text-primary"></i>
                           </span>
-                          <input
+                          <select
                             className="form-control"
                             type="text"
                             name="gender"
@@ -213,7 +210,10 @@ function TeacherForm() {
                             value={gender}
                             onChange={handleChangeInput}
                             required
-                          />
+                          >
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -287,13 +287,12 @@ function TeacherForm() {
                             onChange={handleChangeInput}
                             required
                           />
-                           {/* <FileBase component="input"
+                          {/* <FileBase component="input"
                         type="file"
                         multiple={false}
                         onDone={({ base64 }) =>
                         setFormData({ ...formData, profilePicture: base64 })
                         } /> */}
-
                         </div>
                       </div>
                     </div>
