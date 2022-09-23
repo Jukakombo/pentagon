@@ -133,9 +133,9 @@ const Index6 = (props) => {
                   and a well rouded-education in their informative year
                   <br />
                 </p>
-                <Link to={"#"} className="site-button button-md radius-xl">
+                <a href="#aboutus2020" className="site-button button-md radius-xl">
                   Explore Now
-                </Link>
+                </a>
               </div>
               <div className="col-md-6">
                 <div className="curve-img">
@@ -147,7 +147,7 @@ const Index6 = (props) => {
           </div>
         </div>
 
-        <div
+        <div id="aboutus2020"
           className="section-full content-inner-2 overlay-primary choseus-tabs  bg-img-fix"
           style={{ backgroundImage: "url(" + bnr1 + ")" }}
         >
