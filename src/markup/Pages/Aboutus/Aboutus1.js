@@ -8,7 +8,7 @@ import SectionCounter from "./../../Element/SectionCounter";
 //Images
 import about9 from "./../../../images/about/pic9.jpg";
 import bg2 from "./../../../images/background/bg-map.jpg";
-import services1 from "./../../../images/our-services/pic1.jpg";
+import services1 from "./../../../images/our-services/mapgif.gif";
 import organizationalDigram from "./../../../images/our-services/organizational.png";
 import services2 from "./../../../images/our-services/pic2.jpg";
 

@@ -6,13 +6,12 @@ import Footer5 from "./../Layout/footer5";
 import LatestBlogSlider from "./../Element/LatestBlogSlider";
 
 //Images
- 
+import organizationalDigram from "../../images/our-services/organizational.png";
 import bgslider9 from "./../../images/main-slider/slide9.jpg";
 import bg19 from "./../../images/background/bg19.jpg";
 import bg2 from "./../../images/background/fountain2.gif";
 import bnr1 from "./../../images/background/back2.gif";
-import services1 from "./../../images/our-services/mapgif.gif";
-import services2 from "./../../images/our-services/pic2.jpg";
+ 
 
 import test1 from "./../../images/testimonials/pic1.jpg";
 import test2 from "./../../images/testimonials/pic2.jpg";
@@ -21,6 +20,7 @@ import Index7ClientCarousel from "../Element/Index7ClientCarousel";
 import TestimonialStyle2 from "./ShortCode/TestimonialStyle2";
 import HomeTab from "../Element/HomeTab";
 import FinalClock from "./clock/FinalClock";
+import { VisionBlog } from "./Aboutus/Aboutus1";
 
 const expertBox = [
   {
@@ -174,76 +174,18 @@ const Index6 = (props) => {
               backgroundRepeat: "no-repeat",
             }}
           >
+            {/* mission and vision */}
+            <VisionBlog />
             <div className="container">
               <div className="section-head text-center">
                 <h2 className="box-title m-tb0">
-                  Mission And Vision<span className="bg-primary"></span>
+                  Organizational Structure for Effective School Management
+                  <span className="bg-primary"></span>
                 </h2>
-                <p>
-                  {" "}
-                  Learning hand in hand – partners in education. Our aim is to
-                  set high standards and expectations to help all Pentagon International College (PIC) to obtain the best in education and to work
-                  towards reaching their full potential in life. To fulfil this
-                  we will:
-                </p>
-              </div>
-              <div className=" row dzseth  m-b30">
-                <div className="col-lg-6 col-md-12 m-b30 about-img ">
-                  <img src={services1} data-tilt alt="" />
-                </div>
-                <div className="col-lg-6 col-md-12 m-b30 dis-tbl text-justify">
-                  <div className="dis-tbl-cell">
-                    <h3 className="box-title">
-                      Mission<span className="bg-primary"></span>
-                    </h3>
-                    <p className="font-16">
-                      Maintain a safe, open and friendly environment within
-                      which students are encouraged to develop a love of
-                      learning and to become confident, independent and lifelong
-                      learners
-                    </p>
-                    <p className="font-16">
-                      Provide a broad, balanced and challenging curriculum to
-                      enable all students to work to the best of their ability
-                    </p>
-                    <p className="font-16">
-                      Students in our school come from different cultural
-                      backgrounds; they have different religions and speak
-                      different languages. We celebrate and value this
-                      diversity. We encourage the children to be proud of their
-                      own culture, religion and language and to show respect for
-                      those of others.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="row dzseth column-reverse">
-                <div className="col-lg-6 col-md-12 dis-tbl text-justify">
-                  <div className="dis-tbl-cell">
-                    <h3 className="box-title">
-                      Vision<span className="bg-primary"></span>
-                    </h3>
-                    <p className="font-16">
-                      Our school aims to be the centre for a meaningful student
-                      centred, new curriculum that builds skills, innovation,
-                      independence, collaboration, confidence, and resilience to
-                      support each child in achieving their full potential and
-                      to make a smooth transition to university and society.
-                    </p>
-                    <p className="font-16">
-                      Provide equal opportunities for all our children and
-                      encourage them to be proud of their own culture, religion
-                      and language and to show respect for those of others.
-                    </p>
-                    <p className="font-16">
-                      Work together in a positive partnership with parents and
-                      government and to contribute to the quality and
-                      development of our local communities.
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-12 about-img ">
-                  <img src={services2} data-tilt alt="" />
+                {/* <div className=" row dzseth  m-b30"> */}
+                <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
+                  <img src={organizationalDigram} data-tilt alt="organigram" />
+                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -376,7 +318,7 @@ const Index6 = (props) => {
                       zoom={6}
                       center={{
                         lng: 31.549118244672563,
-                         
+
                         lat: 4.866158074938157,
                       }}
                       markers={{
