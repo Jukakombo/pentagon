@@ -70,7 +70,7 @@ class Footer5 extends Component {
                       </li>
                       <li>
                         <i className="ti-email"></i>
-                        <strong>email</strong>pentagone@gmail.com
+                        <strong>email</strong>pentagoncollege2021@gmail.com
                       </li>
                     </ul>
                   </div>

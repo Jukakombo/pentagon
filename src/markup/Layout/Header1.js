@@ -68,7 +68,7 @@ class Header1 extends Component {
                       <i className="ti-skype m-r5"></i> Pentagon International College
                     </li>
                     <li>
-                      <i className="ti-email m-r5"></i> pentagonsch@gmail.com
+                      <i className="ti-email m-r5"></i> pentagoncollege2021@gmail.com
                     </li>
                   </ul>
                 </div>
