@@ -9,7 +9,7 @@ import "./plugins/slick/slick.min.css";
 import "./plugins/slick/slick-theme.min.css";
 import "react-modal-video/css/modal-video.min.css";
 import ClockLoader from "react-spinners/ClockLoader";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 function App() {
   const [body_, setbody_] = useState();
   const [header, setHeader] = useState("fixed");
@@ -22,10 +22,9 @@ function App() {
     setHeader_(document.getElementsByClassName("main-bar-wraper"));
   }, []);
   useEffect(() => {
-   
+    setTimeout(() => {
       setLoading(true);
-     
-     
+    },5000)
   }, []);
 
   var element = document.getElementById("fix-header");
@@ -37,12 +36,15 @@ function App() {
   }
   return (
     <div className="App">
-       {
-        !loading ? (<ReactLoading type={"bars"} color={"blue"} height={367} width={175} />): (
-
-      <Markup />
-        )
-       }
+      {!loading ? (
+        <div style={{display: "flex", flexDirection:"column", alignItems: "center" , paddingTop:"50px"}}>
+          <ReactLoading type={"bars"} color={"blue"} height={267} width={75} />
+          <p style={{paddingTop:"0"}}>Loading ...</p>
+          <p>Welcome Pentagon International College (P.I.C)</p>
+        </div>
+      ) : (
+        <Markup />
+      )}
     </div>
   );
 }
