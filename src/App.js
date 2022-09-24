@@ -9,11 +9,12 @@ import "./plugins/slick/slick.min.css";
 import "./plugins/slick/slick-theme.min.css";
 import "react-modal-video/css/modal-video.min.css";
 import ClockLoader from "react-spinners/ClockLoader";
+import ReactLoading from 'react-loading';
 function App() {
   const [body_, setbody_] = useState();
   const [header, setHeader] = useState("fixed");
   const [header_, setHeader_] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(undefined);
   let scrollPosition = useScrollPosition();
 
   useEffect(() => {
@@ -21,10 +22,10 @@ function App() {
     setHeader_(document.getElementsByClassName("main-bar-wraper"));
   }, []);
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+   
+      setLoading(true);
+     
+     
   }, []);
 
   var element = document.getElementById("fix-header");
@@ -36,8 +37,12 @@ function App() {
   }
   return (
     <div className="App">
-       
+       {
+        !loading ? (<ReactLoading type={"bars"} color={"blue"} height={367} width={175} />): (
+
       <Markup />
+        )
+       }
     </div>
   );
 }
