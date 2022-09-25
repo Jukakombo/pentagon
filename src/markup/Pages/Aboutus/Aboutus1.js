@@ -24,7 +24,7 @@ class Aboutus1 extends Component {
             className="dlab-bnr-inr overlay-primary"
             style={{ backgroundImage: "url(" + bnr + ")" }}
           >
-            <PageTitle motherMenu="About Us 1" activeMenu="About Us 1" />
+            <PageTitle motherMenu="About Us " activeMenu="About Us " />
           </div>
           <div className="content-block">
             <div className="section-full content-inner-2">

@@ -236,8 +236,8 @@ function StudentForm() {
                           >
                             <option>Senior-One</option>
                             <option>Senior-Two</option>
-                            <option>Senior-Three-Art Section</option>
-                            <option>Senior-Three-Science Section</option>
+                            <option>Senior-Three-Art-Section</option>
+                            <option>Senior-Three-Science-Section</option>
                             <option>Senior-Four-Art-Section</option>
                             <option>Senior-Four-Science-Section</option>
                           </select>

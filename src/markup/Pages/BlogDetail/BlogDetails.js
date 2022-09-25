@@ -17,6 +17,7 @@ import Header4 from "../../Layout/header4";
 function BlogDetails() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 const [loading, setLoading] = useState(false);
+const [success, setSuccess] = useState(false);
   const { id } = useParams();
 
   const [news, setNews] = useState([]);
@@ -93,6 +94,7 @@ const handleSubmit = (e) => {
       comment: formData.comment,
     }
    
+   
   };
 
   client
@@ -109,8 +111,13 @@ const handleSubmit = (e) => {
    
     comment: "",
   });
+  setSuccess(true)
+
   setTimeout(() => {
     setIsFormSubmitted(false);
+    
+      setSuccess(false)
+    
   }, 5000);
 };
   return (
@@ -411,6 +418,11 @@ const handleSubmit = (e) => {
                               id="comment"
                             ></textarea>
                           </p>
+                          {success &&
+                            (<div className="col-lg-12 site-button">
+                            Your comment has been submitted for review.
+                            </div>)
+                          }
                           <p className="form-submit">
                             <input onClick={handleSubmit}
                               type="submit"
