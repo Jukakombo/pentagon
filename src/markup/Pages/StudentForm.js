@@ -253,7 +253,7 @@ function StudentForm() {
                           </span>
                           <input
                             className="form-control"
-                            type="text"
+                            type="date"
                             name="dateOfBirth"
                             placeholder="D.O.B"
                             value={dateOfBirth}
