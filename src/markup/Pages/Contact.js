@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
-import Header from './../Layout/Header1';
-import Footer5 from './../Layout/footer5';
-import { useDispatch } from 'react-redux';
-import bgimg from './../../images/background/bg2.jpg';
-import { createContact } from '../../actions/contacts';
+import Header from "./../Layout/Header1";
+import Footer5 from "./../Layout/footer5";
+import { useDispatch } from "react-redux";
+import bgimg from "./../../images/background/bg2.jpg";
+import { createContact } from "../../actions/contacts";
 
 // const initialState = {};
 
 function Contact() {
   const [contact, setContact] = useState({
-    givenName: '',
-    email: '',
-    phone: '',
-    message: '',
-    subject: '',
+    givenName: "",
+    email: "",
+    phone: "",
+    message: "",
+    subject: "",
   });
   const [success, setSuccess] = useState(false);
   const dispatch = useDispatch();
@@ -28,15 +28,14 @@ function Contact() {
     }, 5000);
     clear();
   };
-  console.log(handleSubmit);
 
   const clear = () => {
     setContact({
-      givenName: '',
-      email: '',
-      phone: '',
-      message: '',
-      subject: '',
+      givenName: "",
+      email: "",
+      phone: "",
+      message: "",
+      subject: "",
     });
   };
   return (
@@ -46,7 +45,7 @@ function Contact() {
         {/* <!-- inner page banner --> */}
         <div
           className="dlab-bnr-inr overlay-primary-dark contact-page"
-          style={{ backgroundImage: 'url(' + bgimg + ')' }}
+          style={{ backgroundImage: "url(" + bgimg + ")" }}
         >
           <div className="container">
             <div className="row">
@@ -61,9 +60,7 @@ function Contact() {
                           </span>
                           Our Address
                         </h5>
-                        <p>
-                        Gudele Block 9, Opp. Pity Oil Filling Station
-                        </p>
+                        <p>Gudele Block 9, Opp. Pity Oil Filling Station</p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
                         </h6>
@@ -82,7 +79,6 @@ function Contact() {
                           E-mail
                         </h5>
                         <p className="m-b0">pentagoncollege2021@gmail.com</p>
-                         
                       </div>
                     </div>
                   </div>
@@ -107,7 +103,7 @@ function Contact() {
                 <form className="inquiry-form dzForm" onSubmit={handleSubmit}>
                   <div className="dzFormMsg"></div>
                   <h3 className="box-title m-t0 m-b10">
-                    Let's Convert Your Idea into Reality{' '}
+                    Let's Convert Your Idea into Reality{" "}
                     <span className="bg-primary"></span>
                   </h3>
                   <p>
@@ -251,8 +247,9 @@ function Contact() {
 
                           {success && (
                             <div className="col-lg-12 site-button">
-                              A Juba Proper Int. Specialist Specialist will be following up with you
-                              soon.{' '}
+                              Thank you for getting in touch! We appreciate you
+                              contacting us. One of our colleagues will get back
+                              in touch with you soon!Have a great day!{" "}
                             </div>
                           )}
                         </div>
@@ -264,7 +261,7 @@ function Contact() {
                         className="site-button button-lg"
                         onClick={handleSubmit}
                       >
-                        {' '}
+                        {" "}
                         <span>Send</span>
                       </button>
                     </div>
