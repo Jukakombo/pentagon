@@ -113,14 +113,14 @@ function LatestBlogSlider() {
             <div className="blog-post blog-grid blog-rounded blog-effect1">
               <div className="dlab-post-media dlab-img-effect ">
                 {" "}
-                <Link to={"#"}>
+                <Link to={`/news-details/${item._id}`}>
                   <img src={urlFor(item.imageUrl)} alt="" />
                 </Link>{" "}
               </div>
               <div className="dlab-info p-a20 border-1">
                 <div className="dlab-post-title ">
                   <h5 className="post-title font-weight-500">
-                    <Link to={"#"}>{item.title}</Link>
+                    <Link to={`/news-details/${item._id}`}>{item.title}</Link>
                   </h5>
                 </div>
                 <div className="dlab-post-meta ">
@@ -132,7 +132,7 @@ function LatestBlogSlider() {
                     </li>
                     <li className="post-author">
                       <i className="fa fa-user"></i>By{" "}
-                      <Link to={"#"}>{item.author}</Link>{" "}
+                      <Link to={`/news-details/${item._id}`}>{item.author}</Link>{" "}
                     </li>
                   </ul>
                 </div>
@@ -143,7 +143,7 @@ function LatestBlogSlider() {
                 </div>
                 <div className="dlab-post-readmore">
                   <Link
-                    to={`/news-detail/${item.slug.current}`}
+                    to={`/news-details/${item._id}`}
                     title="READ MORE"
                     rel="bookmark"
                     className="site-button-link black outline"

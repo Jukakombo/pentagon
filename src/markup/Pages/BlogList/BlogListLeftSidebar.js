@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './../../Layout/Header1';
 import Footer from './../../Layout/Footer1';
@@ -11,7 +11,8 @@ import grid1 from './../../../images/blog/grid/pic1.jpg';
 import grid2 from './../../../images/blog/grid/pic2.jpg';
 import grid3 from './../../../images/blog/grid/pic3.jpg';
 import grid4 from './../../../images/blog/grid/pic4.jpg';
-
+import { client } from '../../../sanityClient';
+import moment from 'moment';
 const blogPost = [
 	{images: grid1, }, {images: grid2, }, {images: grid3, },
 	{images: grid1, }, {images: grid2, }, {images: grid3, },
@@ -27,7 +28,7 @@ class BlogListLeftSidebar extends Component {
 
                 <div className="page-content bg-white">
                     <div className="dlab-bnr-inr dlab-bnr-inr-sm overlay-primary bg-pt" style={{ backgroundImage: "url(" + bnr1 + ")" }}>
-						<PageTitle motherMenu='List Blog Left Sidebar' activeMenu='List Blog Left Sidebar' />
+						<PageTitle motherMenu='News Articles' activeMenu='School lates news' />
                     </div>
 
                     <div className="content-area">
@@ -49,30 +50,44 @@ class BlogListLeftSidebar extends Component {
 }
 
 function ListMainBlog(){
+	const [schoolNews, setSchoolNews] = useState([]);
+ 
+  useEffect(() => {
+    const query = `*[ _type == "schoolNews"]{
+		title, _id,newsDetails, author, imageUrl{
+			asset->{
+				url, _id
+			}
+		}
+	}`;
+    client.fetch(query).then((data) => {
+      setSchoolNews(data);
+    });
+  }, []);
 	return(
 		<>
 			<div className="col-lg-9">
-				{blogPost.map((item,index)=>(	
-					<div className="blog-post blog-md clearfix" key={index}>
+				{schoolNews.map((item)=>(	
+					<div className="blog-post blog-md clearfix" key={item._id}>
 						<div className="dlab-post-media dlab-img-effect zoom-slow">
-							<Link to={"#"}><img src={item.images} alt="" /></Link>
+							<Link to={"#"}><img src={item?.imageUrl?.asset?.url} alt="" /></Link>
 						</div>
 						<div className="dlab-post-info">
 							<div className="dlab-post-title ">
-								<h4 className="post-title"><Link to={"#"}>Title of first blog post</Link></h4>
+								<h4 className="post-title"><Link to={"#"}>{item.title}</Link></h4>
 							</div>
 							<div className="dlab-post-meta">
 								<ul className="d-flex align-items-center">
-									<li className="post-date"> <i className="fa fa-calendar"></i><strong>10 Aug</strong> <span> 2016</span> </li>
-									<li className="post-author"><i className="fa fa-user"></i>By <Link to={"#"}>demongo</Link> </li>
-									<li className="post-comment"><i className="fa fa-comments"></i> <Link to={"#"}>0</Link> </li>
+									<li className="post-date"> <i className="fa fa-calendar"></i><strong>{moment(item._createdAt).fromNow()}</strong>  </li>
+									<li className="post-author"><i className="fa fa-user"></i>By: <Link to={"#"}>{item.author}</Link> </li>
+									<li className="post-comment"><i className="fa fa-comments"></i> <Link to={"#"}>10</Link> </li>
 								</ul>
 							</div>
 							<div className="dlab-post-text">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it...</p>
+								<p>{item.newsDetails.substring(0,70)}...</p>
 							</div>
 							<div className="dlab-post-readmore blog-share">
-								<Link to={"#"} title="READ MORE" rel="bookmark" className="site-button outline outline-1">READ MORE
+								<Link to={`/news-details/${item._id}`} title="READ MORE" rel="bookmark" className="site-button outline outline-1">READ MORE
 									<i className="fa fa-long-arrow-right"></i>
 								</Link>
 								<div className="share-btn">

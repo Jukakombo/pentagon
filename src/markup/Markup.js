@@ -147,7 +147,7 @@ function Markup() {
             exact
             component={BlogListRightSidebar}
           />
-          <Route path="/news-detail/:id" exact component={BlogDetails} />
+          <Route path="/news-details/:id" exact component={BlogDetails} />
           <Route
             path="/portfolio-full-width"
             exact
