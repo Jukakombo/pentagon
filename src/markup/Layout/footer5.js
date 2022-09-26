@@ -23,7 +23,8 @@ class Footer5 extends Component {
                         <Link to={"/contact"}>Contact Us</Link>
                       </li>
                       <li>
-                        <Link to={"/#"}>Terms & Conditions</Link>
+                      {/* <a href="#termsAndCondition">Terms & Conditions</a> */}
+                        <Link to={"/terms-condition"}>Terms & Conditions</Link>
                       </li>
                       <li>
                         <Link to={"/service"}>Our Services</Link>

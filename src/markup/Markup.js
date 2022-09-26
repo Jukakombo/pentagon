@@ -70,6 +70,7 @@ import StudentArticles from "./Pages/school-news/StudentArticles";
 import LibraryBooks from "./Pages/library/LibraryBooks";
 import TeacherForm from "./Pages/TeacherForm";
 import StudentForm from "./Pages/StudentForm";
+import TermsAndCondition from "./Pages/TermsAndCondition";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -231,6 +232,9 @@ function Markup() {
             ]}
           >
             <StudentDashboard />
+          </Route>
+          <Route path="/terms-condition">
+            <TermsAndCondition />
           </Route>
           <Route
             exact
