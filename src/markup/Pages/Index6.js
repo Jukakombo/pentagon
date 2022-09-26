@@ -118,7 +118,7 @@ const Index6 = (props) => {
                   className="sub-title "
                   style={{ fontSize: "40px", fontFamily: "Rancho" }}
                 >
-                  Welcome to Pentagon International College (PIC)
+                  Pentagon International Modern Mixed Secondary School
                 </h4>
                 <h4 className="sub-title">We’re Awesome & Professionals</h4>
                 <h2 className="dz-title text-primary">

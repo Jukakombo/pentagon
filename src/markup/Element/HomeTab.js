@@ -14,11 +14,11 @@ function Para() {
     <>
       <div className="abuot-box p-lr30">
         <p>
-          A well-rounded education is of paramount importance at Pentagon International College (PIC)
+          A well-rounded education is of paramount importance at Pentagon International Modern Mixed Secondary School
       . We guide all students to develop personal
           integrity and leadership skills, which they can draw from for the rest
           of their lives. We would love to help you understand the unique
-          benefits that we have to offer at Pentagon International College (PIC) , where we encourage each child to develop as a confident and
+          benefits that we have to offer atPentagon International Modern Mixed Secondary School, where we encourage each child to develop as a confident and
           lifelong learner.
           <br /> Our qualified teachers have the ability to attend to every
           child according to the unique need, relentlessly making sure every

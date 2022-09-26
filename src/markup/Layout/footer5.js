@@ -12,7 +12,7 @@ class Footer5 extends Component {
                 <div className="col-5 col-lg-2 col-md-6 col-sm-6 footer-col-4">
                   <div className="widget widget_services border-0">
                     <h5 className="m-b30 text-white">
-                      Pentagon International College (P.I.C){" "}
+                    Pentagon International Modern Mixed Secondary School{" "}
                     </h5>
                     <ul>
                       
@@ -60,7 +60,7 @@ class Footer5 extends Component {
                     <ul>
                       <li>
                         <i className="ti-location-pin"></i>
-                        <strong>address</strong> Gudele Block 9, Opp. Pity Oil Filling Station
+                        <strong>address</strong> Gudele Block 9, Opp. Pity Oil Filling Station, Juba South Sudan
                       </li>
                       <li>
                         <i className="ti-mobile"></i>
@@ -166,8 +166,7 @@ class Footer5 extends Component {
                 <div className="col-lg-6 col-md-6 col-sm-6 text-left ">
                   {" "}
                   <span>
-                    Copyright ©2021- {new Date().getFullYear()} Pentagon
-                    International College (PIC)
+                    Copyright ©2021- {new Date().getFullYear()} Pentagon International Modern Mixed Secondary School
                   </span>{" "}
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 text-right ">

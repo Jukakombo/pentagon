@@ -85,7 +85,7 @@ class TestimonialStyle2 extends Component {
                 </div>
                 <div className="m-b0">
                   <p>
-                  Pentagon International College (PIC)is one of the best schools
+                  Pentagon International Modern Mixed Secondary School is one of the best schools
                     in the South Sudan.It has a serene learning environment, outstanding
                     facilities, well qualified teachers, and proper management
                     in place. If you want your child to progress well, They have

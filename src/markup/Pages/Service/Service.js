@@ -65,7 +65,7 @@ class Service extends Component {
                     <span className="bg-primary"></span>
                   </h2>
                   <p>
-                    At Pentagon International College (PIC) we provide a
+                    At Pentagon International Modern Mixed Secondary School we provide a
                     happy, caring and safe environment for our children. We work
                     very hard to ensure that your child's experience of school
                     is a positive one, which encourages a love of learning and

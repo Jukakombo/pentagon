@@ -143,11 +143,11 @@ function VisionBlog() {
               VISION AND MISSION<span className="bg-primary"></span>
             </h2>
             <p>
-              {" "}
+              {/* {" "}
               Learning hand in hand – partners in education. Our aim is to set
               high standards and expectations to help all members of the school
               community to achieve the best among all in everything they do and
-              to work towards reaching their full potential.
+              to work towards reaching their full potential. */}
             </p>
           </div>
           <div className=" row dzseth  m-b30">
@@ -170,13 +170,13 @@ function VisionBlog() {
                   light the candle. You will find the “Seeds” on the tables.
                   They were hidden by Darkness.
                 </p>
-                <p className="font-16">
+                {/* <p className="font-16">
                   Students in our school come from different cultural
                   backgrounds; they have different religions and speak different
                   languages. We celebrate and value this diversity. We encourage
                   the children to be proud of their own culture, religion and
                   language and to show respect for those of others.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -198,11 +198,11 @@ function VisionBlog() {
                   the coming generations in order to embrace humanity around the
                   world and build our Nation’s shining future to last.
                 </p>
-                <p className="font-16">
+                {/* <p className="font-16">
                   Work together in a positive partnership with parents and
                   government and to contribute to the quality and development of
                   our country.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className="col-lg-6 col-md-12 about-img ">
