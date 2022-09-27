@@ -20,9 +20,9 @@ function StudentForm() {
     dateOfBirth: "",
     address: "",
     contact: "",
-    profilePicture: "",
+    
 
-    headmasterComment: "",
+    yearAddmitted: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -35,8 +35,8 @@ function StudentForm() {
     address,
     contact,
     classYear,
-    profilePicture,
-    headmasterComment,
+    
+    yearAddmitted,
   } = formData;
 
   const handleChangeInput = (e) => {
@@ -54,10 +54,8 @@ function StudentForm() {
       gender: formData.gender,
       dateOfBirth: formData.dateOfBirth,
       address: formData.address,
-      contact: formData.contact,
-      profilePicture: formData.profilePicture,
-
-      headmasterComment: formData.headmasterComment,
+      contact: formData.contact, 
+      yearAddmitted: formData.yearAddmitted,
       classYear: formData.classYear,
     };
 
@@ -75,10 +73,8 @@ function StudentForm() {
       email: "",
       dateOfBirth: "",
       address: "",
-      contact: "",
-      profilePicture: "",
-
-      headmasterComment: "",
+      contact: "", 
+      yearAddmitted: "",
       classYear: "",
     });
     setTimeout(() => {
@@ -231,6 +227,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="classYear"
+                            value={classYear}
                             onChange={handleChangeInput}
                             required
                           >
@@ -320,8 +317,8 @@ function StudentForm() {
                           <select
                           className="form-control"
                           type="text"
-                          name="headmasterComment" 
-                          value={headmasterComment}
+                          name="yearAddmitted" 
+                          value={yearAddmitted}
                           onChange={handleChangeInput}
                           required
                           >
