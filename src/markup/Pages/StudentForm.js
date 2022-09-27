@@ -107,7 +107,7 @@ function StudentForm() {
                           </span>
                           Our Address
                         </h5>
-                        <p>Gudele Block 9, Opp. Pity Oil Filling Station</p>
+                        <p>Gudele Block 9, Opp. Pity Oil, Juba South Sudan</p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
                         </h6>

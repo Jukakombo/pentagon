@@ -60,7 +60,7 @@ class Footer5 extends Component {
                     <ul>
                       <li>
                         <i className="ti-location-pin"></i>
-                        <strong>address</strong> Gudele Block 9, Opp. Pity Oil Filling Station, Juba South Sudan
+                        <strong>address</strong> Gudele Block 9, Opp. Pity Oil, Juba, South Sudan
                       </li>
                       <li>
                         <i className="ti-mobile"></i>

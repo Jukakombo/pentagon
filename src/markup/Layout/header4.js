@@ -57,7 +57,7 @@ class Header4 extends Component {
 +211(0)928617175
                     </li>
                     <li>
-                      <i className="ti-location-pin m-r5"></i> Gudele Block 9, Opp. Pity Oil Station, Juba South Sudan
+                      <i className="ti-location-pin m-r5"></i> Gudele Block 9, Opp. Pity Oil, Juba, South Sudan
                     </li>
                   </ul>
                 </div>
