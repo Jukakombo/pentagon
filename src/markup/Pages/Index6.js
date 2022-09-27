@@ -7,6 +7,7 @@ import LatestBlogSlider from "./../Element/LatestBlogSlider";
 
 //Images
 import organizationalDigram from "../../images/our-services/organizational.png";
+import organizationalDigram2 from "../../images/our-services/structure2.jpg";
 import bgslider9 from "./../../images/main-slider/slide9.jpg";
 import bg19 from "./../../images/background/bg19.jpg";
 import bg2 from "./../../images/background/fountain2.gif";
@@ -186,6 +187,11 @@ const Index6 = (props) => {
                 <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
                   <img src={organizationalDigram} data-tilt alt="organigram" />
                   {/* </div> */}
+                  
+                <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
+                <img src={organizationalDigram2} data-tilt alt="organigram" />
+                 
+                </div>
                 </div>
               </div>
             </div>
