@@ -140,7 +140,7 @@ const handleSubmit = (e) => {
                   <div className="blog-post blog-single" key={item.slug}>
                     <div className="dlab-post-title ">
                       <h4 className="post-title m-t0">
-                        <Link to={"#"}>{item.title}</Link>
+                        <Link to={"#"}>{item?.title}</Link>
                       </h4>
                     </div>
                     <div className="dlab-post-meta m-b20">
@@ -149,31 +149,31 @@ const handleSubmit = (e) => {
                           {" "}
                           <i className="fa fa-calendar"></i>
                           <strong>
-                            {moment(item.updatedAt).format(
+                            {moment(item?.updatedAt).format(
                               "MMMM Do YYYY, h:mm:ss a"
                             )}
                           </strong>
                         </li>
                         <li className="post-author">
-                          <Link to={`news-details/${item.slug}`}>
-                            <i className="fa fa-user"></i>By:{item.author}
+                          <Link to={`news-details/${item?.slug}`}>
+                            <i className="fa fa-user"></i>By:{item?.author}
                           </Link>
                         </li>
                         <li className="post-comment">
                           <i className="fa fa-comments"></i>
-                          <Link to={"#"}>{comments.length}</Link>
+                          <Link to={"#"}>{comments?.length}</Link>
                         </li>
                       </ul>
                     </div>
                     <div className="dlab-post-media dlab-img-effect zoom-slow">
                       <Link to={"#"}>
-                        <img src={item.imageUrl.asset.url} alt="ali" />
+                        <img src={item?.imageUrl?.asset?.url} alt="ali" />
                       </Link>
                     </div>
                     <div className="dlab-post-text">
-                      <p>{item.title}</p>
+                      <p>{item?.title}</p>
 
-                      <blockquote>{item.newsDetails}</blockquote>
+                      <blockquote>{item?.newsDetails}</blockquote>
                       <p>
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the
@@ -343,7 +343,7 @@ const handleSubmit = (e) => {
                                   )}
                                 </Link>{" "}
                               </div>
-                              <p>{comment.comment}</p>
+                              <p>{comment?.comment}</p>
                             </div>
                           </li>
                         ))}

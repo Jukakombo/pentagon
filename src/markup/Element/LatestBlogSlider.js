@@ -112,10 +112,10 @@ function LatestBlogSlider() {
           <div className="item p-3" key={item._id}>
             <div className="blog-post blog-grid blog-rounded blog-effect1">
               <div className="dlab-post-media dlab-img-effect ">
-                {" "}
+                 
                 <Link to={`/news-details/${item._id}`}>
-                  <img src={urlFor(item.imageUrl)} alt="" />
-                </Link>{" "}
+                  <img src={urlFor(item?.imageUrl)} alt="" />
+                </Link> 
               </div>
               <div className="dlab-info p-a20 border-1">
                 <div className="dlab-post-title ">
@@ -128,7 +128,7 @@ function LatestBlogSlider() {
                     <li className="post-date">
                       {" "}
                       <i className="fa fa-comments"></i>
-                      <strong>{moment(item.updatedAt).format("MMM Do YY")}</strong> {" "}
+                      <strong>{moment(item._createdAt).format("MMM Do YY")}</strong> {" "}
                     </li>
                     <li className="post-author">
                       <i className="fa fa-user"></i>By{" "}
