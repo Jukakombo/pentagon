@@ -107,7 +107,7 @@ function StudentForm() {
                           </span>
                           Our Address
                         </h5>
-                        <p>Gudele Block 9, Opp. Pity Oil, Juba South Sudan</p>
+                        <p>Gudele Block 9, Opp. Pity Oil, Juba, South Sudan</p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
                         </h6>
@@ -171,7 +171,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="fullName"
-                            placeholder="Enter your Names here......"
+                            placeholder="Enter your Full Name here......"
                             value={fullName}
                             onChange={handleChangeInput}
                             required
@@ -235,7 +235,7 @@ function StudentForm() {
                             required
                           >
                             <option>Senior One Pretoria</option>
-                            <option>Senior One Tripol</option>
+                            <option>Senior One Tripoli</option>
                             <option>Senior One Cape Town</option>
 
                             <option>Senior Two Paris</option>
@@ -309,32 +309,9 @@ function StudentForm() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-6">
-                      <div className="form-group">
-                        <div className="input-group">
-                          <span className="input-group-addon">
-                            <i className="ti-gallery text-primary"></i>
-                          </span>
-                          <input
-                            className="form-control"
-                            type="file"
-                            name="profilePicture"
-                            placeholder="Profile Picture"
-                            value={profilePicture}
-                            onChange={handleChangeInput}
-                            required
-                          />
-                          {/* <FileBase component="input"
-                        type="file"
-                        multiple={false}
-                        onDone={({ base64 }) =>
-                        setFormData({ ...formData, profilePicture: base64 })
-                        } /> */}
-                        </div>
-                      </div>
-                    </div>
+                     
 
-                    <div className="col-lg-12">
+                    <div className="col-lg-6">
                       <div className="form-group">
                         <div className="input-group">
                           <span className="input-group-addon">
@@ -344,7 +321,7 @@ function StudentForm() {
                             className="form-control"
                             type="text"
                             name="headmasterComment"
-                            placeholder="Headmaster Comment"
+                            placeholder="Year Addmitted"
                             value={headmasterComment}
                             onChange={handleChangeInput}
                             required
