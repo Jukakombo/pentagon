@@ -10,7 +10,7 @@ export default {
     },
 
     {
-      title: "Image",
+      title: "Profile Image",
       name: "imageUrl",
       type: "image",
       option: {
