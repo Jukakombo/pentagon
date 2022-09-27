@@ -234,12 +234,22 @@ function StudentForm() {
                             onChange={handleChangeInput}
                             required
                           >
-                            <option>Senior-One</option>
-                            <option>Senior-Two</option>
-                            <option>Senior-Three-Art-Section</option>
-                            <option>Senior-Three-Science-Section</option>
-                            <option>Senior-Four-Art-Section</option>
-                            <option>Senior-Four-Science-Section</option>
+                            <option>Senior One Pretoria</option>
+                            <option>Senior One Tripol</option>
+                            <option>Senior One Cape Town</option>
+
+                            <option>Senior Two Paris</option>
+                            <option>Senior Two Tokyo</option>
+                            <option>Senior Two Beijing</option>
+                            <option>Senior Two London</option>
+
+                            <option>Senior Three Singapore</option>
+                            <option>Senior Three Australia</option>
+
+                            <option>Senior Four Stanford</option>
+                            <option>Senior Four Oxford</option> 
+                            <option>Senior Four Harvard</option>
+                             
                           </select>
                         </div>
                       </div>
