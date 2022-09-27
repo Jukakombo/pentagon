@@ -20,7 +20,7 @@ function TeacherForm() {
     contact: "",
     profilePicture: "",
     subjects: "",
-    headmasterComment: "",
+    
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ function TeacherForm() {
     address,
     contact,
     profilePicture,
-    headmasterComment,
+     
     subjects,
   } = formData;
 
@@ -55,7 +55,7 @@ function TeacherForm() {
       contact: formData.contact,
       profilePicture: formData.profilePicture,
       subjects: formData.subjects,
-      headmasterComment: formData.headmasterComment,
+    
     };
 
     client
@@ -75,7 +75,7 @@ function TeacherForm() {
       contact: "",
       profilePicture: "",
       subjects: "",
-      headmasterComment: "",
+      
     });
     setTimeout(() => {
       setIsFormSubmitted(false);
@@ -103,7 +103,7 @@ function TeacherForm() {
                           </span>
                           Our Address
                         </h5>
-                        <p>Gudele Block 9, Opp. Pity Oil, Juba South Sudan</p>
+                        <p>Gudele Block 9, Opp. Pity Oil, Juba, South Sudan</p>
                         <h6 className="m-b15 font-weight-400">
                           <i className="ti-alarm-clock"></i> Office Hours
                         </h6>
@@ -314,24 +314,7 @@ function TeacherForm() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-12">
-                      <div className="form-group">
-                        <div className="input-group">
-                          <span className="input-group-addon">
-                            <i className="ti-write text-primary"></i>
-                          </span>
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="headmasterComment"
-                            placeholder="Headmaster Comment"
-                            value={headmasterComment}
-                            onChange={handleChangeInput}
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    
                     <div className="col-lg-12">
                       <div className="form-group">
                         <div className="input-group">

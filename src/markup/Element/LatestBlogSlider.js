@@ -62,7 +62,7 @@ function LatestBlogSlider() {
   const [schoolNews, setSchoolNews] = useState([]);
  
   useEffect(() => {
-    const query = '*[ _type == "schoolNews"]';
+    const query = '*[_type=="schoolNews"]';
     client.fetch(query).then((data) => {
       setSchoolNews(data);
     });
@@ -108,7 +108,7 @@ function LatestBlogSlider() {
         className="dots-style-center img-carousel owl-carousel owl-btn-center-lr owl-btn-3 "
         {...settings}
       >
-        {schoolNews.slice(0).reverse().map((item, index) => (
+        {schoolNews.slice(0).reverse().map((item) => (
           <div className="item p-3" key={item._id}>
             <div className="blog-post blog-grid blog-rounded blog-effect1">
               <div className="dlab-post-media dlab-img-effect ">

@@ -40,7 +40,7 @@ function App() {
         <div style={{display: "flex", flexDirection:"column", alignItems: "center" , paddingTop:"50px"}}>
           <ReactLoading type={"bars"} color={"blue"} height={267} width={75} />
           <p style={{paddingTop:"0"}}>Loading ...</p>
-          <p>Welcome Pentagon International College (P.I.C)</p>
+          <p>Welcome to Pentagon International Modern Mixed Secondary School</p>
         </div>
       ) : (
         <Markup />
