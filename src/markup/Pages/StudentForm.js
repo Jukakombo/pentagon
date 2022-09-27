@@ -317,15 +317,20 @@ function StudentForm() {
                           <span className="input-group-addon">
                             <i className="ti-write text-primary"></i>
                           </span>
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="headmasterComment"
-                            placeholder="Year Addmitted"
-                            value={headmasterComment}
-                            onChange={handleChangeInput}
-                            required
-                          />
+                          <select
+                          className="form-control"
+                          type="text"
+                          name="headmasterComment" 
+                          value={headmasterComment}
+                          onChange={handleChangeInput}
+                          required
+                          >
+                         <option>2021</option>
+                         <option>2022</option>
+                         <option>2023</option>
+                         <option>2024</option>
+                         <option>2025</option>
+                          </select>
                         </div>
                       </div>
                     </div>
