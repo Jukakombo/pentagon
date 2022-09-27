@@ -17,11 +17,7 @@ export default {
         hotspot: true,
       },
     },
-    {
-      title: "Comment",
-      name: "comment",
-      type: "string",
-    },
+   
     {
       title: "Comment",
       name: "comment",
