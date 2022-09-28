@@ -279,7 +279,9 @@ function Markup() {
             component={SignInSide}
           />
           <Route path="/students-articles" exact component={StudentArticles} />
-          <Route path="/:id" exact component={BlogDetails} />
+          <Route exact path="/:id"   >
+          <BlogDetails />
+          </Route>
         </Switch>
       </div>
       <ScrollToTop />
