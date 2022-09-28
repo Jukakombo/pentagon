@@ -27,11 +27,16 @@ export default {
         hotspot: true,
       },
     },
-
+    // portableText.js
     {
+      name: "body",
       title: "News Details",
-      name: "newsDetails",
-      type: "text",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
     },
     {
       title: "Author",

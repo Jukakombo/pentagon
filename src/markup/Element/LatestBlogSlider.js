@@ -3,6 +3,8 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { client, urlFor } from "../../sanityClient";
+import BlockContent from "@sanity/block-content-to-react";
+
 // import { client, urlFor } from "../../sanityClient";
 
 //Everything is being fetch dynamically from database
@@ -141,7 +143,9 @@ function LatestBlogSlider() {
                     </ul>
                   </div>
                   <div className="dlab-post-text">
-                    <p>{item.newsDetails.substring(0, 100)}...</p>
+                     <p>
+                     {item.title.substring(0,90)}
+                     </p>
                   </div>
                   <div className="dlab-post-readmore">
                     <Link

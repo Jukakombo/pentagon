@@ -10,6 +10,7 @@
     "@mui/icons-material": "^5.4.2",
     "@mui/material": "^5.4.2",
     "@mui/styled-engine": "^5.4.2",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "@testing-library/jest-dom": "^5.12.0",

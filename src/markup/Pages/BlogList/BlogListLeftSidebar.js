@@ -54,7 +54,7 @@ function ListMainBlog(){
  
   useEffect(() => {
     const query = `*[ _type == "schoolNews"]{
-		title, _id,newsDetails, author, imageUrl{
+		title, _id,body, author, imageUrl{
 			asset->{
 				url, _id
 			}
@@ -84,10 +84,10 @@ function ListMainBlog(){
 								</ul>
 							</div>
 							<div className="dlab-post-text">
-								<p>{item.newsDetails.substring(0,70)}...</p>
+								<p>{item.body.substring(0,70)}...</p>
 							</div>
 							<div className="dlab-post-readmore blog-share">
-								<Link to={`/news-details/${item._id}`} title="READ MORE" rel="bookmark" className="site-button outline outline-1">READ MORE
+								<Link to={`/${item._id}`} title="READ MORE" rel="bookmark" className="site-button outline outline-1">READ MORE
 									<i className="fa fa-long-arrow-right"></i>
 								</Link>
 								<div className="share-btn">

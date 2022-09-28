@@ -9,8 +9,7 @@ import bnr from "./../../../images/banner/bnr5.jpg";
 import grid4 from "./../../../images/blog/grid/pic4.jpg";
 import grid1 from "./../../../images/blog/grid/pic1.jpg";
 import test1 from "./../../../images/testimonials/pic1.jpg";
-import test2 from "./../../../images/testimonials/pic2.jpg";
-import test3 from "./../../../images/testimonials/pic3.jpg";
+import BlockContent from "@sanity/block-content-to-react";
 import { client } from "../../../sanityClient";
 
 function BlogDetails() {
@@ -23,7 +22,7 @@ function BlogDetails() {
     client
       .fetch(
         `*[_id=="${id}"]{
-      title, newsDetails, imageUrl{
+      title, body, imageUrl{
         asset -> {
           _id,
           url
@@ -46,7 +45,7 @@ function BlogDetails() {
           className="dlab-bnr-inr dlab-bnr-inr-sm overlay-primary bg-pt"
           style={{ backgroundImage: "url(" + bnr + ")" }}
         >
-          <PageTitle motherMenu="Blog Details" activeMenu="Blog Details" />
+          <PageTitle motherMenu="News Details" activeMenu="News Details" />
         </div>
         <div className="content-area">
           <div className="container">
@@ -88,77 +87,17 @@ function BlogDetails() {
                       </Link>
                     </div>
                     <div className="dlab-post-text">
-                      <p>{item.title}</p>
+                      <h3>{item.title}</h3>
 
-                      <blockquote>{item.newsDetails}</blockquote>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard text ever since the 1500s, when an
-                        unknown printer took a galley of type and scrambled it
-                        to make a type specimen It has urvived not only five
-                        centuries, but also the leap into electronic
-                        typesetting.
-                      </p>
-                      <h5>Completely Responsive</h5>
-                      <img
-                        className="alignleft"
-                        width="300"
-                        src={grid4}
-                        alt=""
-                      />
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and
-                        more recently with desktop publishing software like
-                        Aldus PageMaker including versions of Lorem Ipsum.Lorem
-                        Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the releasefive
-                        centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the release
-                      </p>
+                      <blockquote>{item?.newsDetails}</blockquote>
+                       
+                         <BlockContent blocks={item?.body} dataset="production" projectId="2xflc1g2" /> 
+
+                     
+                      
                       <div className="dlab-divider bg-gray-dark"></div>
-                      <img
-                        className="alignright"
-                        width="300"
-                        src={grid1}
-                        alt=""
-                      />
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and
-                        more recently with desktop publishing software like
-                        Aldus PageMaker including versions of Lorem Ipsum.Lorem
-                        Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release
-                      </p>
+                      
+                      
                     </div>
 
                     <div className="dlab-post-tags clear">
