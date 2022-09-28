@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import { SRLWrapper, useLightbox } from 'simple-react-lightbox';
@@ -8,38 +8,15 @@ import PageTitle from './../../Layout/PageTitle';
 
 //images
 import bnr1 from './../../../images/banner/bnr8.jpg';
-import {
-  box1,
-  box2,
-  box3,
-  box4,
-  box5,
-  box6,
-  box7,
-  box8,
-  box9,
-  box10,
-  box11,
-  box12,
-} from './ProtfolioFullWidth';
-const imageBlog = [
-  { Large: box1 },
-  { Large: box2 },
-  { Large: box3 },
-  { Large: box4 },
-  { Large: box5 },
-  { Large: box6 },
-  { Large: box7 },
-  { Large: box8 },
-  { Large: box9 },
-  { Large: box11 },
-  { Large: box10 },
-  { Large: box12 },
-];
+ 
+import { useState } from 'react';
+import { client } from '../../../sanityClient';
+ 
 
 //Light Gallery on icon click
 const Iconimage = (props) => {
   const { openLightbox } = useLightbox();
+  
   return (
     <Link
       to={'#'}
@@ -63,8 +40,8 @@ class PortfolioGrid4 extends Component {
             style={{ backgroundImage: 'url(' + bnr1 + ')' }}
           >
             <PageTitle
-              motherMenu="Portfolio Grid 4"
-              activeMenu="Portfolio Grid 4"
+              motherMenu="Browse Our Gallery"
+              activeMenu="Beautiful Photos"
             />
           </div>
           {/*  Section-1 Start  */}
@@ -76,17 +53,17 @@ class PortfolioGrid4 extends Component {
                     <div className="sticky-top">
                       <h3>Our Mission</h3>
                       <ul className="list-check primary">
-                        <li>Amet Sollicitudin Quam Dolor Mollis</li>
-                        <li>Diipiscing Vestibulum Nullam Venenatis</li>
-                        <li>Diipiscing Vestibulum</li>
-                        <li>Vehicula Vulputate Ligula Mollis</li>
+                        <li>Declare war on illiteracy in our beloved Country, The Republic of South Sudan and beyond</li>
+                        <li>To provide a sophisticated high quality class of education to the coming generations in order to embrace humanity around the world and build our Nation’s shining future to last.</li>
+                         
+                         
                       </ul>
                       <h3>Core Values</h3>
                       <ul className="list-check primary">
-                        <li>Amet Sollicitudin Quam Dolor Mollis</li>
-                        <li>Diipiscing Vestibulum Nullam</li>
-                        <li>Diipiscing Vestibulum Nullam Venenatis</li>
-                        <li>Vehicula Vulputate</li>
+                        <li>Accountability </li>
+                        <li>Appreciation </li>
+                        <li>Cooperation </li>
+                        <li>Critical Thinking</li>
                       </ul>
                     </div>
                   </div>
@@ -106,24 +83,42 @@ class PortfolioGrid4 extends Component {
 }
 
 function GalleryGrid() {
+  const [gallery , setGallery]= useState([])
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type=="gallery"]{
+      name, hastag,_id, imageUrl{
+        asset -> {
+          _id,
+          url
+        }, alt
+      },
+      author
+    }`
+      )
+      .then((data) => {
+        setGallery(data);
+      });
+  }, []);
   return (
     <>
       <SimpleReactLightbox>
         <SRLWrapper>
           <ul className="row dlab-gallery-listing gallery-grid-4 gallery mfp-gallery port-style1">
-            {imageBlog.map((item, index) => (
+            {gallery.map((item,) => (
               <li
                 className="web design card-container col-lg-4 col-md-6 col-sm-6 p-a0"
-                key={index}
+                key={item._id}
               >
                 <div className="dlab-box dlab-gallery-box">
                   <div className="dlab-media dlab-img-overlay1 dlab-img-effect">
-                    <img src={item.Large} alt="" />
+                    <img src={item?.imageUrl?.asset?.url} alt="" />
                     <div className="overlay-bx">
                       <div className="overlay-icon align-b text-white text-left">
                         <div className="text-white text-left port-box">
-                          <h5>Herbal Beauty Salon</h5>
-                          <p>Branding and Identity</p>
+                          <h5>{item?.name}</h5>
+                          <p>{item?.hastag}</p>
                           <Iconimage />
                         </div>
                       </div>

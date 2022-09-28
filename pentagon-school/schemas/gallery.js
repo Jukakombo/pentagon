@@ -1,38 +1,26 @@
 export default {
-    title: "Gallery",
-    name: "gallery",
-    type: "document",
-    fields: [
-      {
-        title: "Name",
-        name: "name",
-        type: "string",
+  title: "Gallery",
+  name: "gallery",
+  type: "document",
+  fields: [
+    {
+      title: "Profile Image",
+      name: "imageUrl",
+      type: "image",
+      option: {
+        hotspot: true,
       },
-  
-      {
-        title: "Profile Image",
-        name: "imageUrl",
-        type: "image",
-        option: {
-          hotspot: true,
-        },
-      },
-     
-      {
-        title: "Comment",
-        name: "comment",
-         
-      },
-      {
-        title: "Email",
-        name: "email",
-        type: "string",
-      },
-      {
-        title: "WebsiteUrl",
-        name: "webUrl",
-        type: "string",
-      },
-    ],
-  };
-  
+    },
+    {
+      title: "Name",
+      name: "name",
+      type: "string",
+    },
+
+    {
+      title: "Hastag",
+      name: "hastag",
+      type: "string",
+    },
+  ],
+};
