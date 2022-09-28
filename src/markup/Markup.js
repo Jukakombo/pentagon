@@ -148,7 +148,7 @@ function Markup() {
             exact
             component={BlogListRightSidebar}
           />
-          <Route path="/:id" exact component={BlogDetails} />
+          
           <Route
             path="/portfolio-full-width"
             exact
@@ -278,8 +278,8 @@ function Markup() {
             exact
             component={SignInSide}
           />
-
           <Route path="/students-articles" exact component={StudentArticles} />
+          <Route path="/:id" exact component={BlogDetails} />
         </Switch>
       </div>
       <ScrollToTop />

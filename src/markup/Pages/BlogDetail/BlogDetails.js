@@ -94,7 +94,7 @@ function BlogDetails() {
                          <BlockContent blocks={item?.body} dataset="production" projectId="2xflc1g2" /> 
 
                      
-                      
+                      <Link to={"/blog-list-right-sidebar"} >Read More Articles</Link>
                       <div className="dlab-divider bg-gray-dark"></div>
                       
                       

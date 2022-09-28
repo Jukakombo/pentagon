@@ -84,7 +84,7 @@ function ListMainBlog(){
 								</ul>
 							</div>
 							<div className="dlab-post-text">
-								<p>{item.body.substring(0,70)}...</p>
+								<p>{item?.title}...</p>
 							</div>
 							<div className="dlab-post-readmore blog-share">
 								<Link to={`/${item._id}`} title="READ MORE" rel="bookmark" className="site-button outline outline-1">READ MORE
