@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-// import Header from "../../../Layout/Header4";
+import Header from "./../../Layout/Header1";
 import Footer5 from "./../../Layout/footer5";
 import PageTitle from "./../../Layout/PageTitle";
 import Sidebar from "./../../Element/Sidebar";
@@ -12,29 +12,12 @@ import test1 from "./../../../images/testimonials/pic1.jpg";
 import test2 from "./../../../images/testimonials/pic2.jpg";
 import test3 from "./../../../images/testimonials/pic3.jpg";
 import { client } from "../../../sanityClient";
-import Header4 from "../../Layout/header4";
 
 function BlogDetails() {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-const [loading, setLoading] = useState(false);
-const [success, setSuccess] = useState(false);
+  // const [scienceAndTech, setScienceAndTech] = useState([]);
   const { id } = useParams();
 
   const [news, setNews] = useState([]);
-  const [comments, setComments] = useState([]);
-  const [formData, setFormData] = useState({
-    name: "",
-    webUrl: "",
-    email: "", 
-    comment: "",
-  });
-  const {
-    name,
-    webUrl,
-    email,
-    comment,
-     
-  } = formData;
 
   useEffect(() => {
     client
@@ -53,76 +36,10 @@ const [success, setSuccess] = useState(false);
         setNews(data);
       });
   }, [id]);
-  // comments zonesclient
-  useEffect(() => {
-    client
-      .fetch(
-        `*[_type=="comment" && references("${id}")]{
-          _createdAt,name, comment, email, imageUrl{
-          asset->{
-          _id, url
-        }
-        }
-        }`
-      )
-      .then((data) => {
-        setComments(data);
-      });
-  }, [id]);
-// comment form submit concept functions
 
-
-
-
-
-const handleChangeInput = (e) => {
-  const { name, value } = e.target;
-  setFormData({ ...formData, [name]: value });
-};
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  setLoading(true); 
-  const contact = {
-    _type: "comment",
-    name: formData.name, 
-    webUrl: formData.webUrl, 
-    email: formData.email,
-
-     comment:{_type:"schoolNews",
-      _ref:formData.id,
-      comment: formData.comment,
-    }
-   
-   
-  };
-
-  client
-    .create(contact)
-    .then(() => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    })
-    .catch((err) => console.log(err));
-  setFormData({
-    name: "",
-    webUrl: "",
-    email: "",
-   
-    comment: "",
-  });
-  setSuccess(true)
-
-  setTimeout(() => {
-    setIsFormSubmitted(false);
-    
-      setSuccess(false)
-    
-  }, 5000);
-};
   return (
     <>
-      <Header4 />
+      <Header />
 
       <div className="page-content bg-white">
         <div
@@ -140,7 +57,7 @@ const handleSubmit = (e) => {
                   <div className="blog-post blog-single" key={item.slug}>
                     <div className="dlab-post-title ">
                       <h4 className="post-title m-t0">
-                        <Link to={"#"}>{item?.title}</Link>
+                        <Link to={"#"}>{item.title}</Link>
                       </h4>
                     </div>
                     <div className="dlab-post-meta m-b20">
@@ -149,31 +66,31 @@ const handleSubmit = (e) => {
                           {" "}
                           <i className="fa fa-calendar"></i>
                           <strong>
-                            {moment(item?.updatedAt).format(
+                            {moment(item.updatedAt).format(
                               "MMMM Do YYYY, h:mm:ss a"
                             )}
                           </strong>
                         </li>
                         <li className="post-author">
-                          <Link to={`news-details/${item?.slug}`}>
-                            <i className="fa fa-user"></i>By:{item?.author}
+                          <Link to={`news-details/${item.slug}`}>
+                            <i className="fa fa-user"></i>By:{item.author}
                           </Link>
                         </li>
                         <li className="post-comment">
                           <i className="fa fa-comments"></i>
-                          <Link to={"#"}>{comments?.length}</Link>
+                          <Link to={"#"}>1k+ Comments</Link>
                         </li>
                       </ul>
                     </div>
                     <div className="dlab-post-media dlab-img-effect zoom-slow">
                       <Link to={"#"}>
-                        <img src={item?.imageUrl?.asset?.url} alt="ali" />
+                        <img src={item.imageUrl.asset.url} alt="ali" />
                       </Link>
                     </div>
                     <div className="dlab-post-text">
-                      <p>{item?.title}</p>
+                      <p>{item.title}</p>
 
-                      <blockquote>{item?.newsDetails}</blockquote>
+                      <blockquote>{item.newsDetails}</blockquote>
                       <p>
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the
@@ -246,10 +163,10 @@ const handleSubmit = (e) => {
 
                     <div className="dlab-post-tags clear">
                       <div className="post-tags">
-                        <Link to={"#"}>Child </Link>
+                        <Link to={"#"}>Science And Tech </Link>
                         <Link to={"#"}>Eduction </Link>
-                        <Link to={"#"}>Money </Link>
-                        <Link to={"#"}>Resturent </Link>
+                        <Link to={"#"}>Top Stories </Link>
+                        <Link to={"#"}>Culture </Link>
                       </div>
                     </div>
                     <div className="dlab-divider bg-gray-dark op4">
@@ -316,38 +233,38 @@ const handleSubmit = (e) => {
 
                 <div className="clear" id="comment-list">
                   <div className="comments-area" id="comments">
-                    <h2 className="comments-title">
-                      {comments.length}{" "}
-                      {comments.length >= 2 ? "Comments" : "comment"}
-                    </h2>
+                    <h2 className="comments-title">8 Comments</h2>
                     <div className="clearfix m-b20">
                       <ol className="comment-list">
-                        {comments.map((comment) => (
-                          <li className="comment" key={comment._id}>
-                            <div className="comment-body">
-                              <div className="comment-author vcard">
-                                {" "}
-                                <img
-                                  className="avatar photo"
-                                  src={comment?.imageUrl?.asset?.url}
-                                  alt="detail_img"
-                                />
-                                <cite className="fn">{comment.name}</cite>{" "}
-                                <span className="says">says:</span>{" "}
-                              </div>
-                              <div className="comment-meta">
-                                {" "}
-                                <Link to={"#"}>
-                                  {moment(comment?._createdAt).format(
-                                    "MMM Do YY"
-                                  )}
-                                </Link>{" "}
-                              </div>
-                              <p>{comment?.comment}</p>
+                        <li className="comment">
+                          <div className="comment-body">
+                            <div className="comment-author vcard">
+                              {" "}
+                              <img
+                                className="avatar photo"
+                                src={test1}
+                                alt=""
+                              />
+                              <cite className="fn">Stacy poe</cite>{" "}
+                              <span className="says">says:</span>{" "}
                             </div>
-                          </li>
-                        ))}
+                            <div className="comment-meta">
+                              {" "}
+                              <Link to={"#"}>
+                                October 6, 2015 at 7:15 am
+                              </Link>{" "}
+                            </div>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Nam vitae neqnsectetur adipiscing elit. Nam
+                              viae neqnsectetur adipiscing elit. Nam vitae neque
+                              vitae sapien malesuada aliquet.
+                            </p>
+                             
+                          </div>
+                        </li>
                       </ol>
+
                       <div className="comment-respond" id="respond">
                         <h4 className="comment-reply-title" id="reply-title">
                           Leave a Reply
@@ -365,7 +282,8 @@ const handleSubmit = (e) => {
                         <form
                           className="comment-form"
                           id="commentform"
-                         
+                          method="post"
+                          action="http://sedatelab.com/developer/donate/wp-comments-post.php"
                         >
                           <p className="comment-form-author">
                             <label for="author">
@@ -373,11 +291,9 @@ const handleSubmit = (e) => {
                             </label>
                             <input
                               type="text"
-                              value={name}
-                              onChange={handleChangeInput}
-
-                              name="name"
-                              placeholder="User Name"
+                              value="Author"
+                              name="Author"
+                              placeholder="Author"
                               id="author"
                             />
                           </p>
@@ -387,23 +303,19 @@ const handleSubmit = (e) => {
                             </label>
                             <input
                               type="text"
-                             
+                              value="email"
                               placeholder="Email"
-                              value={email}
                               name="email"
                               id="email"
-                              onChange={handleChangeInput}
-
                             />
                           </p>
                           <p className="comment-form-url">
                             <label for="url">Website</label>
                             <input
                               type="text"
-                              value={webUrl}
+                              value="url"
                               placeholder="Website"
-                              name="webUrl"
-                              onChange={handleChangeInput}
+                              name="url"
                               id="url"
                             />
                           </p>
@@ -411,20 +323,13 @@ const handleSubmit = (e) => {
                             <label for="comment">Comment</label>
                             <textarea
                               rows="8"
-                              value={comment}
                               name="comment"
-                              onChange={handleChangeInput}
                               placeholder="Comment"
                               id="comment"
                             ></textarea>
                           </p>
-                          {success &&
-                            (<div className="col-lg-12 site-button">
-                            Your comment has been submitted for review.
-                            </div>)
-                          }
                           <p className="form-submit">
-                            <input onClick={handleSubmit}
+                            <input
                               type="submit"
                               value="Post Comment"
                               className="submit"

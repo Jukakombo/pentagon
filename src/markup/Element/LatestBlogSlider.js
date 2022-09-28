@@ -1,5 +1,5 @@
-import React, {  useState, useEffect } from "react";
-import moment from "moment"
+import React, { useState, useEffect } from "react";
+import moment from "moment";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { client, urlFor } from "../../sanityClient";
@@ -60,7 +60,7 @@ function SamplePrevArrow(props) {
 
 function LatestBlogSlider() {
   const [schoolNews, setSchoolNews] = useState([]);
- 
+
   useEffect(() => {
     const query = '*[_type=="schoolNews"]';
     client.fetch(query).then((data) => {
@@ -108,54 +108,56 @@ function LatestBlogSlider() {
         className="dots-style-center img-carousel owl-carousel owl-btn-center-lr owl-btn-3 "
         {...settings}
       >
-        {schoolNews.slice(0).reverse().map((item) => (
-          <div className="item p-3" key={item._id}>
-            <div className="blog-post blog-grid blog-rounded blog-effect1">
-              <div className="dlab-post-media dlab-img-effect ">
-                 
-                <Link to={`/news-details/${item._id}`}>
-                  <img src={urlFor(item?.imageUrl)} alt="" />
-                </Link> 
-              </div>
-              <div className="dlab-info p-a20 border-1">
-                <div className="dlab-post-title ">
-                  <h5 className="post-title font-weight-500">
-                    <Link to={`/news-details/${item._id}`}>{item.title}</Link>
-                  </h5>
-                </div>
-                <div className="dlab-post-meta ">
-                  <ul>
-                    <li className="post-date">
-                      {" "}
-                      <i className="fa fa-comments"></i>
-                      <strong>{moment(item._createdAt).format("MMM Do YY")}</strong> {" "}
-                    </li>
-                    <li className="post-author">
-                      <i className="fa fa-user"></i>By{" "}
-                      <Link to={`/news-details/${item._id}`}>{item.author}</Link>{" "}
-                    </li>
-                  </ul>
-                </div>
-                <div className="dlab-post-text">
-                  <p>
-                    {item.newsDetails.substring(0,100)}...
-                  </p>
-                </div>
-                <div className="dlab-post-readmore">
-                  <Link
-                    to={`/news-details/${item._id}`}
-                    title="READ MORE"
-                    rel="bookmark"
-                    className="site-button-link black outline"
-                  >
-                    READ MORE
-                    <i className="ti-arrow-right"></i>
+        {schoolNews
+          .slice(0)
+          .reverse()
+          .map((item) => (
+            <div className="item p-3" key={item._id}>
+              <div className="blog-post blog-grid blog-rounded blog-effect1">
+                <div className="dlab-post-media dlab-img-effect ">
+                  <Link to={`/${item._id}`}>
+                    <img src={urlFor(item?.imageUrl)} alt="" />
                   </Link>
+                </div>
+                <div className="dlab-info p-a20 border-1">
+                  <div className="dlab-post-title ">
+                    <h5 className="post-title font-weight-500">
+                      <Link to={`/${item._id}`}>{item.title}</Link>
+                    </h5>
+                  </div>
+                  <div className="dlab-post-meta ">
+                    <ul>
+                      <li className="post-date">
+                        {" "}
+                        <i className="fa fa-comments"></i>
+                        <strong>
+                          {moment(item._createdAt).format("MMM Do YY")}
+                        </strong>{" "}
+                      </li>
+                      <li className="post-author">
+                        <i className="fa fa-user"></i>By{" "}
+                        <Link to={`/${item._id}`}>{item.author}</Link>{" "}
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="dlab-post-text">
+                    <p>{item.newsDetails.substring(0, 100)}...</p>
+                  </div>
+                  <div className="dlab-post-readmore">
+                    <Link
+                      to={`/${item._id}`}
+                      title="READ MORE"
+                      rel="bookmark"
+                      className="site-button-link black outline"
+                    >
+                      READ MORE
+                      <i className="ti-arrow-right"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Slider>
     </>
   );
