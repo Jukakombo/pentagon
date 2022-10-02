@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import moment from "moment";
-import Axios from "axios";
+ 
 import LoadingCircle from "./Loading";
+ 
+import axios from "axios";
 
 //Images
 // import pic1 from "./../../images/blog/grid/pic1.jpg";
@@ -34,22 +36,24 @@ function SamplePrevArrow(props) {
 }
 
 function ScienceAndTechNews() {
-  const [scienceAndTech, setScienceAndTech] = useState([]);
+  const [scienceNews, setScienceNews] = useState([]);
+ console.log(scienceNews) 
+ const options = {
+  method: 'GET',
+  url: 'https://covid-19-news.p.rapidapi.com/v1/covid',
+  params: {q: 'covid', lang: 'en', sort_by: 'date', media: 'True'},
+  headers: {
+    'X-RapidAPI-Key': '8656d56e67mshc1d0d88932ef302p1813b9jsn0a3163c87fba',
+    'X-RapidAPI-Host': 'covid-19-news.p.rapidapi.com'
+  }
+};
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      await Axios.get(
-        "https://newsapi.org/v2/everything?" +
-          "q=Apple&" +
-          "from=2022-08-20&" +
-          "sortBy=popularity&" +
-          "apiKey=d56ba4ad974d4acd88c72cfcc83c75bc"
-      ).then((response) => {
-        setScienceAndTech(response.data.articles);
-      });
-    };
-    fetchNews();
-  }, []);
+axios.request(options).then(function (response) {
+	setScienceNews(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+
   var settings = {
     arrows: true,
     slidesToShow: 4,
@@ -84,8 +88,8 @@ function ScienceAndTechNews() {
       },
     ],
   };
- 
-  return !scienceAndTech.length ? (
+
+  return !scienceNews?.articles.length ? (
     <LoadingCircle />
   ) : (
     <>
@@ -93,18 +97,19 @@ function ScienceAndTechNews() {
         className="dots-style-center img-carousel owl-carousel owl-btn-center-lr owl-btn-3 "
         {...settings}
       >
-        {scienceAndTech.map((news) => (
-          <div className="item p-3" key={news.title}>
+        {scienceNews?.articles.map((news, index) => (
+          <div className="item p-3" key={index}>
             <div className="blog-post blog-grid blog-rounded blog-effect1">
               <div className="dlab-post-media dlab-img-effect ">
                 <Link to={"#"}>
-                  <img src={news.urlToImage} alt="news_image" />
+                  <img src={news?.urlToImage} alt="news_image" />
                 </Link>
               </div>
               <div className="dlab-info p-a20 border-1">
                 <div className="dlab-post-title ">
                   <h5 className="post-title font-weight-500">
-                    <Link to={"#"}>{news.title}</Link>
+                    <Link to={"#"}>{news?.title}</Link>
+                     
                   </h5>
                 </div>
                 <div className="dlab-post-meta ">
@@ -127,7 +132,7 @@ function ScienceAndTechNews() {
                   </ul>
                 </div>
                 <div className="dlab-post-text">
-                  <p>{news.description.substring(0, 100)} ...</p>
+                  <p>{news?.description.substring(0, 100)} ...</p>
                 </div>
                 <div className="dlab-post-readmore">
                   <Link

@@ -3,22 +3,22 @@ import ScienceAndTechNews from "../../Element/ScienceAdTechNew";
 import Footer5 from "../../Layout/footer5";
 import Header4 from "../../Layout/header4";
 import PageTitle from "../../Layout/PageTitle";
-import bnr1 from '../../../images/banner/bnr4.jpg';
-
-
+import bnr1 from "../../../images/banner/bnr4.jpg";
+ 
 
 function ScienceAndTechnology() {
-
+   
+  
 
   return (
     <>
       <Header4 />
       <div
-            className="dlab-bnr-inr dlab-bnr-inr-sm overlay-primary bg-pt"
-            style={{ backgroundImage: 'url(' + bnr1 + ')' }}
-          >
-            <PageTitle motherMenu="Science & tech" activeMenu="Tech" />
-          </div>
+        className="dlab-bnr-inr dlab-bnr-inr-sm overlay-primary bg-pt"
+        style={{ backgroundImage: "url(" + bnr1 + ")" }}
+      >
+        <PageTitle motherMenu="Science & tech" activeMenu="Tech" />
+      </div>
       <div className="section-full bg-white content-inner">
         <div className="container">
           <div className="max-w600 m-auto text-center m-b30">
@@ -29,10 +29,8 @@ function ScienceAndTechnology() {
               Latest tech and science news around the world
             </h2>
           </div>
-          
 
-          <ScienceAndTechNews  />
-          
+       <ScienceAndTechNews   />
         </div>
       </div>
 
