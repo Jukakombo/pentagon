@@ -32,6 +32,7 @@ import Workshop from "../studentsForms/Workshop";
 import SeniorTwo from "../Senior-2";
 import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
+import { client } from "../../../sanityClient";
 
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
@@ -63,31 +64,53 @@ function preventDefault(event) {
 export default function Orders({ setContactId }) {
   const courses = useSelector((state) => state.courses);
   const contacts = useSelector((state) => state.contacts);
+  const [teacherdetail, setTeacherDetails] = React.useState([])
   const dispatch = useDispatch();
+   
   const location = useLocation();
+   React.useEffect(() => {
+    client
+      .fetch(
+        `*[_type=="teacherForm"]{
+          fullName, position, classTaken, subjects,profilePicture{
+        asset -> {
+          _id,
+          url
+        }, alt
+      },
+      contact,_id
+    }`
+      )
+      .then((data) => {
+        setTeacherDetails(data);
+      });
+  }, []);
   switch (location.pathname) {
+
     case "/dashboard":
+    
       return (
         <React.Fragment>
-          <Title>Board of Directors</Title>
+          <Title>Structure of the School Management</Title>
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>Date</TableCell>
+                
                 <TableCell>Name</TableCell>
                 <TableCell>Position</TableCell>
-                <TableCell>Address</TableCell>
+                <TableCell>Class</TableCell>
+                <TableCell>Subject</TableCell>
                 <TableCell align="right">Contact</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell>{row.date}</TableCell>
-                  <TableCell>{row.name}</TableCell>
-                  <TableCell>{row.shipTo}</TableCell>
-                  <TableCell>{row.paymentMethod}</TableCell>
-                  <TableCell align="right">{`${row.amount}`}</TableCell>
+              {teacherdetail.map((row) => (
+                <TableRow key={row?._id}>
+                  <TableCell>{row?.fullName}</TableCell>
+                  <TableCell>{row?.position}</TableCell>
+                  <TableCell>{row?.classTaken}</TableCell>
+                  <TableCell>{row?.subjects}</TableCell>
+                  <TableCell align="right">{`${row?.contact}`}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
