@@ -49,6 +49,16 @@ export default {
         name: "contact",
         type: "string"
       },
+      {
+        title: "Class",
+        name: "classTaken",
+        type: "string"
+      },
+      {
+        title: "Position",
+        name: "position",
+        type: "string"
+      },
        
     ]
   }

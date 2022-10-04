@@ -20,6 +20,8 @@ function TeacherForm() {
     contact: "",
     profilePicture: "",
     subjects: "",
+    classTaken: "",
+    position: "",
     
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -33,7 +35,8 @@ function TeacherForm() {
     address,
     contact,
     profilePicture,
-     
+    classTaken,
+     position,
     subjects,
   } = formData;
 
@@ -55,6 +58,9 @@ function TeacherForm() {
       contact: formData.contact,
       profilePicture: formData.profilePicture,
       subjects: formData.subjects,
+      classTaken:formData.classTaken,
+      position:formData.position,
+      
     
     };
 
@@ -75,6 +81,8 @@ function TeacherForm() {
       contact: "",
       profilePicture: "",
       subjects: "",
+      classTaken: "",
+      position: "",
       
     });
     setTimeout(() => {
@@ -285,12 +293,45 @@ function TeacherForm() {
                             onChange={handleChangeInput}
                             required
                           />
-                          {/* <FileBase component="input"
-                        type="file"
-                        multiple={false}
-                        onDone={({ base64 }) =>
-                        setFormData({ ...formData, profilePicture: base64 })
-                        } /> */}
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <div className="input-group">
+                          <span className="input-group-addon">
+                            <i className="ti-agenda text-primary"></i>
+                          </span>
+                          <input
+                            className="form-control"
+                            type="text"
+                            name="position"
+                            placeholder="Position"
+                            value={position}
+                            onChange={handleChangeInput}
+                            required
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <div className="input-group">
+                          <span className="input-group-addon">
+                            <i className="ti-agenda text-primary"></i>
+                          </span>
+                          <input
+                            className="form-control"
+                            type="text"
+                            name="classTaken"
+                            placeholder="Class"
+                            value={classTaken}
+                            onChange={handleChangeInput}
+                            required
+                          />
+                          
                         </div>
                       </div>
                     </div>
