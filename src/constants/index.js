@@ -17,6 +17,9 @@ export const FETCH_COURSES = 'FETCH_COURSES';
 export const CREATE_COURSE = 'CREATE_COURSE';
 export const UPDATE_COURSE = 'UPDATE_COURSE';
 export const DELETE_COURSE = 'DELETE_COURSE';
-
+// students constants
 export const AUTH = 'AUTH';
 export const LOGOUT = 'LOGOUT';
+//teacher constants
+export const AUTHTEACHER = 'AUTHTEACHER';
+export const LOGOUTTEACHER = 'LOGOUTTEACHER';
