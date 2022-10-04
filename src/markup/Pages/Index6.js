@@ -13,48 +13,37 @@ import bg19 from "./../../images/background/bg19.jpg";
 import bg2 from "./../../images/background/fountain2.gif";
 import bnr1 from "./../../images/background/back2.gif";
  
-
-import test1 from "./../../images/testimonials/pic1.jpg";
-import test2 from "./../../images/testimonials/pic2.jpg";
-import test3 from "./../../images/testimonials/pic3.jpg";
+import image1 from "../../images/our-services/logo.jpg"
+ 
 import Index7ClientCarousel from "../Element/Index7ClientCarousel";
 import TestimonialStyle2 from "./ShortCode/TestimonialStyle2";
 import HomeTab from "../Element/HomeTab";
 import FinalClock from "./clock/FinalClock";
 import { VisionBlog } from "./Aboutus/Aboutus1";
+import { client } from "../../sanityClient";
+import { useState } from "react";
 
-const expertBox = [
-  {
-    image: test1,
-    name: "Name",
-    description:
-      "E.g Fresh Graduate Master in Business Administration from Makerere University-Ugandan ",
-    title: "Proprietor",
-  },
-  {
-    image: test2,
-    name: "Name",
-    description:
-      "E.g Fresh Graduate Master in Business Administration from Makerere University-Ugandan ",
-    title: "Principal",
-  },
-  {
-    image: test3,
-    name: "Name",
-    description:
-      "E.g Fresh Graduate Master in Business Administration from Makerere University-Ugandan ",
-    title: "Vice Principal",
-  },
-  {
-    image: test2,
-    name: "Name",
-    description:
-      "E.g Fresh Graduate Master in Business Administration from Makerere University-Ugandan ",
-    title: "Headmasters",
-  },
-];
+ 
 
 const Index6 = (props) => {
+  const [teacherDetails,setTeacherDetails]= useState([])
+  React.useEffect(() => {
+    client
+      .fetch(
+        `*[_type=="teacherForm"]{
+          fullName, position, classTaken, subjects,profilePicture{
+        asset -> {
+          _id,
+          url
+        }, alt
+      },
+      contact,_id
+    } | order(dsc)`
+      )
+      .then((data) => {
+        setTeacherDetails(data);
+      });
+  }, []);
   let resizeMargin = () => {
     var screenWidth = window.innerWidth;
     if (screenWidth >= 1280) {
@@ -236,62 +225,50 @@ const Index6 = (props) => {
           </div>
           {/* <!-- Our Recent Blog Posts END --> */}
           {/* <!-- Our Team --> */}
-          <div className="section-full content-inner-2 our-team-bx bg-primary">
-            <div className="container">
-              <div className="row">
-                <div className="section-head text-white col-lg-12 text-center">
-                  <h5 className="title-small">Our Team</h5>
-                  <h2 className="title-head m-b0">Top experts mates</h2>
-                </div>
-              </div>
-              <div className="row">
-                {expertBox.map((data, index) => (
-                  <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                    <div className="experts-box text-white p-a20">
-                      <div className="clearfix experts-info-bx">
-                        <div className="experts-img">
-                          <img src={data.image} alt="" />
-                        </div>
-                        <div className="experts-info">
-                          <h5 className="experts-name">{data.name} </h5>
-                          <h6 className="experts-service">{data.title}</h6>
+          <div className="page-content bg-white">
+                  
+                   
+                  {/* <!-- contact area --> */}
+                  <div className="content-block">
+                      {/* <!-- Team Section --> */}
+                      <div className="section-full text-center bg-white content-inner-1">
+                          <div className="container">
+                              <div className="section-head text-black text-center">
+                                  <h2>Meet Our Team</h2>
+                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+                              </div>
+                              <div className="row">
+                {teacherDetails.map((data)=>(
+                  <div className="col-lg-3 col-md-6 col-sm-6 m-b5" key={data?._id}>
+                    <div className="dlab-box">
+                      <div className="dlab-media dlab-img-overlay6 dlab-img-effect radius-sm"> 
+                        <img src={!data?.profilePicture?.asset?.url ? image1 : data?.profilePicture?.asset?.url}  alt={data?.fullName} />
+                        <div className="overlay-bx">
+                          <div className="overlay-icon">
+                            <ul className="dlab-social-icon">
+                              <li><Link to={"#"} className="fa text-white fa-facebook"></Link></li>
+                              <li><Link to={"#"} className="fa text-white fa-twitter"></Link></li>
+                              <li><Link to={"#"} className="fa text-white fa-linkedin"></Link></li>
+                              <li><Link to={"#"} className="fa text-white fa-facebook"></Link></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                      <p className="m-b10">{data.description}</p>
-                      <ul className="dez-social-icon">
-                        <li>
-                          <Link
-                            to={"#"}
-                            className="fa text-white fa-facebook"
-                          ></Link>
-                        </li>
-                        <li>
-                          <Link
-                            to={"#"}
-                            className="fa text-white fa-google-plus"
-                          ></Link>
-                        </li>
-                        <li>
-                          <Link
-                            to={"#"}
-                            className="fa text-white fa-linkedin"
-                          ></Link>
-                        </li>
-                        <li>
-                          <Link
-                            to={"#"}
-                            className="fa text-white fa-twitter"
-                          ></Link>
-                        </li>
-                      </ul>
+                      <div className="dlab-title-bx p-a10">
+                        <h5 className="text-black m-a0">{data?.fullName}</h5>
+                        <span className="clearfix">{data?.position}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
+                              </div>
+                          </div>
+                      </div>
+                      {/* <!-- Team Section END --> */}
+                   
+                  </div>
+                  {/* <!-- contact area END --> */}
               </div>
-            </div>
-          </div>
-          {/* contact form and map here */}
-          {/* <!-- Our Portfolio --> */}
           <div
             className="section-full p-tb15 our-support content-inner-2"
             style={{
