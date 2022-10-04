@@ -235,7 +235,7 @@ const Index6 = (props) => {
                           <div className="container">
                               <div className="section-head text-black text-center">
                                   <h2>Meet Our Team</h2>
-                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+                                  <p>Our school is made up of a diverse group of educators with extensive knowledge and experience in their respective fields.</p>
                               </div>
                               <div className="row">
                 {teacherDetails.map((data)=>(

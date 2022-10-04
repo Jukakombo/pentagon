@@ -19,8 +19,8 @@ class BlogListRightSidebar extends Component {
             style={{ backgroundImage: 'url(' + bnr1 + ')' }}
           >
             <PageTitle
-              motherMenu="List Blog Right Sidebar"
-              activeMenu="List Blog Right Sidebar"
+              motherMenu="Find our school news here"
+              activeMenu="Stay updated"
             />
           </div>
           <div className="content-area">
