@@ -115,8 +115,8 @@ class Footer5 extends Component {
                     <ul className="list-inline m-a0">
                       <li>
                         <Link
-                          to={"#"}
-                          className="site-button facebook circle mr-1"
+                          to={{pathname:"https://www.facebook.com/pentagoninter2021"}}
+                          className="site-button facebook circle mr-1" target='_blank' 
                         >
                           <i className="fa fa-facebook"></i>
                         </Link>

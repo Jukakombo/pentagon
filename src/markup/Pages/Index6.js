@@ -10,11 +10,11 @@ import organizationalDigram from "../../images/our-services/organizational.png";
 import organizationalDigram2 from "../../images/our-services/structure2.jpg";
 import bgslider9 from "./../../images/main-slider/slide9.jpg";
 import bg19 from "./../../images/background/bg19.jpg";
-import bg2 from "./../../images/background/fountain2.gif";
-import bnr1 from "./../../images/background/back2.gif";
- 
-import image1 from "../../images/our-services/logo.jpg"
- 
+import bg2 from "./../../images/background/fountain2.jpg";
+import bnr1 from "./../../images/background/bg24.jpg";
+
+import image1 from "../../images/our-services/logo.jpg";
+
 import Index7ClientCarousel from "../Element/Index7ClientCarousel";
 import TestimonialStyle2 from "./ShortCode/TestimonialStyle2";
 import HomeTab from "../Element/HomeTab";
@@ -23,10 +23,8 @@ import { VisionBlog } from "./Aboutus/Aboutus1";
 import { client } from "../../sanityClient";
 import { useState } from "react";
 
- 
-
 const Index6 = (props) => {
-  const [teacherDetails,setTeacherDetails]= useState([])
+  const [teacherDetails, setTeacherDetails] = useState([]);
   React.useEffect(() => {
     client
       .fetch(
@@ -123,7 +121,10 @@ const Index6 = (props) => {
                   and a well rouded-education in their informative year
                   <br />
                 </p>
-                <a href="#aboutus2020" className="site-button button-md radius-xl">
+                <a
+                  href="#aboutus2020"
+                  className="site-button button-md radius-xl"
+                >
                   Explore Now
                 </a>
               </div>
@@ -137,7 +138,8 @@ const Index6 = (props) => {
           </div>
         </div>
 
-        <div id="aboutus2020"
+        <div
+          id="aboutus2020"
           className="section-full content-inner-2 overlay-primary choseus-tabs  bg-img-fix"
           style={{ backgroundImage: "url(" + bnr1 + ")" }}
         >
@@ -176,11 +178,14 @@ const Index6 = (props) => {
                 <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
                   <img src={organizationalDigram} data-tilt alt="organigram" />
                   {/* </div> */}
-                  
-                <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
-                <img src={organizationalDigram2} data-tilt alt="organigram" />
-                 
-                </div>
+
+                  <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
+                    <img
+                      src={organizationalDigram2}
+                      data-tilt
+                      alt="organigram"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -199,9 +204,10 @@ const Index6 = (props) => {
                     What People are saying about our School?
                   </h2>
                   <p className="m-b0">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since.
+                    Here is a list of testimonials from our students' parents
+                    stating that our school is the best. Register your child
+                    with us; we teach everything and strive to make our school
+                    the best among all.
                   </p>
                 </div>
               </div>
@@ -226,49 +232,82 @@ const Index6 = (props) => {
           {/* <!-- Our Recent Blog Posts END --> */}
           {/* <!-- Our Team --> */}
           <div className="page-content bg-white">
-                  
-                   
-                  {/* <!-- contact area --> */}
-                  <div className="content-block">
-                      {/* <!-- Team Section --> */}
-                      <div className="section-full text-center bg-white content-inner-1">
-                          <div className="container">
-                              <div className="section-head text-black text-center">
-                                  <h2>Meet Our Team</h2>
-                                  <p>Our school is made up of a diverse group of educators with extensive knowledge and experience in their respective fields.</p>
+            {/* <!-- contact area --> */}
+            <div className="content-block">
+              {/* <!-- Team Section --> */}
+              <div className="section-full text-center bg-white content-inner-1">
+                <div className="container">
+                  <div className="section-head text-black text-center">
+                    <h2>Meet Our Team</h2>
+                    <p>
+                      Our school is made up of a diverse group of educators with
+                      extensive knowledge and experience in their respective
+                      fields.
+                    </p>
+                  </div>
+                  <div className="row">
+                    {teacherDetails.map((data) => (
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6 m-b5"
+                        key={data?._id}
+                      >
+                        <div className="dlab-box">
+                          <div className="dlab-media dlab-img-overlay6 dlab-img-effect radius-sm">
+                            <img
+                              src={
+                                !data?.profilePicture?.asset?.url
+                                  ? image1
+                                  : data?.profilePicture?.asset?.url
+                              }
+                              alt={data?.fullName}
+                            />
+                            <div className="overlay-bx">
+                              <div className="overlay-icon">
+                                <ul className="dlab-social-icon">
+                                  <li>
+                                    <Link
+                                      to={"#"}
+                                      className="fa text-white fa-facebook"
+                                    ></Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      to={"#"}
+                                      className="fa text-white fa-twitter"
+                                    ></Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      to={"#"}
+                                      className="fa text-white fa-linkedin"
+                                    ></Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      to={"#"}
+                                      className="fa text-white fa-facebook"
+                                    ></Link>
+                                  </li>
+                                </ul>
                               </div>
-                              <div className="row">
-                {teacherDetails.map((data)=>(
-                  <div className="col-lg-3 col-md-6 col-sm-6 m-b5" key={data?._id}>
-                    <div className="dlab-box">
-                      <div className="dlab-media dlab-img-overlay6 dlab-img-effect radius-sm"> 
-                        <img src={!data?.profilePicture?.asset?.url ? image1 : data?.profilePicture?.asset?.url}  alt={data?.fullName} />
-                        <div className="overlay-bx">
-                          <div className="overlay-icon">
-                            <ul className="dlab-social-icon">
-                              <li><Link to={"#"} className="fa text-white fa-facebook"></Link></li>
-                              <li><Link to={"#"} className="fa text-white fa-twitter"></Link></li>
-                              <li><Link to={"#"} className="fa text-white fa-linkedin"></Link></li>
-                              <li><Link to={"#"} className="fa text-white fa-facebook"></Link></li>
-                            </ul>
+                            </div>
+                          </div>
+                          <div className="dlab-title-bx p-a10">
+                            <h5 className="text-black m-a0">
+                              {data?.fullName}
+                            </h5>
+                            <span className="clearfix">{data?.position}</span>
                           </div>
                         </div>
                       </div>
-                      <div className="dlab-title-bx p-a10">
-                        <h5 className="text-black m-a0">{data?.fullName}</h5>
-                        <span className="clearfix">{data?.position}</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
-                              </div>
-                          </div>
-                      </div>
-                      {/* <!-- Team Section END --> */}
-                   
-                  </div>
-                  {/* <!-- contact area END --> */}
+                </div>
               </div>
+              {/* <!-- Team Section END --> */}
+            </div>
+            {/* <!-- contact area END --> */}
+          </div>
           <div
             className="section-full p-tb15 our-support content-inner-2"
             style={{

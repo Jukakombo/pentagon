@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { signin, signup } from '../../actions/user';
 import { useHistory } from 'react-router-dom';
 import Googlesignin from 'react-google-login';
-import bnr from './../../images/banner/bnr3.jpg';
+import bnr from './../../images/banner/bnr11.jpg';
 import ProgressBar from './ProgressBar';
 import { Button } from '@mui/material';
 
