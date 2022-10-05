@@ -80,6 +80,7 @@ import Editor from "./Pages/teacherDashboard/elements/Editor";
 import Calendar from "./Pages/teacherDashboard/elements/Calendar";
 import ColorPicker from "./Pages/teacherDashboard/elements/ColorPicker";
 import Chart from "./Pages/dashboar-student/students-dashboard/Cart";
+import CodeOfConduct from "./Pages/CodeOfConduct";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -303,7 +304,10 @@ function Markup() {
           </Route>
           <Route exact path="/Kanban-board">
             <Kanban />
+          </Route><Route exact path="/code-of-conduct">
+            <CodeOfConduct />
           </Route>
+          
           <Route exact path="/editor">
             <Editor />
           </Route>
