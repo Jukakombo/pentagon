@@ -34,28 +34,8 @@ import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
 
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
-}
-
-const rows = [
-  createData(
-    0,
-    "16 Mar, 2019",
-    "Alison Juka ",
-    "Headmaster",
-    "Rabat-Morocco",
-    "+212698487054"
-  ),
-  createData(
-    1,
-    "19 Dec, 2021",
-    "Joseph Cosmos Juka",
-    "Teacher",
-    "Juba, South Sudan",
-    "+211922030149"
-  ),
-];
+ 
+ 
 
 function preventDefault(event) {
   event.preventDefault();
@@ -64,6 +44,7 @@ function preventDefault(event) {
 export default function Orders({ setContactId }) {
   const courses = useSelector((state) => state.courses);
   const contacts = useSelector((state) => state.contacts);
+  
   const [teacherdetail, setTeacherDetails] = React.useState([])
   const dispatch = useDispatch();
    
@@ -87,7 +68,7 @@ export default function Orders({ setContactId }) {
   }, []);
   switch (location.pathname) {
 
-    case "/dashboard":
+    case "/teacherDashboard":
     
       return (
         <React.Fragment>
@@ -115,16 +96,12 @@ export default function Orders({ setContactId }) {
               ))}
             </TableBody>
           </Table>
-          <Link
-            color="primary"
-            href="#"
-            onClick={preventDefault}
-            sx={{ mt: 3 }}
-          >
-            See more
-          </Link>
+          
         </React.Fragment>
       );
+
+
+
     // students case
     case "/students":
       return (
@@ -177,23 +154,27 @@ export default function Orders({ setContactId }) {
             >
               <CardContent>
                 <Typography variant="h5" component="div">
-                  Time:&nbsp;{moment(contact.updatedAt).fromNow()}
+                  Time:&nbsp;{moment(contact?.updatedAt).fromNow()}
                 </Typography>
                 <Typography variant="h5" component="div">
-                  Name:&nbsp;{contact.givenName}
+                  Name:&nbsp;{contact?.name}
                 </Typography>
                 <Typography
                   sx={{ mb: 1.5 }}
                   variant="h5"
-                  color="text.secondary"
+                  color="secondary"
                 >
-                  Phone:&nbsp;{contact.phone}
+                  Phone:&nbsp;{contact?.phone}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  Email:&nbsp;{contact.email}
+                  Email:&nbsp;{contact?.email}
                 </Typography>
                 <Typography variant="h6">
-                  message:&nbsp;{contact.message}
+                  Subject:&nbsp;{contact?.subject}
+                  <br />
+                </Typography>
+                <Typography variant="h6">
+                  message:&nbsp;{contact?.message}
                   <br />
                 </Typography>
               </CardContent>
@@ -253,6 +234,6 @@ export default function Orders({ setContactId }) {
         return <Workshop />;
     // default case
     default:
-      return "/dashboard";
+      return "/teacherDashboard";
   }
 }

@@ -10,7 +10,7 @@ import { createContact } from "../../actions/contacts";
 
 function Contact() {
   const [contact, setContact] = useState({
-    givenName: "",
+    name: "",
     email: "",
     phone: "",
     message: "",
@@ -31,7 +31,7 @@ function Contact() {
 
   const clear = () => {
     setContact({
-      givenName: "",
+      name: "",
       email: "",
       phone: "",
       message: "",
@@ -121,13 +121,13 @@ function Contact() {
                             autoFocus
                             className="form-control"
                             type="text"
-                            name="givenName"
+                            name="name"
                             placeholder="Enter your Name here......"
-                            value={contact.givenName}
+                            value={contact.name}
                             onChange={(e) =>
                               setContact({
                                 ...contact,
-                                givenName: e.target.value,
+                                name: e.target.value,
                               })
                             }
                             required
