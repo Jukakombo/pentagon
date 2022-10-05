@@ -6,7 +6,7 @@ import Footer5 from "./../Layout/footer5";
 import LatestBlogSlider from "./../Element/LatestBlogSlider";
 
 //Images
-import organizationalDigram from "../../images/our-services/organizational.png";
+import organizationalDigram from "../../images/our-services/ali.jpg";
 import organizationalDigram2 from "../../images/our-services/structure2.jpg";
 import bgslider9 from "./../../images/main-slider/slide9.jpg";
 import bg19 from "./../../images/background/bg19.jpg";
@@ -170,10 +170,7 @@ const Index6 = (props) => {
             <VisionBlog />
             <div className="container">
               <div className="section-head text-center">
-                <h2 className="box-title m-tb0">
-                  Organizational Structure for Effective School Management
-                  <span className="bg-primary"></span>
-                </h2>
+                 
                 {/* <div className=" row dzseth  m-b30"> */}
                 <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
                   <img src={organizationalDigram} data-tilt alt="organigram" />
