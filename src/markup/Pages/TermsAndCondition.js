@@ -1,7 +1,7 @@
 import React from "react";
 import Footer5 from "../Layout/footer5";
 import Header4 from "../Layout/header4";
-import bgimg from "./../../images/background/bg2.jpg";
+ 
 
 function TermsAndCondition() {
   return (

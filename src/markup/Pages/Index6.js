@@ -170,7 +170,6 @@ const Index6 = (props) => {
             <VisionBlog />
             <div className="container">
               <div className="section-head text-center">
-                 
                 {/* <div className=" row dzseth  m-b30"> */}
                 <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
                   <img src={organizationalDigram} data-tilt alt="organigram" />
@@ -318,12 +317,12 @@ const Index6 = (props) => {
               <div className="row">
                 <div className="col-md-12 col-lg-12 section-head text-center">
                   <h2 className="m-b0 font-40">
-                    <span className="font-weight-400">Contact</span> Us
+                    <span className="font-weight-400">Contact Us</span>
                   </h2>
                   <p className="m-b0">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the.
+                    For more inquiries, contact us on: Tel: +211(0)920032333;
+                    928104000; 928617175 E-mail: pentagoncollege2021@gmail.com
+                    Or you can simply fill the form below.
                   </p>
                 </div>
               </div>
