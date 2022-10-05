@@ -147,12 +147,12 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Hello,🖐&nbsp; {user.result.name} &nbsp;
+              Hello,🖐&nbsp; {user?.result?.name} &nbsp;
             </Typography>
 
             <IconButton color="inherit">
-              <Avatar src={user.result.imageUrl}>
-                {user.result.name.charAt(0)}
+              <Avatar src={user?.result?.imageUrl}>
+                {user?.result?.name?.charAt(0)}
               </Avatar>
             </IconButton>
 

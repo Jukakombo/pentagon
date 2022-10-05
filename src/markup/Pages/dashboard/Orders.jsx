@@ -34,28 +34,7 @@ import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
 
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
-}
-
-const rows = [
-  createData(
-    0,
-    "16 Mar, 2019",
-    "Alison Juka ",
-    "Headmaster",
-    "Rabat-Morocco",
-    "+212698487054"
-  ),
-  createData(
-    1,
-    "19 Dec, 2021",
-    "Joseph Cosmos Juka",
-    "Teacher",
-    "Juba, South Sudan",
-    "+211922030149"
-  ),
-];
+ 
 
 function preventDefault(event) {
   event.preventDefault();

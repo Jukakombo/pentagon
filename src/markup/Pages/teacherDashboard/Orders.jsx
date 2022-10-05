@@ -33,6 +33,7 @@ import SeniorTwo from "../Senior-2";
 import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
+import StudentList from "./elements/StudentList";
 
  
  
@@ -67,7 +68,7 @@ export default function Orders({ setContactId }) {
       });
   }, []);
   switch (location.pathname) {
-
+// case teacher default dashboard
     case "/teacherDashboard":
     
       return (
@@ -75,15 +76,13 @@ export default function Orders({ setContactId }) {
           <Title>Structure of the School Management</Title>
           <Table size="small">
             <TableHead>
-              <TableRow>
-                
+              <TableRow> 
                 <TableCell>Name</TableCell>
                 <TableCell>Position</TableCell>
                 <TableCell>Class</TableCell>
                 <TableCell>Subject</TableCell>
                 <TableCell align="left">Contact</TableCell>
-                <TableCell align="right">Photo</TableCell>
-
+                <TableCell align="right">Photo</TableCell> 
               </TableRow>
             </TableHead>
             <TableBody>
@@ -108,44 +107,10 @@ export default function Orders({ setContactId }) {
 
 
     // students case
-    case "/students":
+    case "/students-list":
       return (
         <React.Fragment>
-          <Title>List of the students Attending course</Title>
-          <Table size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell>Date</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Course</TableCell>
-                <TableCell>Level</TableCell>
-                <TableCell>Address</TableCell>
-                <TableCell>Mode of Traing</TableCell>
-                <TableCell align="right">Contact</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {courses.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell>{moment(row.updatedAt).fromNow()}</TableCell>
-                  <TableCell>{row.givenName}</TableCell>
-                  <TableCell>{row.course}</TableCell>
-                  <TableCell>{row.level}</TableCell>
-                  <TableCell>{row.city}</TableCell>
-                  <TableCell>{row.training}</TableCell>
-                  <TableCell align="right">{`${row.phone}`}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-          <Link
-            color="primary"
-            href="#"
-            onClick={preventDefault}
-            sx={{ mt: 3 }}
-          >
-            See more
-          </Link>
+          <StudentList />
         </React.Fragment>
       );
     // contact zones

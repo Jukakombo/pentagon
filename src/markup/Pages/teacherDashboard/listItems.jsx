@@ -29,7 +29,7 @@ export const mainListItems = (
       </ListItem>
     </Link>
 
-    <Link to="Students-list">
+    <Link to="students-list">
       <ListItem button>
         <ListItemIcon>
           <BsFillPeopleFill />

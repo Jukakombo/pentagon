@@ -298,7 +298,8 @@ function Markup() {
             <TeacherLogin />
           </Route>
           <Route exact path="/students-list">
-            <StudentList />
+                  <TeacherDashboard />
+ 
           </Route>
           <Route exact path="/Kanban-board">
             <Kanban />
