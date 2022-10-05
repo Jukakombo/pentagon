@@ -91,19 +91,47 @@ function CodeOfConduct() {
           <p>
             RULE (08): smart phones or any other phones, guns tape recorders,
             cameras radios, ipad, knives, CD players are strictly prohibited.
-            <span className="text-red">ONCE CAUGHT FROM ANY STUDENT ARE NOT RETURNABLE</span>, if the student
-            resists, he/she shall be given the property back and shall
-            immediately be dismissed indefinitely in front of their parents.
-            Laptops are accepted for ICT lessons <span className="text-red">(NO TEACHER IS ALLOWED TO USED
-            CONSFICATED ITEMS MENTIONED ABOVE)</span>. If aby items above is
-            confiscated by a teacher from the student, such teacher should hand
-            it to the disciplinary chairperson who will in turn hand it to the
-            principal after the case/decision has been heard from the owner of
-            the items.
+            <span className="text-red">
+              ONCE CAUGHT FROM ANY STUDENT ARE NOT RETURNABLE
+            </span>
+            , if the student resists, he/she shall be given the property back
+            and shall immediately be dismissed indefinitely in front of their
+            parents. Laptops are accepted for ICT lessons{" "}
+            <span className="text-red">
+              (NO TEACHER IS ALLOWED TO USED CONSFICATED ITEMS MENTIONED ABOVE)
+            </span>
+            . If aby items above is confiscated by a teacher from the student,
+            such teacher should hand it to the disciplinary chairperson who will
+            in turn hand it to the principal after the case/decision has been
+            heard from the owner of the items.
           </p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>
+            RULE (09): Parents are only allowed to talk to their children after
+            obtaining permission from relevant school authority. Failure to
+            adhere to this, the parent(s) shall be kindly asked to take his/her
+            child home for good.
+          </p>
+          <p>
+            RULE (10) Fulfillment of all the school’s dues shall be a
+            pre-condition for the student’s entrance to the class.
+          </p>
+          <p>
+            RULE (11) Departure from the school premises during school hours has
+            to be approved by teacher on duty or any other relevant authorized
+            personnel.
+          </p>
+          <p>
+            RULE (12): Communal work is compulsory to all students. Any student
+            who refuses shall be punished.
+          </p>
+          <p>
+            RULE (13): All students are to participate in all the school
+            functions without discrimination.
+          </p>
+          <p>
+            RULE (14): Any student that absent him/herself from the school
+            without proper reasons shall to punished by the teacher concerned
+          </p>
         </div>
       </div>
 
