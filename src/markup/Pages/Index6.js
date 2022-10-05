@@ -36,7 +36,7 @@ const Index6 = (props) => {
         }, alt
       },
       contact,_id
-    } | order(dsc)`
+    }`
       )
       .then((data) => {
         setTeacherDetails(data);
