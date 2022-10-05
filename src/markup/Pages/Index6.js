@@ -20,28 +20,11 @@ import TestimonialStyle2 from "./ShortCode/TestimonialStyle2";
 import HomeTab from "../Element/HomeTab";
 import FinalClock from "./clock/FinalClock";
 import { VisionBlog } from "./Aboutus/Aboutus1";
-import { client } from "../../sanityClient";
-import { useState } from "react";
+ 
+import teamsPictures from "./teamPictures";
 
 const Index6 = (props) => {
-  const [teacherDetails, setTeacherDetails] = useState([]);
-  React.useEffect(() => {
-    client
-      .fetch(
-        `*[_type=="teacherForm"]{
-          fullName, position, classTaken, subjects,profilePicture{
-        asset -> {
-          _id,
-          url
-        }, alt
-      },
-      contact,_id
-    }`
-      )
-      .then((data) => {
-        setTeacherDetails(data);
-      });
-  }, []);
+  
   let resizeMargin = () => {
     var screenWidth = window.innerWidth;
     if (screenWidth >= 1280) {
@@ -242,7 +225,7 @@ const Index6 = (props) => {
                     </p>
                   </div>
                   <div className="row">
-                    {teacherDetails.map((data) => (
+                    {teamsPictures.map((data) => (
                       <div
                         className="col-lg-3 col-md-6 col-sm-6 m-b5"
                         key={data?._id}
@@ -251,11 +234,11 @@ const Index6 = (props) => {
                           <div className="dlab-media dlab-img-overlay6 dlab-img-effect radius-sm">
                             <img
                               src={
-                                !data?.profilePicture?.asset?.url
+                                !data?.image
                                   ? image1
-                                  : data?.profilePicture?.asset?.url
+                                  : data?.image
                               }
-                              alt={data?.fullName}
+                              alt={data?.name}
                             />
                             <div className="overlay-bx">
                               <div className="overlay-icon">
@@ -290,7 +273,7 @@ const Index6 = (props) => {
                           </div>
                           <div className="dlab-title-bx p-a10">
                             <h5 className="text-black m-a0">
-                              {data?.fullName}
+                              {data?.name}
                             </h5>
                             <span className="clearfix">{data?.position}</span>
                           </div>
