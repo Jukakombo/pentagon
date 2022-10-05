@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import authReducer from './auth';
+import authTeacherReducer from './authTeacher';
 import contacts from './contacts';
 import news from './news';
 import comments from './comment';
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   contacts,
   news,
   comments,
+  authTeacherReducer
 });
 
 export default reducers;

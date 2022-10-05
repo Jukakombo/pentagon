@@ -1,20 +1,20 @@
-import * as api from '../api/auth';
+import * as api from '../api/authTeacher';
 
-export const signin = (formData, history) => async (dispatch) => {
+export const signinTeacher = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await api.signIn(formData, history);
+    const { data } = await api.signinTeacher(formData, history);
     dispatch({ type: 'AUTHTEACHER', data });
-    history.push('/dashboard');
+    history.push('/teacherDashboard');
   } catch (error) {
     console.log(error);
   }
 };
 
-export const signup = (formData, history) => async (dispatch) => {
+export const signupTeacher = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await api.signUp(formData, history);
+    const { data } = await api.signupTeacher(formData, history);
     dispatch({ type: 'AUTHTEACHER', data });
-    history.push('/dashboard');
+    history.push('/teacherDashboard');
   } catch (error) {
     console.log(error);
   }

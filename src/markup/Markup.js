@@ -71,12 +71,14 @@ import LibraryBooks from "./Pages/library/LibraryBooks";
 import TeacherForm from "./Pages/TeacherForm";
 import StudentForm from "./Pages/StudentForm";
 import TermsAndCondition from "./Pages/TermsAndCondition";
+import TeacherDashboard from "./Pages/teacherDashboard/TeacherDashboard";
+import TeacherSignUp from "./Pages/TeacherSignUp";
+import TeacherLogin from "./Pages/TeacherLogin";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
-
   useEffect(() => {
     dispatch(getContacts());
   }, [dispatch]);
@@ -278,6 +280,19 @@ function Markup() {
             exact
             component={SignInSide}
           />
+          
+          <Route exact path="/teacherDashboard">
+            <TeacherDashboard />
+          </Route>
+          <Route exact path="/teacher-sign-up">
+            <TeacherSignUp />
+          </Route>
+          
+          <Route exact path="/teacher-login">
+            <TeacherLogin />
+          </Route>
+          
+
           <Route path="/students-articles" exact component={StudentArticles} />
           <Route exact path="/:id"   >
           <BlogDetails />

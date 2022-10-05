@@ -60,7 +60,7 @@ class HeaderMenu extends Component {
                   Student's Articles
                 </Link>
               </li>
-              
+
               <li>
                 <Link to={"/exam-timetable"} className="dez-page">
                   Exam timetable
@@ -81,28 +81,34 @@ class HeaderMenu extends Component {
             <ul className="sub-menu left">
               <li>
                 <Link to={"./login"} className="dez-page">
-                  Student e-Portal{" "}
+                  Students Login{" "}
                 </Link>
               </li>
               <li>
-                <Link to={"./login"} className="dez-page">
+                <Link to={"./teacher-login"} className="dez-page">
                   Teachers Login{" "}
                 </Link>
               </li>
 
               <li>
                 <Link to={"./register"} className="dez-page">
-                  Create an Account{" "}
+                  Create Student Account{" "}
                 </Link>
               </li>
               <li>
+                <Link to={"./teacher-sign-up"} className="dez-page">
+                  Create Teacher Account{" "}
+                </Link>
+              </li>
+
+              <li>
                 <Link to={"/student-registration-form"} className="dez-page">
-                 Student Registration form{" "}
+                  Student Registration form{" "}
                 </Link>
               </li>
               <li>
                 <Link to={"/teacher-registration-form"} className="dez-page">
-                Teacher Registration Form{" "}
+                  Teacher Registration Form{" "}
                 </Link>
               </li>
 
@@ -209,7 +215,7 @@ class HeaderMenu extends Component {
                 </ul>
               </li>
               {/* Generalbooks */}
-              
+
               <li>
                 <Link to={"#"}>General books</Link>
                 <ul className="sub-menu right">
@@ -259,8 +265,9 @@ class HeaderMenu extends Component {
               </li>
               {/* primary school */}
               <li>
-              <Link to={"/primary-school"} className="dez-page">Primary School</Link>
-
+                <Link to={"/primary-school"} className="dez-page">
+                  Primary School
+                </Link>
               </li>
             </ul>
           </li>

@@ -7,7 +7,8 @@ import bnr from "./../../images/banner/bnr6.jpg";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { CircularProgress } from "@material-ui/core";
-import { signup } from "../../actions/user";
+ 
+import { signupTeacher } from "../../actions/userTeacher";
 const initialState = {
   firstName: "",
   lastName: "",
@@ -16,7 +17,7 @@ const initialState = {
   confirmPassword: "",
 };
 
-function Register() {
+function TeacherSignUp() {
   const [formData, setFormData] = useState(initialState);
   const [isSignUp, setIsSignUp] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
@@ -25,7 +26,7 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signup(formData, history));
+    dispatch(signupTeacher(formData, history));
     setShowProgress(true);
     setTimeout(() => {
       setShowProgress(false);
@@ -196,4 +197,4 @@ function Register() {
     </>
   );
 }
-export default Register;
+export default TeacherSignUp;
