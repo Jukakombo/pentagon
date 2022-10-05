@@ -74,6 +74,12 @@ import TermsAndCondition from "./Pages/TermsAndCondition";
 import TeacherDashboard from "./Pages/teacherDashboard/TeacherDashboard";
 import TeacherSignUp from "./Pages/TeacherSignUp";
 import TeacherLogin from "./Pages/TeacherLogin";
+import StudentList from "./Pages/teacherDashboard/elements/StudentList";
+import Kanban from "./Pages/teacherDashboard/elements/Kaban";
+import Editor from "./Pages/teacherDashboard/elements/Editor";
+import Calendar from "./Pages/teacherDashboard/elements/Calendar";
+import ColorPicker from "./Pages/teacherDashboard/elements/ColorPicker";
+import Chart from "./Pages/dashboar-student/students-dashboard/Cart";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -291,6 +297,25 @@ function Markup() {
           <Route exact path="/teacher-login">
             <TeacherLogin />
           </Route>
+          <Route exact path="/students-list">
+            <StudentList />
+          </Route>
+          <Route exact path="/Kanban-board">
+            <Kanban />
+          </Route>
+          <Route exact path="/editor">
+            <Editor />
+          </Route>
+          <Route exact path="/calendar">
+            <Calendar />
+          </Route>
+          <Route exact path="/color-picker">
+            <ColorPicker />
+          </Route>
+          <Route exact path="/chart">
+            <Chart />
+          </Route>
+          
           
 
           <Route path="/students-articles" exact component={StudentArticles} />

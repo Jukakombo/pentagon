@@ -10,69 +10,76 @@ import { Link } from "react-router-dom";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
+import {FiEdit} from "react-icons/fi"
+import {BsFillPeopleFill} from "react-icons/bs"
+import {GoCalendar} from "react-icons/go"
+import {FcOvertime} from "react-icons/fc"
+import {BiMale} from "react-icons/bi"
+import {FaFemale} from "react-icons/fa"
+
 import FeedIcon from "@mui/icons-material/Feed";
 export const mainListItems = (
   <div>
-    <Link to="student-registration">
+    <Link to="teacherDashboard">
       <ListItem button>
         <ListItemIcon>
           <FeedIcon />
         </ListItemIcon>
-        <ListItemText primary="Registration" />
+        <ListItemText primary="P.I.C Dashboard" />
       </ListItem>
     </Link>
 
-    <Link to="senior-1">
+    <Link to="Students-list">
+      <ListItem button>
+        <ListItemIcon>
+          <BsFillPeopleFill />
+        </ListItemIcon>
+        <ListItemText primary="All Studens" />
+      </ListItem>
+    </Link>
+    <Link to="male-students">
+      <ListItem button>
+        <ListItemIcon>
+          <BiMale />
+        </ListItemIcon>
+        <ListItemText primary="Male Students" />
+      </ListItem>
+    </Link>
+    <Link to="female-students">
+      <ListItem button>
+        <ListItemIcon>
+          <FaFemale />
+        </ListItemIcon>
+        <ListItemText primary="Female Students" />
+      </ListItem>
+    </Link>
+
+    <Link to="Calendar">
+      <ListItem button>
+        <ListItemIcon>
+          <GoCalendar />
+        </ListItemIcon>
+        <ListItemText primary="Calendar" />
+      </ListItem>
+    </Link>
+    <Link to="Kanban">
       <ListItem button>
         <ListItemIcon>
           <SchoolIcon />
         </ListItemIcon>
-        <ListItemText primary="Senior-1" />
-      </ListItem>
-    </Link>
-    <Link to="senior-2">
-      <ListItem button>
-        <ListItemIcon>
-          <SchoolIcon />
-        </ListItemIcon>
-        <ListItemText primary="Senior-2" />
+        <ListItemText primary="Kanban" />
       </ListItem>
     </Link>
 
-    <Link to="senior-3">
+    <Link to="editor">
       <ListItem button>
         <ListItemIcon>
-          <SchoolIcon />
+          <FiEdit />
         </ListItemIcon>
-        <ListItemText primary="Senior-3" />
+        <ListItemText primary="Editor" />
       </ListItem>
     </Link>
-    <Link to="senior-4">
-      <ListItem button>
-        <ListItemIcon>
-          <SchoolIcon />
-        </ListItemIcon>
-        <ListItemText primary="Senior-4" />
-      </ListItem>
-    </Link>
-
-    <Link to="library">
-      <ListItem button>
-        <ListItemIcon>
-          <LocalLibraryIcon />
-        </ListItemIcon>
-        <ListItemText primary="Library" />
-      </ListItem>
-    </Link>
-
-    <Link to="/past-exam">
-      <ListItem button>
-        <ListItemIcon>
-          <PlagiarismIcon />
-        </ListItemIcon>
-        <ListItemText primary="Past Exams" />
-      </ListItem>
-    </Link>
+ 
   </div>
 );
 
@@ -82,27 +89,13 @@ export const secondaryListItems = (
     <Link to="/time-table">
       <ListItem button>
         <ListItemIcon>
-          <DateRangeIcon />
+          <FcOvertime />
         </ListItemIcon>
         <ListItemText primary="Time Table" />
       </ListItem>
     </Link>
-    <Link to="/publish-news">
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Publish News" />
-      </ListItem>
-    </Link>
-    <Link to="/students">
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Students" />
-      </ListItem>
-    </Link>
+    
+     
 
     <Link to="/contact-zone">
       <ListItem button>

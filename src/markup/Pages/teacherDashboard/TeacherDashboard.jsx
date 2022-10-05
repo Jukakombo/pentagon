@@ -35,7 +35,7 @@ function Copyright(props) {
       {...props}
     >
       {'Copyright © '}
-      <Link color="inherit" href="https://jubaproper.com">
+      <Link color="inherit" href="https://pentagon.com">
         Pentagon International College (PIC)
       </Link>{' '}
       {new Date().getFullYear()}
@@ -147,7 +147,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Hi🖐&nbsp; {user.result.name} &nbsp;
+              Hello,🖐&nbsp; {user.result.name} &nbsp;
             </Typography>
 
             <IconButton color="inherit">

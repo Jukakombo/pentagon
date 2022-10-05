@@ -18,7 +18,7 @@ import { deleteContact } from "../../../actions/contacts";
 import { useLocation } from "react-router-dom";
 import TimeTable from "../TimeTable";
 import PublishNews from "../PublishNews";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import PastExam from "../PastExam";
 import SeniorOne from "../Senior-1";
 import Library from "../Library";
@@ -81,7 +81,9 @@ export default function Orders({ setContactId }) {
                 <TableCell>Position</TableCell>
                 <TableCell>Class</TableCell>
                 <TableCell>Subject</TableCell>
-                <TableCell align="right">Contact</TableCell>
+                <TableCell align="left">Contact</TableCell>
+                <TableCell align="right">Photo</TableCell>
+
               </TableRow>
             </TableHead>
             <TableBody>
@@ -91,7 +93,10 @@ export default function Orders({ setContactId }) {
                   <TableCell>{row?.position}</TableCell>
                   <TableCell>{row?.classTaken}</TableCell>
                   <TableCell>{row?.subjects}</TableCell>
-                  <TableCell align="right">{`${row?.contact}`}</TableCell>
+                  <TableCell align="left">{`${row?.contact}`}</TableCell>
+                  <TableCell align="right">
+                  <Avatar src={`${row?.profilePicture?.asset?.url}`} />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
