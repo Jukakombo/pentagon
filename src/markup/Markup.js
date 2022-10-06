@@ -260,7 +260,7 @@ function Markup() {
               "/geography-books",
               "/Fine-Art-books",
               "/literature-books",
-              "/primary-school",
+              // "/primary-school",
               "/history-books",
               "/mathematics-books",
               "/cre-books",

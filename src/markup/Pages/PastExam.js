@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TableDetails from './TableDetails';
+import PrimaryBooksTable from './PrimaryBooksTable';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,7 +69,7 @@ export default function PastExam() {
 
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <TableDetails />
+      <PrimaryBooksTable />
 
       </TabPanel>
     </Box>
