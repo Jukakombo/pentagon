@@ -70,7 +70,7 @@ function MoralStory() {
               today, he will still go hungry tomorrow and we don’t know the next
               amongst us to be eaten tomorrow.
             </p>
-            <p>The Moral of this tale:</p>
+            <p>The Moral of this tale:</p> <br />
             <h5>
               DON’T SUPPORT EVIL TODAY BECAUSE IT DOESN’T AFFECT YOU DIRECTLY,
               TOMORROW IT COULD BE YOUR TURN.
