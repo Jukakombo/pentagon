@@ -18,11 +18,11 @@ function Para() {
       . We guide all students to develop personal
           integrity and leadership skills, which they can draw from for the rest
           of their lives. We would love to help you understand the unique
-          benefits that we have to offer atPentagon International Modern Mixed Secondary School, where we encourage each child to develop as a confident and
+          benefits that we have to offer at Pentagon International Modern Mixed Secondary School, where we encourage each student to develop as a confident and
           lifelong learner.
           <br /> Our qualified teachers have the ability to attend to every
-          child according to the unique need, relentlessly making sure every
-          child develops the desired ability to succeed.
+          student according to the unique need, relentlessly making sure every
+          student develops the desired ability to succeed.
         </p>
       </div>
     </>

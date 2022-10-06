@@ -9,7 +9,8 @@ import SectionCounter from "./../../Element/SectionCounter";
 import about9 from "./../../../images/about/pic9.jpg";
 import bg2 from "./../../../images/background/bg-map.jpg";
 import services1 from "./../../../images/our-services/pic5.jpg";
-import organizationalDigram from "./../../../images/our-services/organizational.png";
+import organizationalDigram from "./../../../images/our-services/ali.jpg";
+import structure2 from "./../../../images/our-services/structure2.jpg";
 import services2 from "./../../../images/our-services/pic2.jpg";
 
 import bnr from "./../../../images/banner/bnr2.jpg";
@@ -107,13 +108,14 @@ class Aboutus1 extends Component {
             <VisionBlog />
             <div className="container">
               <div className="section-head text-center">
-                <h2 className="box-title m-tb0">
-                  Organizational Structure for Effective School Management
-                  <span className="bg-primary"></span>
-                </h2>
+                 
                 {/* <div className=" row dzseth  m-b30"> */}
                 <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
                   <img src={organizationalDigram} data-tilt alt="organigram" />
+                  {/* </div> */}
+                </div>
+                <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
+                  <img src={structure2} data-tilt alt="organigram" />
                   {/* </div> */}
                 </div>
               </div>
