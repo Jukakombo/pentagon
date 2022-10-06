@@ -16,6 +16,9 @@ import oremJuma from "./teamsPics/Orem Juma.jpg";
   import nhialWhat from "./teamsPics/Nhial Wat.jpg";
  import stephenchuol from "./teamsPics/stephenChuol.jpg";
  import dutPasqual from "./teamsPics/dutpasqual.jpg";
+   import lulaFrancis from "./teamsPics/lulaFrancis.jpg";
+ import amuleAnthony from "./teamsPics/amuleAnthony.jpg";
+//  import dutPasqual from "./teamsPics/dutpasqual.jpg";
 
 const teamsPictures = [
   { _id: "01", name: "TR. MERE LUKE", image: mere, position: "DIRECTOR" },
@@ -70,7 +73,7 @@ const teamsPictures = [
   {
     _id: "10",
     name: "TR. AMULE ANTHONY",
-    image: "",
+    image: amuleAnthony,
     position: "TEACHERS’ WELFARE",
   },
   {
@@ -124,7 +127,7 @@ const teamsPictures = [
   {
     _id: "19",
     name: "TR. LULA FRANCIS",
-    image: "",
+    image: lulaFrancis,
     position: "TEACHER",
   },
   {
