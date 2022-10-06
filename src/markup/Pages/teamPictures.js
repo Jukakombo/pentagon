@@ -20,7 +20,7 @@ const teamsPictures = [
   { _id: "01", name: "TR. MERE LUKE", image: mere, position: "DIRECTOR" },
   {
     _id: "02",
-    name: "TR. EMMANUEL KWAJJE",
+    name: "TR. EMMANUEL KWAJE",
     image: emmanuelKuaje,
     position: "PRINCIPAL",
   },

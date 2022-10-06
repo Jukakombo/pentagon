@@ -304,7 +304,7 @@ const Index6 = (props) => {
                   </h2>
                   <p className="m-b0">
                     For more inquiries, contact us on: Tel: +211(0)920032333;
-                    928104000; 928617175 E-mail: pentagoncollege2021@gmail.com
+                    928104000; 928617175 <br />E-mail: pentagoncollege2021@gmail.com
                     Or you can simply fill the form below.
                   </p>
                 </div>
