@@ -98,9 +98,9 @@ const Index6 = (props) => {
                   <strong>Start Now by</strong>
                 </h2>
                 <p>
-                  Giving your child a great start in life.
+                  Giving your student a great start in life.
                   <br />
-                  Every child deserves a quality <br />
+                  Every student deserves a quality <br />
                   and a well rouded-education in their informative year
                   <br />
                 </p>
@@ -132,7 +132,7 @@ const Index6 = (props) => {
                 Why Choose Us<span className="bg-primary"></span>
               </h2>
               <p>
-                We seek to aid the development of children in our care, to
+                We seek to aid the development of students in our care, to
                 become outstanding scholars and global citizens, by instilling
                 in them the spirit of excellence.
               </p>
