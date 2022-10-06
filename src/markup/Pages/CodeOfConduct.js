@@ -39,14 +39,14 @@ function CodeOfConduct() {
             RULE (02): Student must respect the teachers, non-teaching staff and
             any elder on the compound and outside. If any student is found in
             such act of disobedience, he/she shall be summoned before the
-            disciplinary committee and if found guilty he/she, he/she shall be
+            disciplinary committee and if found guilty he/she shall be
             suspended for one week to report back with parents. If the child
             continues with such undesired behavior, he/she shall be dismissed
             indefinitely
           </p>
           <p>
-            RULE: (03): English language must be the only language use all
-            times, expect during class hours of Arabic and Kiswahili. Any
+            RULE: (03): English language must be the only language use at all
+            times, except during class hours of Arabic and Kiswahili. Any
             student who is found using another language apart from the above
             said ones shall be punished or suspended.
           </p>
@@ -60,7 +60,7 @@ function CodeOfConduct() {
             and if found guilty, he/she shall be dismissed indefinitely.
           </p>
           <p>
-            RULE (05): smoking Bhang, cigarettes and any other form of drugs
+            RULE (05): Smoking Bhang, cigarettes and any other form of drugs
             abuse such as drinking alcohol, cocaine, marijuana, marungi and
             fighting are strictly prohibited. Any student who involves in such
             said ACTS above shall be dismissed indefinitely.
