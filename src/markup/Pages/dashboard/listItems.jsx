@@ -3,7 +3,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
-import DashboardIcon from "@mui/icons-material/Dashboard";
 import EmailIcon from "@mui/icons-material/Email";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import SchoolIcon from "@mui/icons-material/School";
@@ -62,7 +61,8 @@ export const mainListItems = (
         <ListItemIcon>
           <LocalLibraryIcon />
         </ListItemIcon>
-        <ListItemText primary="Library" />
+        <ListItemText primary="E-Library" />
+
       </ListItem>
     </Link>
 

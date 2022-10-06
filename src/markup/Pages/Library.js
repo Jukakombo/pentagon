@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { useState } from "react";
 import books from "./LibraryData";
+import { Link } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -30,29 +31,15 @@ function FormRow({book}) {
 }
 
 export default function Library() {
-  const [query, setQuery] = useState("");
+ 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={1}>
-        <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
-          <input
-            type="text"
-            placeholder="Search books"
-            style={{ outlined: "none" }}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <PlagiarismIcon />
-        </div>
+        
         <Grid container item spacing={3}>
-          {books.book1
-            .filter((book) => book.subject.toLowerCase().includes(query)
-            
-            
-            
-            )
-            .map((book) => (
-              <FormRow key={book._id} book={book} />
-            ))}
+           <Link to={"#"} >
+
+           </Link>
         </Grid>
       </Grid>
     </Box>

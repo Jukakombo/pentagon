@@ -14,7 +14,8 @@ import emmanuegora from "./teamsPics/Emmanuel Gora.jpg";
 import oremJuma from "./teamsPics/Orem Juma.jpg";
   import jamesBaraka from "./teamsPics/James Baraka.jpg";
   import nhialWhat from "./teamsPics/Nhial Wat.jpg";
-//  import batimoInnocent from "./teamsPics/Babitimo Innocent.jpg";
+ import stephenchuol from "./teamsPics/stephenChuol.jpg";
+ import dutPasqual from "./teamsPics/dutpasqual.jpg";
 
 const teamsPictures = [
   { _id: "01", name: "TR. MERE LUKE", image: mere, position: "DIRECTOR" },
@@ -33,7 +34,7 @@ const teamsPictures = [
   {
     _id: "04",
     name: "TR. STEPHEN CHUOL",
-    image: "",
+    image: stephenchuol,
     position: "D.O.S",
   },
   {
@@ -80,7 +81,7 @@ const teamsPictures = [
   },
   {
     _id: "12",
-    name: "TR. EMMANUEL PITIA",
+    name: "TR. EMMANUEL PITIA GINARO",
     image: emanuelpitia,
     position: "CLASS MASTER",
   },
@@ -111,7 +112,7 @@ const teamsPictures = [
   {
     _id: "17",
     name: "TR. DUT PASQUALE",
-    image: "",
+    image: dutPasqual,
     position: "CLASS MASTER",
   },
   {
