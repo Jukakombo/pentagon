@@ -222,7 +222,7 @@ class HeaderMenu extends Component {
                 </Link>
               </li>
               <li>
-                <Link to={"/under-maintenance"} className="dez-page">
+                <Link to={"/moral-story"} className="dez-page">
                   Moral Story{" "}
                 </Link>
               </li>

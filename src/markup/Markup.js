@@ -81,6 +81,7 @@ import Calendar from "./Pages/teacherDashboard/elements/Calendar";
 import ColorPicker from "./Pages/teacherDashboard/elements/ColorPicker";
 import Chart from "./Pages/dashboar-student/students-dashboard/Cart";
 import CodeOfConduct from "./Pages/CodeOfConduct";
+import MoralStory from "./Pages/MoralStory";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -319,6 +320,9 @@ function Markup() {
           </Route>
           <Route exact path="/chart">
             <Chart />
+          </Route>
+          <Route exact path="/moral-story">
+            <MoralStory />
           </Route>
           
           
