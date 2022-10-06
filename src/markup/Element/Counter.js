@@ -3,8 +3,8 @@ import CountUp from 'react-countup';
 
 const counterBlog = [
 	{icon: <i className="ti-bag m-r10" />, num: '2',  title: 'Years in Eduction',},	
-	{icon: <i className="ti-user m-r10" />, num: '700',    title: 'Happy Students',},	
-	{icon: <i className="flaticon-users m-r10" />, num: '10',   title: 'Technical Experts',},	
+	{icon: <i className="ti-user m-r10" />, num: '600+',    title: 'Happy Students',},	
+	{icon: <i className="flaticon-users m-r10" />, num: '20+',   title: ' Experts Teachers',},	
 	{icon: <i className="ti-mobile m-r10" />, num: '200', title: 'Parents Testimonials',},	
 ];
 

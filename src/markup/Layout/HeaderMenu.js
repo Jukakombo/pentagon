@@ -81,16 +81,16 @@ class HeaderMenu extends Component {
             <ul className="sub-menu left">
               <li>
                 <Link to={"./login"} className="dez-page">
-                  Students Login{" "}
+                  Students' Database{" "}
                 </Link>
               </li>
               <li>
                 <Link to={"./teacher-login"} className="dez-page">
-                  Teachers Login{" "}
+                  Teachers' Database{" "}
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link to={"./register"} className="dez-page">
                   Create Student Account{" "}
                 </Link>
@@ -98,17 +98,17 @@ class HeaderMenu extends Component {
               <li>
                 <Link to={"./teacher-sign-up"} className="dez-page">
                   Create Teacher Account{" "}
-                </Link>
-              </li>
+                </Link> */}
+              {/* </li> */}
 
               <li>
                 <Link to={"/student-registration-form"} className="dez-page">
-                  Student Registration form{" "}
+                  Students' Registration form{" "}
                 </Link>
               </li>
               <li>
                 <Link to={"/teacher-registration-form"} className="dez-page">
-                  Teacher Registration Form{" "}
+                  Teachers' Registration Form{" "}
                 </Link>
               </li>
 
@@ -132,142 +132,13 @@ class HeaderMenu extends Component {
             </Link>
             <ul className="sub-menu left">
               <li>
-                <Link to={"#"} className="dez-page">
-                  Science Books{" "}
+                <Link to={"/login"} className="dez-page">
+                  Login to Access{" "}
                 </Link>
-                <ul className="sub-menu right">
-                  <li>
-                    <Link
-                      to={"/aditional-mathematic-books"}
-                      className="dez-page"
-                    >
-                      Additional Maths
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/agriculture-books"} className="dez-page">
-                      Agriculture
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/biology-books"} className="dez-page">
-                      Biology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/chemistry-books"} className="dez-page">
-                      Chemistry
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/physics-books"} className="dez-page">
-                      Physics
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <Link to={"/computer-books"} className="dez-page">
-                      Computer Science
-                    </Link>
-                  </li> */}
-                </ul>
               </li>
               {/* artbook */}
               <li>
-                <Link to={"#"}>Arts Books</Link>
-                <ul className="sub-menu right">
-                  <li>
-                    <Link to={"/commerce-books"} className="dez-page">
-                      Commerce
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/cre-books"} className="dez-page">
-                      C.R.E
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/geography-books"} className="dez-page">
-                      Geography
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/history-books"} className="dez-page">
-                      History
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/literature-books"} className="dez-page">
-                      Literature
-                    </Link>
-                  </li>
-                  {/* 
-                  <li>
-                    <Link to={"/economics-books"} className="dez-page">
-                      Economics
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link to={"/Fine-Art-books"} className="dez-page">
-                      Fine-Art & Designs
-                    </Link>
-                  </li> */}
-                </ul>
-              </li>
-              {/* Generalbooks */}
-
-              <li>
-                <Link to={"#"}>General books</Link>
-                <ul className="sub-menu right">
-                  <li>
-                    <Link to={"/citizenship-books"} className="dez-page">
-                      Citizenship
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/english-books"} className="dez-page">
-                      English Language
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/ict-books"} className="dez-page">
-                      I.C.T
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/kiswahili-books"} className="dez-page">
-                      Kiswahili
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/mathematics-books"} className="dez-page">
-                      Mathematics
-                    </Link>
-                  </li>
-                  {/* 
-                  
-                  <li>
-                    <Link to={"/ire-books"} className="dez-page">
-                      I.R.I
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/literature-books"} className="dez-page">
-                      Literature
-                    </Link>
-                  </li> */}
-                  {/* <li>
-                    <Link to={"/history-books"} className="dez-page">
-                      History
-                    </Link>
-                  </li> */}
-                </ul>
-              </li>
-              {/* primary school */}
-              <li>
-                <Link to={"/primary-school"} className="dez-page">
-                  Primary School
-                </Link>
+                <Link to={"/login"}>our Library</Link>
               </li>
             </ul>
           </li>

@@ -14,7 +14,7 @@ const iconBox = [
   {
     icon: <i className="flaticon-notebook" />,
     title: 'Curriculum',
-    text: 'The curriculum is dynamic and modern, with the goal of challenging and inspiring students to be adaptable and flexible. The Curriculum is in line with the needs of students, South Sudan, and the larger international community. It prepares students for the opportunities and experiences that come with living in a highly competitive environment and society.',
+    text: 'The curriculum is dynamic and modern, with the goal of challenging and inspiring students to be adaptable and flexible. The Curriculum is in line with the needs of students in South Sudan and the larger international community. It prepares students for the opportunities and experiences that come with living in a highly competitive environment and society.',
   },
   {
     icon: <i className="flaticon-pen" />,
@@ -34,7 +34,7 @@ const iconBox = [
   {
     icon: <i className="flaticon-devices" />,
     title: 'E-Library',
-    text: 'We create a fun, free online library for all of our students with all of the school books and exercices South Sudan syllabus that can only be accessed by our students using their school e-mail and password, which we provide to all of our students.. ',
+    text: 'We create a fun, free online library for all of our students with all of the school books and exercices of South Sudan syllabus that can only be accessed by our students using their school e-mail and password, which we provide to all of our students.. ',
   },
   
 ];
@@ -66,7 +66,7 @@ class Service extends Component {
                   </h2>
                   <p>
                     At Pentagon International Modern Mixed Secondary School we provide a
-                    happy, caring and safe environment for our children. We work
+                    happy, caring and safe environment for our students. We work
                     very hard to ensure that your child's experience of school
                     is a positive one, which encourages a love of learning and
                     self-discipline from the very start.
