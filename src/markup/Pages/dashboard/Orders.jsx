@@ -34,6 +34,8 @@ import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
 import teamsPictures from "../teamPictures";
+import ArtsBooks from "../ArtsBooks";
+import ScienceBooks from "../ScienceBooks";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -49,8 +51,8 @@ export default function Orders({ setContactId }) {
   React.useEffect(() => {
     client
       .fetch(
-        `*[_type=="teacherForm"]{
-          fullName, position, classTaken, subjects,profilePicture{
+        `*[_type=="studentForm"]{
+          fullName, classYear, classTaken, subjects,profilePicture{
         asset -> {
           _id,
           url
@@ -185,9 +187,12 @@ export default function Orders({ setContactId }) {
           ))}
         </Box>
       );
-    // publish news
-    case "/publish-news":
-      return <PublishNews />;
+    // arts book
+    case "/arts-books":
+      return <ArtsBooks />;
+      case "/science-books":
+        return <ScienceBooks />;
+      
     // time table
     case "/time-table":
       return <TimeTable />;
