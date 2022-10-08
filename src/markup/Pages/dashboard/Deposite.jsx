@@ -48,10 +48,10 @@ export default function Deposits() {
     <React.Fragment>
       <Title>All Students: {" "} {students.length}</Title>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
-        Male Students: {maleStudents.length}
+        Male Students: {maleStudents?.length}
       </Typography>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
-        Female Students: {femaleStudents.length}
+        Female Students: {femaleStudents?.length}
       </Typography>
      
     </React.Fragment>
