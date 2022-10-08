@@ -10,7 +10,7 @@ import books from './library/books';
 
  
 
-export default function Citizenship() {
+export default function HistoryTable() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -24,7 +24,7 @@ export default function Citizenship() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {books?.citizenships?.map((row) => (
+          {books?.history?.map((row) => (
             <TableRow
               key={row?._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

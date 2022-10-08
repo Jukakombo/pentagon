@@ -7,11 +7,12 @@ import Box from "@mui/material/Box";
  
 
 import PrimaryBooksTable from "./PrimaryBooksTable";
-import Citizenship from "./TableDetails";
-import EnglishLanguageTable from "./EnglishLanguageTable";
-import Ict from "./IctTable";
-import Kiswahili from "./KiswahiliTable";
-import MathematicsTable from "./MathematicsTable";
+ 
+import AdditionalMathsTable from "./AddtionalMathsTable";
+import AgricultureTable from "./AgricultureTable";
+import BiologyTable from "./BiologyTable";
+import ChemistryTable from "./ChemistryTable";
+import PhysicsTable from "./PhysicsTable";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,7 +47,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Library() {
+export default function ScienceBooks() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -61,28 +62,28 @@ export default function Library() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Citizenship" {...a11yProps(0)} />
-          <Tab label="English Language" {...a11yProps(1)} />
-          <Tab label="I.C.T" {...a11yProps(2)} />
-          <Tab label="Kiswahili" {...a11yProps(3)} />
-          <Tab label="Mathematics" {...a11yProps(4)} />
+          <Tab label="additional Maths" {...a11yProps(0)} />
+          <Tab label="Agriculture" {...a11yProps(1)} />
+          <Tab label="Biology" {...a11yProps(2)} />
+          <Tab label="Chemistry" {...a11yProps(3)} />
+          <Tab label="Physics" {...a11yProps(4)} />
           <Tab label="Primary Books" {...a11yProps(5)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Citizenship />
+        <AdditionalMathsTable />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <EnglishLanguageTable />
+        <AgricultureTable />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Ict />
+        <BiologyTable />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Kiswahili />
+        <ChemistryTable />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <MathematicsTable />
+        <PhysicsTable />
       </TabPanel>
 
       <TabPanel value={value} index={5}>
