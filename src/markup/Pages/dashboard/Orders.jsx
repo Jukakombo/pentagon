@@ -45,10 +45,21 @@ function preventDefault(event) {
 export default function Orders({ setContactId }) {
   // const courses = useSelector((state) => state.courses);
   const contacts = useSelector((state) => state.contacts);
-  const [query, setQuery]= useState("")
+  const [query, setQuery] = useState("");
   const [studentDetails, setStudentDetails] = React.useState([]);
   const dispatch = useDispatch();
-  console.log(studentDetails);
+
+  const searchByFilter = (data) => {
+    return data.filter(
+      (student) =>
+        student.fullName.toLowerCase().includes(query) ||
+        student.classYear.toLowerCase().includes(query) ||
+        student.gender.toLowerCase().includes(query) ||
+        student.idNumber.toLowerCase().includes(query)
+        
+
+    );
+  };
   const location = useLocation();
   React.useEffect(() => {
     client
@@ -107,7 +118,11 @@ export default function Orders({ setContactId }) {
         <React.Fragment>
           <Title>{studentDetails?.length} Students</Title>
           <br />
-          <input type="text" placeholder="Search student by Name,"  onChange={(e) => setQuery(e.target.value)} />
+          <input
+            type="text"
+            placeholder="Search student by Name, class, gender & I.D Number"
+            onChange={(e) => setQuery(e.target.value)}
+          />
           <Table size="small">
             <TableHead>
               <TableRow>
@@ -116,11 +131,13 @@ export default function Orders({ setContactId }) {
                 <TableCell>Gender</TableCell>
 
                 <TableCell>Class</TableCell>
+                <TableCell>Contact/Email</TableCell>
+
                 <TableCell>Address</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {studentDetails?.filter((student) => student.fullName.toLowerCase().includes(query) )?.map((row) => (
+              {searchByFilter(studentDetails)?.map((row) => (
                 <TableRow key={row._id}>
                   {/* <TableCell>{moment(row.updatedAt).fromNow()}</TableCell> */}
                   <TableCell>{row?.fullName}</TableCell>
@@ -128,6 +145,7 @@ export default function Orders({ setContactId }) {
                   <TableCell>{row?.gender}</TableCell>
 
                   <TableCell>{row?.classYear}</TableCell>
+                  <TableCell>{row?.contact}</TableCell>
                   <TableCell>{row?.address}</TableCell>
                 </TableRow>
               ))}
