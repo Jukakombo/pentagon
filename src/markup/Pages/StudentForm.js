@@ -210,6 +210,8 @@ function StudentForm() {
                             onChange={handleChangeInput}
                             required
                           >
+                            <option>--Select--</option>
+
                             <option>Male</option>
                             <option>Female</option>
                           </select>
@@ -231,6 +233,7 @@ function StudentForm() {
                             onChange={handleChangeInput}
                             required
                           >
+                            <option>--Select--</option>
                             <option>Senior One Pretoria</option>
                             <option>Senior One Tripoli</option>
                             <option>Senior One Cape Town</option>
@@ -322,6 +325,8 @@ function StudentForm() {
                           onChange={handleChangeInput}
                           required
                           >
+                            <option>--Select--</option>
+
                          <option>2021</option>
                          <option>2022</option>
                          <option>2023</option>
