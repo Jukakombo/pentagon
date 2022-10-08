@@ -17,7 +17,7 @@ import { deleteContact } from "../../../actions/contacts";
 
 import { useLocation } from "react-router-dom";
 import TimeTable from "../TimeTable";
-import PublishNews from "../PublishNews";
+
 import { Avatar, IconButton } from "@mui/material";
 import PastExam from "../PastExam";
 import SeniorOne from "../Senior-1";
@@ -36,33 +36,30 @@ import { client } from "../../../sanityClient";
 import teamsPictures from "../teamPictures";
 import ArtsBooks from "../ArtsBooks";
 import ScienceBooks from "../ScienceBooks";
+import { useState } from "react";
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function Orders({ setContactId }) {
-  const courses = useSelector((state) => state.courses);
+  // const courses = useSelector((state) => state.courses);
   const contacts = useSelector((state) => state.contacts);
-  const [teacherdetail, setTeacherDetails] = React.useState([]);
+  const [query, setQuery]= useState("")
+  const [studentDetails, setStudentDetails] = React.useState([]);
   const dispatch = useDispatch();
-
+  console.log(studentDetails);
   const location = useLocation();
   React.useEffect(() => {
     client
       .fetch(
         `*[_type=="studentForm"]{
-          fullName, classYear, classTaken, subjects,profilePicture{
-        asset -> {
-          _id,
-          url
-        }, alt
-      },
+          fullName, classYear, idNumber, gender,address,
       contact,_id
-    }`
+    } | order(fullName asc)`
       )
       .then((data) => {
-        setTeacherDetails(data);
+        setStudentDetails(data);
       });
   }, []);
   switch (location.pathname) {
@@ -108,41 +105,34 @@ export default function Orders({ setContactId }) {
     case "/students":
       return (
         <React.Fragment>
-          <Title>List of the students Attending course</Title>
+          <Title>{studentDetails?.length} Students</Title>
+          <br />
+          <input type="text" placeholder="Search student by Name,"  onChange={(e) => setQuery(e.target.value)} />
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>Date</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Course</TableCell>
-                <TableCell>Level</TableCell>
+                <TableCell>Full Name</TableCell>
+                <TableCell>I.D Number</TableCell>
+                <TableCell>Gender</TableCell>
+
+                <TableCell>Class</TableCell>
                 <TableCell>Address</TableCell>
-                <TableCell>Mode of Traing</TableCell>
-                <TableCell align="right">Contact</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {courses.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell>{moment(row.updatedAt).fromNow()}</TableCell>
-                  <TableCell>{row.givenName}</TableCell>
-                  <TableCell>{row.course}</TableCell>
-                  <TableCell>{row.level}</TableCell>
-                  <TableCell>{row.city}</TableCell>
-                  <TableCell>{row.training}</TableCell>
-                  <TableCell align="right">{`${row.phone}`}</TableCell>
+              {studentDetails?.filter((student) => student.fullName.toLowerCase().includes(query) )?.map((row) => (
+                <TableRow key={row._id}>
+                  {/* <TableCell>{moment(row.updatedAt).fromNow()}</TableCell> */}
+                  <TableCell>{row?.fullName}</TableCell>
+                  <TableCell>{row?.idNumber}</TableCell>
+                  <TableCell>{row?.gender}</TableCell>
+
+                  <TableCell>{row?.classYear}</TableCell>
+                  <TableCell>{row?.address}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
-          <Link
-            color="primary"
-            href="#"
-            onClick={preventDefault}
-            sx={{ mt: 3 }}
-          >
-            See more
-          </Link>
         </React.Fragment>
       );
     // contact zones
@@ -190,9 +180,9 @@ export default function Orders({ setContactId }) {
     // arts book
     case "/arts-books":
       return <ArtsBooks />;
-      case "/science-books":
-        return <ScienceBooks />;
-      
+    case "/science-books":
+      return <ScienceBooks />;
+
     // time table
     case "/time-table":
       return <TimeTable />;
