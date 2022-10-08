@@ -18,7 +18,7 @@ import { deleteContact } from "../../../actions/contacts";
 import { useLocation } from "react-router-dom";
 import TimeTable from "../TimeTable";
 import PublishNews from "../PublishNews";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import PastExam from "../PastExam";
 import SeniorOne from "../Senior-1";
 import Library from "../Library";
@@ -33,8 +33,7 @@ import SeniorTwo from "../Senior-2";
 import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
-
- 
+import teamsPictures from "../teamPictures";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -43,11 +42,11 @@ function preventDefault(event) {
 export default function Orders({ setContactId }) {
   const courses = useSelector((state) => state.courses);
   const contacts = useSelector((state) => state.contacts);
-  const [teacherdetail, setTeacherDetails] = React.useState([])
+  const [teacherdetail, setTeacherDetails] = React.useState([]);
   const dispatch = useDispatch();
-   
+
   const location = useLocation();
-   React.useEffect(() => {
+  React.useEffect(() => {
     client
       .fetch(
         `*[_type=="teacherForm"]{
@@ -65,31 +64,30 @@ export default function Orders({ setContactId }) {
       });
   }, []);
   switch (location.pathname) {
-
     case "/dashboard":
-    
       return (
         <React.Fragment>
           <Title>Structure of the School Management</Title>
           <Table size="small">
             <TableHead>
               <TableRow>
-                
                 <TableCell>Name</TableCell>
                 <TableCell>Position</TableCell>
                 <TableCell>Class</TableCell>
                 <TableCell>Subject</TableCell>
-                <TableCell align="right">Contact</TableCell>
+                <TableCell align="left">Photo</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {teacherdetail.map((row) => (
+              {teamsPictures.map((row) => (
                 <TableRow key={row?._id}>
-                  <TableCell>{row?.fullName}</TableCell>
+                  <TableCell>{row?.name}</TableCell>
                   <TableCell>{row?.position}</TableCell>
-                  <TableCell>{row?.classTaken}</TableCell>
-                  <TableCell>{row?.subjects}</TableCell>
-                  <TableCell align="right">{`${row?.contact}`}</TableCell>
+                  <TableCell>{row?.teachingClass}</TableCell>
+                  <TableCell>{row?.subject}</TableCell>
+                  <TableCell align="left">
+                    <Avatar src={row?.image} />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -225,11 +223,11 @@ export default function Orders({ setContactId }) {
     // s3-form
     case "/s4-form":
       return <S4Form />;
-        // s3-form
+    // s3-form
     case "/training-form":
       return <TrainingForm />;
-      case "/work-shop":
-        return <Workshop />;
+    case "/work-shop":
+      return <Workshop />;
     // default case
     default:
       return "/dashboard";
