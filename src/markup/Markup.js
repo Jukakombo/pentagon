@@ -158,7 +158,7 @@ function Markup() {
             exact
             component={BlogListRightSidebar}
           />
-          
+
           <Route
             path="/portfolio-full-width"
             exact
@@ -205,7 +205,8 @@ function Markup() {
             exact
             path={[
               "/students",
-              "/contact-zone",
+              "/notification",
+
               "/dashboard",
               "/arts-books",
               "/science-books",
@@ -275,8 +276,8 @@ function Markup() {
           >
             <LibraryBooks />
           </Route>
-          <Route  path="/teacher-registration-form"component={TeacherForm }/>
-          <Route  path="/student-registration-form"component={StudentForm }/>
+          <Route path="/teacher-registration-form" component={TeacherForm} />
+          <Route path="/student-registration-form" component={StudentForm} />
 
           <Route
             exact
@@ -289,27 +290,41 @@ function Markup() {
             exact
             component={SignInSide}
           />
-          
-          <Route exact path="/teacherDashboard">
+
+          <Route
+            exact
+            path={[
+              "/teacherDashboard",
+              "/contact-zone",
+              "/student-list",
+              "/inbox",
+              "/teacherTimeTable",
+              "/compose",
+              "/scienceBooks",
+              "/libraryBooks",
+              "/libraryBooks",
+              "/artsBooks",
+            ]}
+          >
             <TeacherDashboard />
           </Route>
           <Route exact path="/teacher-sign-up">
             <TeacherSignUp />
           </Route>
-          
+
           <Route exact path="/teacher-login">
             <TeacherLogin />
           </Route>
           <Route exact path="/students-list">
-                  <TeacherDashboard />
- 
+            <TeacherDashboard />
           </Route>
           <Route exact path="/Kanban-board">
             <Kanban />
-          </Route><Route exact path="/code-of-conduct">
+          </Route>
+          <Route exact path="/code-of-conduct">
             <CodeOfConduct />
           </Route>
-          
+
           <Route exact path="/editor">
             <Editor />
           </Route>
@@ -325,12 +340,10 @@ function Markup() {
           <Route exact path="/moral-story">
             <MoralStory />
           </Route>
-          
-          
 
           <Route path="/students-articles" exact component={StudentArticles} />
-          <Route exact path="/:id"   >
-          <BlogDetails />
+          <Route exact path="/:id">
+            <BlogDetails />
           </Route>
         </Switch>
       </div>

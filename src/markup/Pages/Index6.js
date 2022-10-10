@@ -20,11 +20,43 @@ import TestimonialStyle2 from "./ShortCode/TestimonialStyle2";
 import HomeTab from "../Element/HomeTab";
 import FinalClock from "./clock/FinalClock";
 import { VisionBlog } from "./Aboutus/Aboutus1";
- 
+
 import teamsPictures from "./teamPictures";
+import { useState } from "react";
+import { createContact } from "../../actions/contacts";
+import { useDispatch } from "react-redux";
 
 const Index6 = (props) => {
-  
+   
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    subject: "",
+  });
+  const [success, setSuccess] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createContact(contact));
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 5000);
+    clear();
+  };
+
+  const clear = () => {
+    setContact({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      subject: "",
+    });
+  };
   let resizeMargin = () => {
     var screenWidth = window.innerWidth;
     if (screenWidth >= 1280) {
@@ -233,11 +265,7 @@ const Index6 = (props) => {
                         <div className="dlab-box">
                           <div className="dlab-media dlab-img-overlay6 dlab-img-effect radius-sm">
                             <img
-                              src={
-                                !data?.image
-                                  ? image1
-                                  : data?.image
-                              }
+                              src={!data?.image ? image1 : data?.image}
                               alt={data?.name}
                             />
                             <div className="overlay-bx">
@@ -272,9 +300,7 @@ const Index6 = (props) => {
                             </div>
                           </div>
                           <div className="dlab-title-bx p-a10">
-                            <h5 className="text-black m-a0">
-                              {data?.name}
-                            </h5>
+                            <h5 className="text-black m-a0">{data?.name}</h5>
                             <span className="clearfix">{data?.position}</span>
                           </div>
                         </div>
@@ -304,8 +330,9 @@ const Index6 = (props) => {
                   </h2>
                   <p className="m-b0">
                     For more inquiries, contact us on: Tel: +211(0)920032333;
-                    928104000; 928617175 <br />E-mail: pentagoncollege2021@gmail.com
-                    Or you can simply fill the form below.
+                    928104000; 928617175 <br />
+                    E-mail: pentagoncollege2021@gmail.com Or you can simply fill
+                    the form below.
                   </p>
                 </div>
               </div>
@@ -338,13 +365,13 @@ const Index6 = (props) => {
                           Need Help?
                         </h2>
                         <p className="font-14">
-                          Contact our customer support team if you have any
+                          Contact our School Admin support team if you have any
                           questions.
                         </p>
                       </div>
                       <div className="dezPlaceAni">
                         <div className="dzFormMsg"></div>
-                        <form method="post" className="" action="">
+                        <form  className=""  onSubmit={handleSubmit}>
                           <input type="hidden" value="Contact" name="dzToDo" />
                           <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -352,9 +379,16 @@ const Index6 = (props) => {
                                 <div className="input-group">
                                   <label>Your Name</label>
                                   <input
-                                    name="dzName"
-                                    type="text"
+                                    name="name"
+                                    value={contact.name}
+                                    onChange={(e) =>
+                                      setContact({
+                                        ...contact,
+                                        name: e.target.value,
+                                      })
+                                    }
                                     required
+                                    type="text"
                                     className="form-control"
                                     placeholder=""
                                   />
@@ -366,25 +400,60 @@ const Index6 = (props) => {
                                 <div className="input-group">
                                   <label>Phone</label>
                                   <input
-                                    name="dzOther[Phone]"
+                                    name="phone"
                                     type="text"
                                     required
                                     className="form-control"
                                     placeholder=""
+                                    value={contact.phone}
+                                    onChange={(e) =>
+                                      setContact({
+                                        ...contact,
+                                        phone: e.target.value,
+                                      })
+                                    }
                                   />
                                 </div>
                               </div>
                             </div>
-                            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                               <div className="form-group">
                                 <div className="input-group">
                                   <label>Your Email Address</label>
                                   <input
-                                    name="dzEmail"
+                                    name="email"
                                     type="email"
                                     className="form-control"
                                     required
                                     placeholder=""
+                                    value={contact.email}
+                                    onChange={(e) =>
+                                      setContact({
+                                        ...contact,
+                                        email: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                              <div className="form-group">
+                                <div className="input-group">
+                                  <label>Subject</label>
+                                  <input
+                                    name="subject"
+                                    type="text"
+                                    className="form-control"
+                                    required
+                                    placeholder=""
+                                    value={contact.subject}
+                                    onChange={(e) =>
+                                      setContact({
+                                        ...contact,
+                                        subject: e.target.value,
+                                      })
+                                    }
                                   />
                                 </div>
                               </div>
@@ -394,15 +463,29 @@ const Index6 = (props) => {
                                 <div className="input-group">
                                   <label>Your Message...</label>
                                   <textarea
-                                    name="dzMessage"
+                                    name="message"
                                     rows="4"
                                     className="form-control"
                                     required
                                     placeholder=""
+                                    value={contact.message}
+                                    onChange={(e) =>
+                                      setContact({
+                                        ...contact,
+                                        message: e.target.value,
+                                      })
+                                    }
                                   ></textarea>
                                 </div>
                               </div>
                             </div>
+                            {success && (
+                            <div className="col-lg-12 site-button">
+                              Thank you for getting in touch! We appreciate you
+                              contacting us. One of our colleagues will get back
+                              in touch with you soon!Have a great day!{" "}
+                            </div>
+                          )}
                             <div className="col-lg-12 col-md-12 col-sm-12">
                               <button
                                 name="submit"

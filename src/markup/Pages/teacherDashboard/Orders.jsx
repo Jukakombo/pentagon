@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
+ 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -34,18 +34,17 @@ import SeniorThree from "../SeniorThree";
 import SeniorFour from "../SeniorFour";
 import { client } from "../../../sanityClient";
 import StudentList from "./elements/StudentList";
+import ArtsBooks from "../ArtsBooks";
+import ScienceBooks from "../ScienceBooks";
 
  
  
 
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function Orders({ setContactId }) {
-  const courses = useSelector((state) => state.courses);
+ 
   const contacts = useSelector((state) => state.contacts);
-  
+   
   const [teacherdetail, setTeacherDetails] = React.useState([])
   const dispatch = useDispatch();
    
@@ -117,7 +116,7 @@ export default function Orders({ setContactId }) {
     case "/contact-zone":
       return (
         <Box sx={{ minWidth: 275 }}>
-          {contacts.map((contact) => (
+          {contacts?.slice(0).reverse()?.map((contact) => (
             <div
               key={contact._id}
               style={{ border: "1px solid gray", margin: "5px" }}
@@ -160,10 +159,10 @@ export default function Orders({ setContactId }) {
         </Box>
       );
     // publish news
-    case "/publish-news":
+    case "/compose":
       return <PublishNews />;
     // time table
-    case "/time-table":
+    case "/teacherTimeTable":
       return <TimeTable />;
     case "/past-exam":
       return <PastExam />;
@@ -180,8 +179,13 @@ export default function Orders({ setContactId }) {
     case "/senior-4":
       return <SeniorFour />;
     // Libbrary
-    case "/library":
+    case "/libraryBooks":
       return <Library />;
+       // arts book
+    case "/artsBooks":
+      return <ArtsBooks />;
+    case "/scienceBooks":
+      return <ScienceBooks />;
     // student registration
     case "/student-registration":
       return <RegistrationForm />;

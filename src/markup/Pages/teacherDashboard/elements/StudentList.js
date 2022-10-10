@@ -1,27 +1,25 @@
-import * as React from 'react'; 
-import Box from '@mui/material/Box';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { client } from '../../../../sanityClient';
-
- 
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Collapse from "@mui/material/Collapse";
+import IconButton from "@mui/material/IconButton";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { client } from "../../../../sanityClient";
 
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
-      <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+      <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
         <TableCell>
           <IconButton
             aria-label="expand row"
@@ -56,18 +54,14 @@ function Row(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                   
-                    <TableRow  >
-                      <TableCell component="th" scope="row">
-                        {row?.dateOfBirth}
-                      </TableCell>
-                      <TableCell>{row?.idNumber}</TableCell>
-                      <TableCell align="right">{row?.parent}</TableCell>
-                      <TableCell align="right">
-                        {row?.contact}
-                      </TableCell>
-                    </TableRow>
-                   
+                  <TableRow>
+                    <TableCell component="th" scope="row">
+                      {row?.dateOfBirth}
+                    </TableCell>
+                    <TableCell>{row?.address}</TableCell>
+                    <TableCell align="right">{row?.parent}</TableCell>
+                    <TableCell align="right">{row?.contact}</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </Box>
@@ -78,10 +72,20 @@ function Row(props) {
   );
 }
 
-  
-
 export default function StudentList() {
-  const [studentsDetails,setStudentsDetails]=React.useState([])
+  const [query, setQuery] = React.useState("");
+  const [studentsDetails, setStudentsDetails] = React.useState([]);
+  const searchByFilter = (data) => {
+    return data.filter(
+      (student) =>
+        student.fullName.toLowerCase().includes(query) ||
+        student.classYear.toLowerCase().includes(query) ||
+        student.gender.toLowerCase().includes(query) ||
+        student.idNumber.toLowerCase().includes(query)
+        
+
+    );
+  };
   React.useEffect(() => {
     client
       .fetch(
@@ -93,7 +97,7 @@ export default function StudentList() {
         }, alt
       },
       contact,_id
-    }`
+    } | order(fullName asc)`
       )
       .then((data) => {
         setStudentsDetails(data);
@@ -101,10 +105,23 @@ export default function StudentList() {
   }, []);
   return (
     <TableContainer component={Paper}>
+        <div className="form-group">
+    <label for="exampleInputEmail1">Search</label>
+    
+    <input
+          type="text" className="form-control" aria-describedby="emailHelp"
+          placeholder="Search student by Name, class, gender & I.D Number"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+  </div>
+        
+      
+
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
+
             <TableCell>Full Name</TableCell>
             <TableCell align="right">I.D. Number</TableCell>
             <TableCell align="right">Sex&nbsp;</TableCell>
@@ -113,7 +130,7 @@ export default function StudentList() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {studentsDetails.map((row) => (
+          {searchByFilter(studentsDetails).map((row) => (
             <Row key={row._id} row={row} />
           ))}
         </TableBody>

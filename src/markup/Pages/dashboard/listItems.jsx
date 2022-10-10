@@ -3,7 +3,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
-import EmailIcon from "@mui/icons-material/Email";
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { Link } from "react-router-dom";
@@ -20,6 +20,15 @@ export const mainListItems = (
           <DashboardIcon />
         </ListItemIcon>
         <ListItemText primary="DashBoard" />
+      </ListItem>
+    </Link>
+    
+    <Link to="/notification">
+      <ListItem button>
+        <ListItemIcon>
+          <MailOutlinedIcon />
+        </ListItemIcon>
+        <ListItemText primary="Inbox" />
       </ListItem>
     </Link>
     <Link to="/student-registration">

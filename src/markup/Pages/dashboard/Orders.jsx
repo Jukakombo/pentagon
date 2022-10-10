@@ -13,7 +13,7 @@ import CardContent from "@mui/material/CardContent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteContact } from "../../../actions/contacts";
+// import { deleteContact } from "../../../actions/contacts";
 
 import { useLocation } from "react-router-dom";
 import TimeTable from "../TimeTable";
@@ -37,6 +37,7 @@ import teamsPictures from "../teamPictures";
 import ArtsBooks from "../ArtsBooks";
 import ScienceBooks from "../ScienceBooks";
 import { useState } from "react";
+import { deleteNews } from "../../../actions/news";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -44,7 +45,8 @@ function preventDefault(event) {
 
 export default function Orders({ setContactId }) {
   // const courses = useSelector((state) => state.courses);
-  const contacts = useSelector((state) => state.contacts);
+  const news = useSelector((state) => state.news);
+   
   const [query, setQuery] = useState("");
   const [studentDetails, setStudentDetails] = React.useState([]);
   const dispatch = useDispatch();
@@ -127,7 +129,7 @@ export default function Orders({ setContactId }) {
             <TableHead>
               <TableRow>
                 <TableCell>Full Name</TableCell>
-                <TableCell>I.D Number</TableCell>
+                <TableCell align="left">I.D Number</TableCell>
                 <TableCell>Gender</TableCell>
 
                 <TableCell>Class</TableCell>
@@ -154,10 +156,10 @@ export default function Orders({ setContactId }) {
         </React.Fragment>
       );
     // contact zones
-    case "/contact-zone":
+    case "/notification":
       return (
         <Box sx={{ minWidth: 275 }}>
-          {contacts.map((contact) => (
+          {news?.slice(0).reverse()?.map((contact) => (
             <div
               key={contact._id}
               style={{ border: "1px solid gray", margin: "5px" }}
@@ -167,26 +169,24 @@ export default function Orders({ setContactId }) {
                   Time:&nbsp;{moment(contact.updatedAt).fromNow()}
                 </Typography>
                 <Typography variant="h5" component="div">
-                  Name:&nbsp;{contact.givenName}
+                  Anouncement to:&nbsp;{contact.paragraph1}
                 </Typography>
                 <Typography
                   sx={{ mb: 1.5 }}
                   variant="h5"
                   color="text.secondary"
                 >
-                  Phone:&nbsp;{contact.phone}
+                  Subject:&nbsp;{contact.paragraph2}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  Email:&nbsp;{contact.email}
-                </Typography>
+                
                 <Typography variant="h6">
-                  message:&nbsp;{contact.message}
+                  message:&nbsp;{contact.paragraph3}
                   <br />
                 </Typography>
               </CardContent>
               <CardActions>
                 <IconButton
-                  onClick={() => dispatch(deleteContact(contact._id))}
+                  onClick={() => dispatch(deleteNews(contact._id))}
                 >
                   <DeleteForeverIcon />
                 </IconButton>
