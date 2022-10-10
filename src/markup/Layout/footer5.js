@@ -1,8 +1,49 @@
 import React, { Component } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { client } from "../../sanityClient";
+import LoadingWithBuffer from "./Loading";
 
-class Footer5 extends Component {
-  render() {
+function Footer5 () {
+  const [formData, setFormData] = useState({
+    subscriber: "",
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const {
+    subscriber,
+    
+  } = formData;
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    setLoading(true);
+
+    const contact = {
+      _type: "subscriber",
+      subscriber: formData.subscriber,
+    };
+
+    client
+      .create(contact)
+      .then(() => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+      })
+      .catch((err) => console.log(err));
+    setFormData({
+      subscriber: "",
+     
+    });
+    setTimeout(() => {
+      setIsFormSubmitted(false);
+    }, 5000);
+  };
     return (
       <>
         <footer className="site-footer text-uppercase footer-white business-footer">
@@ -87,26 +128,36 @@ class Footer5 extends Component {
                     <div className="subscribe-form m-b20">
                       <form
                         className="dzSubscribe"
-                        action="script/mailchamp.php"
-                        method="post"
+                        
                       >
                         <div className="dzSubscribeMsg"></div>
+                        {isFormSubmitted && (
+                            <div className="col-lg-12  " style={{color:"green", fontWeight:"bolder"}}>
+                             You have successfully subscribed!
+                            </div>
+                          )}
                         <div className="input-group">
                           <input
-                            name="dzEmail"
+                            name="subscriber"
+                            value={subscriber}
+                            onChange={handleChangeInput}
                             required="required"
                             className="form-control"
-                            placeholder="Your Email Id"
+                            placeholder="e.g alison@gmail.com"
                             type="email"
+                            
                           />
+                           
                           <span className="input-group-btn">
-                            <button
+                            <button onClick={handleSubmit}
                               name="submit"
                               value="Submit"
                               type="submit"
                               className="site-button"
+                              disabled={!subscriber}
                             >
-                              Subscribe
+                              
+                              <span>{!loading ? "Subscribe" : "Loading"}</span>
                             </button>
                           </span>
                         </div>
@@ -197,6 +248,6 @@ class Footer5 extends Component {
       </>
     );
   }
-}
+ 
 
 export default Footer5;
