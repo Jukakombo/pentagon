@@ -82,6 +82,7 @@ import ColorPicker from "./Pages/teacherDashboard/elements/ColorPicker";
 import Chart from "./Pages/dashboar-student/students-dashboard/Cart";
 import CodeOfConduct from "./Pages/CodeOfConduct";
 import MoralStory from "./Pages/MoralStory";
+import AdmissionFiles from "./Pages/AdmissionFiles";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -340,7 +341,10 @@ function Markup() {
           <Route exact path="/moral-story">
             <MoralStory />
           </Route>
-
+          <Route exact path="/admission-file">
+            <AdmissionFiles />
+          </Route>
+          
           <Route path="/students-articles" exact component={StudentArticles} />
           <Route exact path="/:id">
             <BlogDetails />

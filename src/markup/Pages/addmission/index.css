@@ -1,0 +1,15 @@
+.header__section{
+    background-color: rgb(255, 170, 0); 
+    padding: 20px 0 10px 0;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.best_among_all{
+    color: #ffffff;
+}
+.firstPage{
+    padding-left: 10px;
+    border-bottom: solid brown 10px;
+    border-left: solid brown 10px;
+
+}
