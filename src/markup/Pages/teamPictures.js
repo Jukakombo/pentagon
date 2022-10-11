@@ -18,7 +18,10 @@ import stephenchuol from "./teamsPics/stephenChuol.jpg";
 import dutPasqual from "./teamsPics/dutpasqual.jpg";
 import lulaFrancis from "./teamsPics/lulaFrancis.jpg";
 import amuleAnthony from "./teamsPics/amuleAnthony.jpg";
-//  import dutPasqual from "./teamsPics/dutpasqual.jpg";
+ import robertOryem from "./teamsPics/robertOryem.jpg";
+ import jamesSebagize from "./teamsPics/jamesSebagize.jpg";
+ import mario from "./teamsPics/mario.jpg";
+ import richardMawa from "./teamsPics/richardMawa.jpg";
 
 const teamsPictures = [
   {
@@ -80,7 +83,7 @@ const teamsPictures = [
   {
     _id: "08",
     name: "TR. JAMES SEBAGEZI",
-    image: "",
+    image: jamesSebagize,
     position: "DEAN",
     subject: "COMMERCE",
     teachingClass: "S.2 & S.3",
@@ -128,7 +131,7 @@ const teamsPictures = [
   {
     _id: "14",
     name: "TR. RICHARD MAWA",
-    image: "",
+    image: richardMawa,
     position: "CLASS MASTER",
     subject: "PHYSICS",
     teachingClass: "S.2 & S.4",
@@ -160,7 +163,7 @@ const teamsPictures = [
   {
     _id: "18",
     name: "TR. ROBERT OYREM",
-    image: "",
+    image: robertOryem,
     position: "TEACHER",
     subject: "C.R.E",
     teachingClass: "S.1 & S.4",
@@ -207,8 +210,8 @@ const teamsPictures = [
   },
   {
     _id: "24",
-    name: "TR. COSMAS AYUME ",
-    image: "",
+    name: "TR. Mario ",
+    image: mario,
     position: "TEACHER",
     subject: "CHEMISTRY",
     teachingClass: "S.2 & S.4",
