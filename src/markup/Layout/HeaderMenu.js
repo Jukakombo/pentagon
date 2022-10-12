@@ -223,7 +223,7 @@ class HeaderMenu extends Component {
               </li>
               <li>
               <Link to={"/admission-file"} className="dez-page">
-               Admision File{" "}
+               Admision Form{" "}
               </Link>
             </li>
               <li>
