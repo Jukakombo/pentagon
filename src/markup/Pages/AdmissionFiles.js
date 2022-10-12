@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "./../Layout/Header1";
 import bnr from "./../../images/banner/bnr9.jpg";
-import services1 from "./../../images/our-services/pic6.jpg";
+// import services1 from "./../../images/our-services/pic6.jpg";
 
 import Footer5 from "./../Layout/footer5";
 import PageTitle from "../Layout/PageTitle";
 import AdmisionIntro from "./addmission/AdmisionIntro";
 import Form from "./addmission/Form";
+import SchoolRequirement from "./addmission/SchoolRequirement";
+import MandatoryRequiment from "./addmission/MandatoryRequiment";
+import LastPage from "./addmission/LastPage";
 function AdmissionFiles() {
   return (
     <>
@@ -25,6 +28,12 @@ function AdmissionFiles() {
             <AdmisionIntro />
             {/* form */}
             <Form />
+            {/* school Requirement */}
+            <SchoolRequirement />
+            {/* compulsary requirement */}
+            <MandatoryRequiment />
+            {/* last page */}
+            <LastPage />
         </div>
       </div>
       <Footer5 />

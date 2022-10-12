@@ -26,3 +26,34 @@
     
     text-transform: uppercase;
 }
+/* school fees */
+.scholFees{
+    border: 2px solid rgb(42, 41, 41);
+     
+
+}
+.row__padding{
+    padding: 0 10px;
+}
+.requirement>h5{
+    text-transform: uppercase; 
+}
+.paymentMode{
+    text-transform: uppercase; 
+    border: rgb(255, 170, 0) 2px solid;   
+    padding: 0 10px;
+}
+.lastPage{
+    border-bottom: solid brown 10px;
+    border-right: solid brown 10px;
+    padding-right: 10px;
+}
+/* last page */
+.center__best_among__all{
+   
+   text-align: center;
+   font-size: bolder;
+   border-radius: 90%;
+   padding-bottom: 30px;
+}
+ 
