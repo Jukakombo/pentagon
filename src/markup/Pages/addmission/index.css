@@ -13,3 +13,16 @@
     border-left: solid brown 10px;
 
 }
+.form_all{
+    border: 2px solid rgb(42, 41, 41);
+}
+.form__head{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid rgb(42, 41, 41);
+}
+.form__head>p{
+    padding: 10px 10px 0 10px;
+    
+    text-transform: uppercase;
+}
