@@ -10,6 +10,11 @@ import Form from "./addmission/Form";
 import SchoolRequirement from "./addmission/SchoolRequirement";
 import MandatoryRequiment from "./addmission/MandatoryRequiment";
 import LastPage from "./addmission/LastPage";
+import RulesAndRegulation from "./addmission/RulesAndRegulation";
+import ContinuationNB from "./addmission/ContinuationNB";
+import WhyPentagonIsUnique from "./addmission/WhyPentagonIsUnique";
+import HousePentagon from "./addmission/HousePentagon";
+import TalentSkill from "./addmission/TalentSkill";
 function AdmissionFiles() {
   return (
     <>
@@ -32,6 +37,15 @@ function AdmissionFiles() {
             <SchoolRequirement />
             {/* compulsary requirement */}
             <MandatoryRequiment />
+            {/*  Rules and regulation*/} 
+            <RulesAndRegulation />
+            {/* contuation */}
+            <ContinuationNB />
+            <WhyPentagonIsUnique />
+            {/* house pentagon */}
+            <HousePentagon />
+            {/* talent skill */}
+            <TalentSkill />
             {/* last page */}
             <LastPage />
         </div>

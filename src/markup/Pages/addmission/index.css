@@ -48,6 +48,47 @@
     border-right: solid brown 10px;
     padding-right: 10px;
 }
+/* mandatory */
+.mandetory>h5{
+    text-transform: uppercase;
+
+}
+.school__reaquirement{
+    background-color: transparent;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+.letterAlpha{
+    background-color: transparent;
+   padding: 10px
+
+}
+.thicks{
+    display: flex;
+    align-items: center;
+     
+}
+.thicks>p{
+    margin-right: 10px;
+}
+.letterRules{
+    background-color: transparent;
+    border-left: 1px solid black;
+
+    padding-right: 10px;
+     
+}
+.letterRules>h3{
+    text-transform: uppercase;
+}
+.letterRules>p{
+    background-color: transparent;
+    margin-right: 10px;
+}
+.nb{
+    font-weight: bold;
+}
 /* last page */
 .center__best_among__all{
    
