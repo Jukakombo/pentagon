@@ -17,6 +17,13 @@ class HeaderMenu extends Component {
           <li>
             <Link to={"./service"}>Our Service</Link>
           </li>
+
+          <li>
+            <Link to={"./admission-file"} className="dez-page">
+              Admission Form{" "}
+            </Link>
+          </li>
+
           <li>
             <Link to={"#"}>
               School News <i className="fa fa-chevron-down"></i>
@@ -96,9 +103,7 @@ class HeaderMenu extends Component {
                 </Link>
               </li>
               <li>
-                <Link to={"./teacher-sign-up"} className="dez-page">
-                  Create Teacher Account{" "}
-                </Link> */}
+                 */}
               {/* </li> */}
 
               <li>
@@ -222,10 +227,10 @@ class HeaderMenu extends Component {
                 </Link>
               </li>
               <li>
-              <Link to={"/admission-file"} className="dez-page">
-               Admision Form{" "}
-              </Link>
-            </li>
+                <Link to={"/admission-file"} className="dez-page">
+                  Admision Form{" "}
+                </Link>
+              </li>
               <li>
                 <Link to={"/moral-story"} className="dez-page">
                   Moral Story{" "}
