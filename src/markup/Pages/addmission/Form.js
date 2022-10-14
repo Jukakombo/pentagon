@@ -1,7 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import image4 from "./../../../images/addmission/svgLogo.png";
 // import bg19 from "./../../../images/addmission/watermark.png";
 function Form() {
+  const history = useHistory()
+  const submitForm =()=>{
+    history.push("/print-Form")
+  }
   return (
     <>
       <div
@@ -301,7 +306,7 @@ function Form() {
                 the best of my knowledge
               </label>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button onClick={submitForm} type="submit" className="btn btn-primary">
               Submit
             </button>
           </form>

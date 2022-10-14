@@ -83,6 +83,8 @@ import Chart from "./Pages/dashboar-student/students-dashboard/Cart";
 import CodeOfConduct from "./Pages/CodeOfConduct";
 import MoralStory from "./Pages/MoralStory";
 import AdmissionFiles from "./Pages/AdmissionFiles";
+import PrintOut from "./Pages/PrintOut";
+// import PrintOut from "./Pages/PrintOut";
 
 function Markup() {
   const [currentId, setCurrentId] = useState(null);
@@ -344,7 +346,9 @@ function Markup() {
           <Route exact path="/admission-file">
             <AdmissionFiles />
           </Route>
-          
+          <Route exact path="/print-Form">
+            <PrintOut />
+          </Route>
           <Route path="/students-articles" exact component={StudentArticles} />
           <Route exact path="/:id">
             <BlogDetails />
