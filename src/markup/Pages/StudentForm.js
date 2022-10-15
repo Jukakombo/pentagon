@@ -19,9 +19,7 @@ function StudentForm() {
     classYear: "",
     dateOfBirth: "",
     address: "",
-    contact: "",
-    
-
+    contact: "", 
     yearAddmitted: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);

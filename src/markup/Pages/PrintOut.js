@@ -29,6 +29,12 @@ function PrintOut() {
   });
   return (
     <div>
+    <button
+              
+              className="btn btn-primary"
+            >
+             <span>Congratulation! You have successfully Registered </span>
+            </button>
       <button onClick={handlePrint}>Print this out!</button>
       <ComponentToPrint ref={componentRef} />
     </div>

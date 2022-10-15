@@ -1,12 +1,128 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { client } from "../../../sanityClient";
 import image4 from "./../../../images/addmission/svgLogo.png";
 // import bg19 from "./../../../images/addmission/watermark.png";
 function Form() {
-  const history = useHistory()
-  const submitForm =()=>{
-    history.push("/print-Form")
-  }
+  const history = useHistory();
+  const [formData, setFormData] = useState({
+    studentFirstName: "",
+    studentSecondtName: "",
+    studentLastName: "",
+    nationality: "",
+    language: "",
+    applyingFor: "",
+    priviousClass: "",
+    previousSchool: "",
+    gradeMarksScore: "",
+    chronicDiseases: "",
+    alergicTo: "",
+    hobbies: "",
+    academicRecord: "",
+    fatherFirstName: "",
+    fatherMidleName: "",
+    fatherLastName: "",
+    occupation: "",
+    fatherTelephoneNumber: "",
+    position: "",
+    address: "",
+    gender: "",
+  });
+  // const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const {
+    studentFirstName,
+    studentSecondtName,
+    studentLastName,
+    nationality,
+    language,
+    applyingFor,
+    previousClass,
+    previousSchool,
+    gradeMarksScore,
+    chronicDiseases,
+    alergicTo,
+    hobbies,
+    academicRecord,
+    fatherFirstName,
+    fatherMidleName,
+    fatherLastName,
+    occupation,
+    fatherTelephoneNumber,
+    position,
+    address,
+    gender,
+  } = formData;
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    setLoading(true);
+
+    const contact = {
+      _type: "studentForm", 
+      studentFirstName: formData.studentFirstName,
+      studentSecondtName: formData.studentSecondtName,
+      studentLastName: formData.studentLastName,
+      nationality: formData.nationality,
+      language: formData.language,
+      applyingFor: formData.applyingFor,
+      previousClass: formData.previousClass,
+      previousSchool: formData.previousSchool,
+      gradeMarksScore: formData.gradeMarksScore,
+      chronicDiseases: formData.chronicDiseases,
+      alergicTo: formData.alergicTo,
+      hobbies: formData.hobbies,
+      academicRecord: formData.academicRecord,
+      fatherFirstName: formData.fatherFirstName,
+      fatherMidleName: formData.fatherMidleName,
+      fatherLastName: formData.fatherLastName,
+      occupation: formData.occupation,
+      fatherTelephoneNumber: formData.fatherTelephoneNumber,
+      position: formData.position,
+      address: formData.address,
+      gender: formData.gender,
+    };
+
+    client
+      .create(contact)
+      .then(() => {
+        setLoading(false);
+        // setIsFormSubmitted(true);
+      })
+      .catch((err) => console.log(err));
+    setFormData({
+      studentFirstName: "",
+      studentSecondtName: "",
+      studentLastName: "",
+      nationality: "",
+      language: "",
+      applyingFor: "",
+      previousClass: "",
+      previousSchool: "",
+      gradeMarksScore: "",
+      chronicDiseases: "",
+      alergicTo: "",
+      hobbies: "",
+      academicRecord: "",
+      fatherFirstName: "",
+      fatherMidleName: "",
+      fatherLastName: "",
+      occupation: "",
+      fatherTelephoneNumber: "",
+      position: "",
+      address: "",
+      gender: "",
+    });
+    setTimeout(() => {
+      // setIsFormSubmitted(false);
+    }, 5000);
+    history.push("/print-form");
+  };
   return (
     <>
       <div
@@ -42,8 +158,9 @@ function Form() {
                   type="text"
                   class="form-control"
                   placeholder="First name"
-                  value=""
-                  name=""
+                  value={studentFirstName}
+                  name="studentFirstName"
+                  onChange={handleChangeInput}
                   required
                 />
               </div>
@@ -54,8 +171,9 @@ function Form() {
                   type="text"
                   class="form-control"
                   placeholder="Middle name"
-                  value=""
-                  name=""
+                  value={studentSecondtName}
+                  name="studentSecondtName"
+                  onChange={handleChangeInput}
                   required
                 />
               </div>
@@ -64,8 +182,9 @@ function Form() {
                 <input
                   type="text"
                   class="form-control"
-                  value=""
-                  name=""
+                  value={studentLastName}
+                  name="studentLastName"
+                  onChange={handleChangeInput}
                   required
                   placeholder="Last name"
                 />
@@ -75,15 +194,16 @@ function Form() {
               <label for="exampleInputEmail1">Gender</label>
               <select
                 type="text"
-                value=""
-                name=""
+                value={gender}
+                  name="gender"
+                  onChange={handleChangeInput}
                 required
                 className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               >
-                <option>Male</option>
-                <option>Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
             </div>
             <div className="row">
@@ -91,8 +211,9 @@ function Form() {
                 <label for="exampleInputEmail1">Nationality</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={nationality}
+                  name="nationality"
+                  onChange={handleChangeInput}
                   required
                   class="form-control"
                   placeholder="Nationality"
@@ -102,8 +223,9 @@ function Form() {
                 <label for="exampleInputEmail1">Language</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={language}
+                  name="language"
+                  onChange={handleChangeInput}
                   required
                   class="form-control"
                   placeholder="Language"
@@ -114,8 +236,9 @@ function Form() {
               <div className="col">
                 <label for="exampleInputEmail1">Class Applying for:</label>
                 <input
-                  value=""
-                  name=""
+                 value={applyingFor}
+                  name="applyingFor"
+                  onChange={handleChangeInput}
                   required
                   type="text"
                   class="form-control"
@@ -126,8 +249,9 @@ function Form() {
                 <label for="exampleInputEmail1">Previous Class:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={previousClass}
+                  name="previousClass"
+                  onChange={handleChangeInput}
                   required
                   class="form-control"
                   placeholder="Previous Class"
@@ -138,8 +262,9 @@ function Form() {
               <div className="col">
                 <label for="exampleInputEmail1">Previous School:</label>
                 <input
-                  value=""
-                  name=""
+                   value={previousSchool}
+                  name="previousSchool"
+                  onChange={handleChangeInput}
                   required
                   type="text"
                   class="form-control"
@@ -152,8 +277,9 @@ function Form() {
                 <label for="exampleInputEmail1">Grade/Marks Scored:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={gradeMarksScore}
+                  name="gradeMarksScore"
+                  onChange={handleChangeInput}
                   required
                   class="form-control"
                   placeholder="Grade/Marks Scored"
@@ -163,8 +289,9 @@ function Form() {
                 <label for="exampleInputEmail1">Chronic Diseases If Any:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={chronicDiseases}
+                  name="chronicDiseases"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Chronic Disease If Any"
@@ -176,8 +303,9 @@ function Form() {
                 <label for="exampleInputEmail1">Alergic to:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={alergicTo}
+                  name="alergicTo"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Alergic to"
@@ -187,8 +315,9 @@ function Form() {
                 <label for="exampleInputEmail1">Hobbies/Interest In</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={hobbies}
+                  name="hobbies"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Hobbies/Interest in"
@@ -201,8 +330,9 @@ function Form() {
 
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={academicRecord}
+                  name="academicRecord"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Academic Records"
@@ -217,8 +347,9 @@ function Form() {
                 <label for="exampleInputEmail1">Father's Name</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={fatherFirstName}
+                  name="fatherFirstName"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Father's First Name"
@@ -228,8 +359,9 @@ function Form() {
                 <label for="exampleInputEmail1">Middle Name</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={fatherMidleName}
+                  name="fatherMidleName"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Middle Name"
@@ -239,8 +371,9 @@ function Form() {
                 <label for="exampleInputEmail1">Sur Name</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={fatherLastName}
+                  name="fatherLastName"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Sur Name"
@@ -252,8 +385,9 @@ function Form() {
                 <label for="exampleInputEmail1">Occupation:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={occupation}
+                  name="occupation"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Occupation"
@@ -263,8 +397,9 @@ function Form() {
                 <label for="exampleInputEmail1">Post:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={position}
+                  name="position"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
                   placeholder="Post"
@@ -276,19 +411,21 @@ function Form() {
                 <label for="exampleInputEmail1">City/Street Address:</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={address}
+                  name="address"
+                  onChange={handleChangeInput}
                   required
                   className="form-control"
-                  placeholder="Sur Name"
+                  placeholder="Street/Address"
                 />
               </div>
               <div className="col">
                 <label for="exampleInputEmail1">Tel: +2119</label>
                 <input
                   type="text"
-                  value=""
-                  name=""
+                  value={fatherTelephoneNumber}
+                  name="fatherTelephoneNumber"
+                  onChange={handleChangeInput}
                   className="form-control"
                   placeholder="Tel: +2119"
                   required
@@ -306,8 +443,12 @@ function Form() {
                 the best of my knowledge
               </label>
             </div>
-            <button onClick={submitForm} type="submit" className="btn btn-primary">
-              Submit
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className="btn btn-primary"
+            >
+             <span>{!loading ? "Submit" : "Saving..."}</span>
             </button>
           </form>
         </div>

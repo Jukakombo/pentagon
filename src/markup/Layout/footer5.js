@@ -8,7 +8,7 @@ function Footer5 () {
   const [formData, setFormData] = useState({
     subscriber: "",
   });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const {
@@ -43,6 +43,7 @@ function Footer5 () {
     setTimeout(() => {
       setIsFormSubmitted(false);
     }, 5000);
+    setIsFormSubmitted(false)
   };
     return (
       <>
@@ -125,17 +126,12 @@ function Footer5 () {
                       can give you a satisfying answer. Subscribe to our
                       newsletter to get our latest news.
                     </p>
-                    <div className="subscribe-form m-b20">
+{isFormSubmitted ? <div className="subscribe-form m-b20">
                       <form
                         className="dzSubscribe"
                         
                       >
-                        <div className="dzSubscribeMsg"></div>
-                        {isFormSubmitted && (
-                            <div className="col-lg-12  " style={{color:"green", fontWeight:"bolder"}}>
-                             You have successfully subscribed!
-                            </div>
-                          )}
+                        <div className="dzSubscribeMsg"></div> 
                         <div className="input-group">
                           <input
                             name="subscriber"
@@ -162,7 +158,10 @@ function Footer5 () {
                           </span>
                         </div>
                       </form>
-                    </div>
+                    </div>:<div style={{backgroundColor:"green", padding:"15px", color:"white"}}>😊You have successfully subscribed!</div>}
+                    
+
+
                     <ul className="list-inline m-a0">
                       <li>
                         <Link

@@ -27,16 +27,16 @@ function AdmisionIntro() {
       "
         style={{ paddingTop: "20px" }}
       >
-        <div className="col-lg-6 col-md-12 m-b30 about-img ">
+        <div className="col-lg-6 col-md-6  m-b30 about-img ">
           <img src={image1} data-tilt alt="" />
         </div>{" "}
-        <div className="col-lg-6 col-md-12 m-b30 about-img ">
+        <div className="col-lg-6 col-md-6  m-b30 about-img ">
           <img src={image2} data-tilt alt="" />
         </div>{" "}
-        <div className="col-lg-6 col-md-12 m-b30 about-img ">
+        <div className="col-lg-6 col-md-6  m-b30 about-img ">
           <img src={image3} data-tilt alt="" />
         </div>
-        <div className="col-lg-6 col-md-12 m-b30 about-img ">
+        <div className="col-lg-6 col-md-6  m-b30 about-img ">
           <img src={image4} data-tilt alt="" />
         </div>
       </div>

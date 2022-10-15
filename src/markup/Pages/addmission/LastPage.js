@@ -20,10 +20,10 @@ function LastPage() {
           className="row" 
        style={{ paddingTop: "20px" }}
         >
-          <div className="col-lg-6 col-md-12 m-b30 about-img ">
+          <div className="col-lg-6 col-md-6 m-b30 about-img ">
             <img src={image6} data-tilt alt="" />
           </div>{" "}
-          <div className="col-lg-6 col-md-12 m-b30 about-img ">
+          <div className="col-lg-6 col-md-6 m-b30 about-img ">
             <img src={image7} data-tilt alt="" />
           </div>{" "}
         </div>
@@ -32,10 +32,10 @@ function LastPage() {
 
         </div>
         <div className="row">
-          <div className="col-lg-6 col-md-12 m-b30 about-img ">
+          <div className="col-lg-6 col-md-6 m-b30 about-img ">
             <img src={image8} data-tilt alt="" />
           </div>
-          <div className="col-lg-6 col-md-12 m-b30 about-img ">
+          <div className="col-lg-6 col-md-6 m-b30 about-img ">
             <img src={image9} data-tilt alt="" />
           </div>
         </div>

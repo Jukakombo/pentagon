@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
- 
+
 // import bnr from "./../../images/banner/bnr9.jpg";
 // import services1 from "./../../images/our-services/pic6.jpg";
 
- 
 // import PageTitle from "../Layout/PageTitle";
 
 import AdmisionIntro from "./addmission/AdmisionIntro";
@@ -16,21 +15,12 @@ import ContinuationNB from "./addmission/ContinuationNB";
 import WhyPentagonIsUnique from "./addmission/WhyPentagonIsUnique";
 import HousePentagon from "./addmission/HousePentagon";
 import TalentSkill from "./addmission/TalentSkill";
-function PrintPDF() {
-  return (
-    <>
-   
-      <div className="page-content bg-white">
-        {/* <div
-          className="dlab-bnr-inr overlay-primary bg-pt"
-          style={{ backgroundImage: "url(" + bnr + ")" }}
-        >
-          <PageTitle
-            motherMenu="School Add Mission"
-            activeMenu="Admission Zone"
-          />
-        </div> */}
-        <div className="container">
+export default class PrintPDF extends React.Component {
+  render() {
+    return (
+      <>
+        <div className="page-content bg-white">
+          <div className="container">
             <AdmisionIntro />
             {/* form */}
             <Form />
@@ -38,7 +28,7 @@ function PrintPDF() {
             <SchoolRequirement />
             {/* compulsary requirement */}
             <MandatoryRequiment />
-            {/*  Rules and regulation*/} 
+            {/*  Rules and regulation*/}
             <RulesAndRegulation />
             {/* contuation */}
             <ContinuationNB />
@@ -49,13 +39,9 @@ function PrintPDF() {
             <TalentSkill />
             {/* last page */}
             <LastPage />
+          </div>
         </div>
-      </div>
- 
-    </>
-  );
+      </>
+    );
+  }
 }
-
-export default PrintPDF;
-
-
