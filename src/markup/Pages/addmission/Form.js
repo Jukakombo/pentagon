@@ -5,9 +5,10 @@ import image4 from "./../../../images/addmission/svgLogo.png";
 // import bg19 from "./../../../images/addmission/watermark.png";
 function Form() {
   const history = useHistory();
+  
   const [formData, setFormData] = useState({
     studentFirstName: "",
-    studentSecondtName: "",
+    studentSecondName: "",
     studentLastName: "",
     nationality: "",
     language: "",
@@ -33,7 +34,7 @@ function Form() {
 
   const {
     studentFirstName,
-    studentSecondtName,
+    studentSecondName,
     studentLastName,
     nationality,
     language,
@@ -66,7 +67,7 @@ function Form() {
     const contact = {
       _type: "studentForm", 
       studentFirstName: formData.studentFirstName,
-      studentSecondtName: formData.studentSecondtName,
+      studentSecondName: formData.studentSecondName,
       studentLastName: formData.studentLastName,
       nationality: formData.nationality,
       language: formData.language,
@@ -97,7 +98,7 @@ function Form() {
       .catch((err) => console.log(err));
     setFormData({
       studentFirstName: "",
-      studentSecondtName: "",
+      studentSecondName: "",
       studentLastName: "",
       nationality: "",
       language: "",
@@ -118,10 +119,9 @@ function Form() {
       address: "",
       gender: "",
     });
-    setTimeout(() => {
-      // setIsFormSubmitted(false);
+    setTimeout(() => { 
+      history.push("/print-form");
     }, 5000);
-    history.push("/print-form");
   };
   return (
     <>
@@ -171,8 +171,8 @@ function Form() {
                   type="text"
                   class="form-control"
                   placeholder="Middle name"
-                  value={studentSecondtName}
-                  name="studentSecondtName"
+                  value={studentSecondName}
+                  name="studentSecondName"
                   onChange={handleChangeInput}
                   required
                 />

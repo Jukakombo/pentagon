@@ -92,7 +92,7 @@ export default {
           },
           {
             title: "Accademic Record",
-            name: "accademicRecord",
+            name: "academicRecord",
             type: "string"
           },
           {
