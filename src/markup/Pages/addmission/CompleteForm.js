@@ -110,7 +110,7 @@ function CompleteForm() {
         </h5>
         <br />
         <div className="rules">
-        <h3>NB: Attach  all the following documents</h3>
+        <h5>NB: Attach  all the following documents</h5>
         <p>1: Registration the first document You saved as pdf</p>
         <p>2: The second document you downloaded</p>
         <p>3: If you are coming from another school provide the coppies of it also</p>

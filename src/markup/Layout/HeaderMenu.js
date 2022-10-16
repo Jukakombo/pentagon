@@ -15,7 +15,7 @@ class HeaderMenu extends Component {
             <Link to={"./about-1"}>About Us</Link>
           </li>
           <li>
-            <Link to={"./service"}>Our Service</Link>
+            <Link to={"./service"}>Our Services</Link>
           </li>
 
           <li>
@@ -198,7 +198,7 @@ class HeaderMenu extends Component {
                   </li>
                   <li>
                     <Link to={"inter-school-debate"}>
-                      • Inter School Presentations
+                       Inter School Presentations
                     </Link>
                   </li>
                 </ul>
@@ -226,11 +226,7 @@ class HeaderMenu extends Component {
                   Funny Story{" "}
                 </Link>
               </li>
-              <li>
-                <Link to={"/admission-file"} className="dez-page">
-                  Admision Form{" "}
-                </Link>
-              </li>
+               
               <li>
                 <Link to={"/moral-story"} className="dez-page">
                   Moral Story{" "}
