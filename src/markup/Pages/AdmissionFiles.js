@@ -25,7 +25,7 @@ function AdmissionFiles() {
           style={{ backgroundImage: "url(" + bnr + ")" }}
         >
           <PageTitle
-            motherMenu="Admision Form"
+            motherMenu="Admission Form"
             activeMenu="Admission Zone"
           />
         </div>
