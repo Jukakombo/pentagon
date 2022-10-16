@@ -113,7 +113,7 @@ function CompleteForm() {
         <h5>NB: Attach  all the following documents</h5>
         <p>1: Registration the first document You saved as pdf</p>
         <p>2: The second document you downloaded</p>
-        <p>3: If you are coming from another school provide the coppies of it also</p>
+        <p>3: If you are coming from another school provide Transfer form and transcript</p>
         <p>4: Online Registration is compulsory </p>
         <p>5: In Complete documents will be rejected</p>
         </div>
