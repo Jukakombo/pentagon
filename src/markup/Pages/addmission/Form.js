@@ -1,23 +1,25 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { saveLocalStorage } from "../../../actions/localStorageSave";
 import { client } from "../../../sanityClient";
 import image4 from "./../../../images/addmission/svgLogo.png";
 // import bg19 from "./../../../images/addmission/watermark.png";
 function Form() {
   const history = useHistory();
-  
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     studentFirstName: "",
     studentSecondName: "",
     studentLastName: "",
     nationality: "",
     language: "",
-    applyingFor: "",
-    priviousClass: "",
+    applyingFor: "", 
     previousSchool: "",
     gradeMarksScore: "",
     chronicDiseases: "",
     alergicTo: "",
+    previousClass:"",
     hobbies: "",
     academicRecord: "",
     fatherFirstName: "",
@@ -62,6 +64,7 @@ function Form() {
   };
 
   const handleSubmit = () => {
+    dispatch (saveLocalStorage(formData, history))
     setLoading(true);
 
     const contact = {

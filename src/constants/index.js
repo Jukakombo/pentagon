@@ -23,3 +23,5 @@ export const LOGOUT = 'LOGOUT';
 //teacher constants
 export const AUTHTEACHER = 'AUTHTEACHER';
 export const LOGOUTTEACHER = 'LOGOUTTEACHER';
+export const SAVE__LOCAL__STORAGE__DATA = 'SAVE__LOCAL__STORAGE__DATA';
+export const REMOVE__LOCAL__STORAGE__DATA = 'REMOVE__LOCAL__STORAGE__DATA';

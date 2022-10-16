@@ -18,7 +18,8 @@
 // export default PrintOut
 
 import React, { useRef } from "react";
-import  { useReactToPrint } from "react-to-print";
+import { Link } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
 
 import ComponentToPrint from "./PrintPDF";
 
@@ -28,15 +29,45 @@ function PrintOut() {
     content: () => componentRef.current,
   });
   return (
-    <div>
-    <button
-              
-              className="btn btn-primary"
-            >
-             <span>Congratulation! You have successfully Registered </span>
-            </button>
-      <button onClick={handlePrint}>Print this out!</button>
+    <div className="container">
+      <button className="btn btn-primary">
+        <span>Congratulation! You have successfully Registered </span>
+      </button>
+      <p>
+        Please Save your Complete Form as PDF by clicking on the button Save
+        Complete File then Click on next Download Complete File button!
+      </p>
+      <button className="btn btn-danger" onClick={handlePrint}>
+        Save Complete File
+      </button>
+      &nbsp;
+      <button className="btn btn-danger">
+        <a href="pdf/admisionFile.pdf" download style={{color:"white"}}>
+          Download Complete Form
+        </a>
+      </button>{" "}
+      &nbsp;
+      <button className="btn btn-danger">
+        <Link to="/" style={{color:"white"}}>Finsh</Link>
+      </button>
       <ComponentToPrint ref={componentRef} />
+      <p>
+        Please Save your Complete Form as PDF by clicking on the button Save
+        Complete File then Click on next Download Complete File button!
+      </p>
+      <button className="btn btn-danger" onClick={handlePrint}>
+        Save Complete File
+      </button>
+      &nbsp;
+      <button className="btn btn-danger">
+        <a href="pdf/admisionFile.pdf" download style={{color:"white"}}>
+          Download Complete Form
+        </a>
+      </button>{" "}
+      &nbsp;
+      <button className="btn btn-danger">
+        <Link to="/" style={{color:"white"}}>Finsh</Link>
+      </button>
     </div>
   );
 }
