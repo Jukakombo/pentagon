@@ -72,6 +72,7 @@ function Form() {
       studentFirstName: formData.studentFirstName,
       studentSecondName: formData.studentSecondName,
       studentLastName: formData.studentLastName,
+
       nationality: formData.nationality,
       language: formData.language,
       applyingFor: formData.applyingFor,

@@ -57,17 +57,16 @@ export default function Orders({ setContactId }) {
         student.fullName.toLowerCase().includes(query) ||
         student.classYear.toLowerCase().includes(query) ||
         student.gender.toLowerCase().includes(query) ||
-        student.idNumber.toLowerCase().includes(query)
-        
-
+        student.idNumber.toLowerCase().includes(query) 
     );
   };
+
   const location = useLocation();
   React.useEffect(() => {
     client
       .fetch(
         `*[_type=="studentForm"]{
-          fullName, classYear, idNumber, gender,address,
+          fullName, address,  idNumber, address, classYear,gender,yearAddmitted, 
       contact,_id
     } | order(fullName asc)`
       )

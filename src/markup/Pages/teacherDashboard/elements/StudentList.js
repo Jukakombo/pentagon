@@ -75,17 +75,17 @@ function Row(props) {
 export default function StudentList() {
   const [query, setQuery] = React.useState("");
   const [studentsDetails, setStudentsDetails] = React.useState([]);
+  
   const searchByFilter = (data) => {
     return data.filter(
       (student) =>
         student.fullName.toLowerCase().includes(query) ||
         student.classYear.toLowerCase().includes(query) ||
         student.gender.toLowerCase().includes(query) ||
-        student.idNumber.toLowerCase().includes(query)
-        
-
+        student.idNumber.toLowerCase().includes(query) 
     );
   };
+  
   React.useEffect(() => {
     client
       .fetch(
