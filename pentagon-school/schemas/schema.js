@@ -7,8 +7,9 @@ import studentForm from "./studentForm";
 import teacherForm from "./teacherForm";
 import schoolNews from "./schoolNews";
 import comment from "./comment";
-import gallery from "./gallery"; 
+import gallery from "./gallery";
 import subscriber from "./subscriber";
+import studentsArticles from "./studentsArticles";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,7 +21,11 @@ export default createSchema({
     /* Your types here! */
     studentForm,
     teacherForm,
+    studentsArticles,
     schoolNews,
-    comment,gallery,subscriber
+    comment,
+    gallery,
+    subscriber,
+   
   ]),
 });

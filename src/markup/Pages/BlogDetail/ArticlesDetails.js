@@ -12,7 +12,7 @@ import test1 from "./../../../images/testimonials/pic1.jpg";
 import BlockContent from "@sanity/block-content-to-react";
 import { client } from "../../../sanityClient";
 
-function BlogDetails() {
+function ArticlesDtails() {
   // const [scienceAndTech, setScienceAndTech] = useState([]);
   const { id } = useParams();
 
@@ -56,7 +56,7 @@ function BlogDetails() {
                   <div className="blog-post blog-single" key={item.slug}>
                     <div className="dlab-post-title ">
                       <h4 className="post-title m-t0">
-                        <Link to={"#"}>{item?.title}</Link>
+                        <Link to={"#"}>{item.title}</Link>
                       </h4>
                     </div>
                     <div className="dlab-post-meta m-b20">
@@ -71,8 +71,8 @@ function BlogDetails() {
                           </strong>
                         </li>
                         <li className="post-author">
-                          <Link to={`news-details/${item?.slug}`}>
-                            <i className="fa fa-user"></i>By:{item?.author}
+                          <Link to={`news-details/${item.slug}`}>
+                            <i className="fa fa-user"></i>By:{item.author}
                           </Link>
                         </li>
                         <li className="post-comment">
@@ -83,7 +83,7 @@ function BlogDetails() {
                     </div>
                     <div className="dlab-post-media dlab-img-effect zoom-slow">
                       <Link to={"#"}>
-                        <img src={item?.imageUrl?.asset?.url} alt="ali" />
+                        <img src={item.imageUrl.asset.url} alt="ali" />
                       </Link>
                     </div>
                     <div className="dlab-post-text">
@@ -295,4 +295,4 @@ function BlogDetails() {
   );
 }
 
-export default BlogDetails;
+export default ArticlesDtails;
