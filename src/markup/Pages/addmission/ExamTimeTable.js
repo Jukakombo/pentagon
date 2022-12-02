@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import timetable from "./timetable.jpg";
 import Header from "./../../Layout/Header1";
 import Footer5 from "./../../Layout/footer5";
 import PageTitle from "../../Layout/PageTitle";
 import bnr from "./../../../images/banner/bnr2.jpg";
+import { client } from "../../../sanityClient";
 
 function ExamTimeTable() {
+  const [timetable, setTimetable] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type=="timetable"]{
+      description, imageUrl{
+        asset -> {
+          _id,
+          url
+        }, alt
+      },
+       
+    }`
+      )
+      .then((data) => {
+        setTimetable(data);
+      });
+  }, []);
+ 
   return (
     <>
       <Header />
@@ -16,6 +37,10 @@ function ExamTimeTable() {
         <PageTitle motherMenu="Exam Timetable " activeMenu="Exam Timetable " />
       </div>
 
+          
+          {timetable?.map((item)=>(
+
+            <>
       <div className="container">
         <div className="section-head text-black text-center">
           <h4 className="text-gray-dark m-b10">About </h4>
@@ -23,10 +48,10 @@ function ExamTimeTable() {
             Examination time table
             <span className="bg-primary"></span>
           </h2>
+
+         
           <p>
-            This exam time is set by the school administration, and all students
-            are expected to respect and prepare for their exams as the exam date
-            approaches.
+            {item.description}
           </p>
         </div>
       </div>
@@ -35,11 +60,13 @@ function ExamTimeTable() {
         <div className="section-head text-center">
           {/* <div className=" row dzseth  m-b30"> */}
           <div className="col-lg-12 col-md-12 col-sm-10 m-b30 center ">
-            <img src={timetable} data-tilt alt="organigram" />
+            <img src={item?.imageUrl?.asset?.url} data-tilt alt="time_table" />
             {/* </div> */}
           </div>
         </div>
       </div>
+      </>
+      ))}
       <Footer5 />
     </>
   );

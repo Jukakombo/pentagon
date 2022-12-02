@@ -10,7 +10,7 @@ import comment from "./comment";
 import gallery from "./gallery";
 import subscriber from "./subscriber";
 import studentsArticles from "./studentsArticles";
-
+import timetable from "./timetable";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -26,6 +26,7 @@ export default createSchema({
     comment,
     gallery,
     subscriber,
+    timetable
    
   ]),
 });
