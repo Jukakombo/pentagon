@@ -84,6 +84,8 @@ import CodeOfConduct from "./Pages/CodeOfConduct";
 import MoralStory from "./Pages/MoralStory";
 import AdmissionFiles from "./Pages/AdmissionFiles";
 import PrintOut from "./Pages/PrintOut";
+import ExamTimeTable from "./Pages/addmission/ExamTimeTable";
+ 
 // import PrintOut from "./Pages/PrintOut";
 
 function Markup() {
@@ -251,6 +253,10 @@ function Markup() {
           <Route path="/terms-condition">
             <TermsAndCondition />
           </Route>
+          <Route exact path="/exam-timetable">
+            <ExamTimeTable />
+          </Route>
+          
           <Route
             exact
             path={[
@@ -301,7 +307,7 @@ function Markup() {
               "/contact-zone",
               "/student-list",
               "/inbox",
-              "/teacherTimeTable",
+              "/teacherExamTimeTable",
               "/compose",
               "/scienceBooks",
               "/libraryBooks",
