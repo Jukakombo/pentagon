@@ -25,9 +25,9 @@ import teamsPictures from "./teamPictures";
 import { useState } from "react";
 import { createContact } from "../../actions/contacts";
 import { useDispatch } from "react-redux";
+import Beneficiary from "./Beneficiary";
 
 const Index6 = (props) => {
-   
   const [contact, setContact] = useState({
     name: "",
     email: "",
@@ -203,44 +203,10 @@ const Index6 = (props) => {
           </div>
         </>
         <div className="content-block">
-          {/* <!-- Customer Review  --> */}
-          <div
-            className="section-full content-inner-2 bg-gray bg-img-fix overlay-primary"
-            style={{ backgroundImage: "url(" + bg2 + ")" }}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12 text-center section-head text-white">
-                  <h2 className="font-weight-700 text-white m-b0">
-                    What People are saying about our School?
-                  </h2>
-                  <p className="m-b0">
-                    Here is a list of testimonials from our students' parents
-                    stating that our school is the best. Register your child
-                    with us; we teach everything and strive to make our school
-                    the best among all.
-                  </p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <TestimonialStyle2 />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <!-- Customer Review END --> */}
-          {/* <!-- Our Recent Blog Posts --> */}
-          <div className="section-full bg-white content-inner">
-            <div className="container">
-              <div className="max-w600 m-auto text-center m-b30">
-                <h6 className="m-t0">Publish what you think</h6>
-                <h2 className="m-t0">Latest School News</h2>
-              </div>
-              <LatestBlogSlider />
-            </div>
-          </div>
-          {/* <!-- Our Recent Blog Posts END --> */}
+         
+
+         
+
           {/* <!-- Our Team --> */}
           <div className="page-content bg-white">
             {/* <!-- contact area --> */}
@@ -313,6 +279,65 @@ const Index6 = (props) => {
             </div>
             {/* <!-- contact area END --> */}
           </div>
+          {/* beneficiaries */}
+          <div className="page-content bg-white">
+            <div className="content-block">
+              <div className="section-full text-center bg-white content-inner-1">
+                <div className="container">
+                  <div className="section-head text-black text-center">
+                    <h2>BENEFICIARIES</h2>
+                    <p>
+                    2022 BENEFICIARIES OF PENTAGON INTERNATIONAL MODERN MIXED SECONDARY SCHOOL
+                    </p>
+                  </div>
+                  <Beneficiary />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* beneficiary end */}
+          
+           {/* <!-- Customer Review  --> */}
+           <div
+            className="section-full content-inner-2 bg-gray bg-img-fix overlay-primary"
+            style={{ backgroundImage: "url(" + bg2 + ")" }}
+          >
+            <div className="container">
+              <div className="row">
+                <div className="col-md-12 text-center section-head text-white">
+                  <h2 className="font-weight-700 text-white m-b0">
+                    What People are saying about our School?
+                  </h2>
+                  <p className="m-b0">
+                    Here is a list of testimonials from our students' parents
+                    stating that our school is the best. Register your child
+                    with us; we teach everything and strive to make our school
+                    the best among all.
+                  </p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <TestimonialStyle2 />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <!-- Customer Review END --> */}
+
+           {/* <!-- Our Recent Blog Posts --> */}
+           <div className="section-full bg-white content-inner">
+            <div className="container">
+              <div className="max-w600 m-auto text-center m-b30">
+                <h6 className="m-t0">Publish what you think</h6>
+                <h2 className="m-t0">Latest School News</h2>
+              </div>
+              <LatestBlogSlider />
+            </div>
+          </div>
+          {/* <!-- Our Recent Blog Posts END --> */}
+
           <div
             className="section-full p-tb15 our-support content-inner-2"
             style={{
@@ -371,7 +396,7 @@ const Index6 = (props) => {
                       </div>
                       <div className="dezPlaceAni">
                         <div className="dzFormMsg"></div>
-                        <form  className=""  onSubmit={handleSubmit}>
+                        <form className="" onSubmit={handleSubmit}>
                           <input type="hidden" value="Contact" name="dzToDo" />
                           <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -480,12 +505,13 @@ const Index6 = (props) => {
                               </div>
                             </div>
                             {success && (
-                            <div className="col-lg-12 site-button">
-                              Thank you for getting in touch! We appreciate you
-                              contacting us. One of our colleagues will get back
-                              in touch with you soon!Have a great day!{" "}
-                            </div>
-                          )}
+                              <div className="col-lg-12 site-button">
+                                Thank you for getting in touch! We appreciate
+                                you contacting us. One of our colleagues will
+                                get back in touch with you soon!Have a great
+                                day!{" "}
+                              </div>
+                            )}
                             <div className="col-lg-12 col-md-12 col-sm-12">
                               <button
                                 name="submit"
