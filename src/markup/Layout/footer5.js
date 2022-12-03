@@ -136,11 +136,11 @@ function Footer5 () {
                           <input
                             name="subscriber"
                             value={subscriber}
-                            onChange={handleChangeInput}
-                            required="required"
+                            onChange={handleChangeInput} 
                             className="form-control"
                             placeholder="e.g alison@gmail.com"
                             type="email"
+                            required
                             
                           />
                            
